@@ -1,4 +1,4 @@
-# Day 01
+# Day 1
 
 ## 1. Web Development
 
@@ -37,3 +37,11 @@ JS:
 ## 3. DevTools
 
 - VSCode, Browser Google Chrome
+
+## 4. Anatomy of an HTML element
+
+`<h1>Welcome to the first day of the bootcamp</h1>`
+
+`- <h1> opening tag`  
+`- The text is the content`  
+`- </h1> closing tag`
