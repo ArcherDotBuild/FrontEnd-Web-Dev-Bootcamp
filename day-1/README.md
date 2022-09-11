@@ -1,4 +1,6 @@
-# Day 1
+![image info](./welcome-day-01.png)
+
+## **Welcome to the Archer FrontEnd Bootcamp - Day 1**
 
 ## 1. Web Development
 
@@ -45,3 +47,14 @@ JS:
 `- <h1> opening tag`  
 `- The text is the content`  
 `- </h1> closing tag`
+
+## 5. Google Developer Tools (basic intro)
+
+- Read the HTML tree
+- Read and edit CSS styles
+- View network connections
+
+## 6. Resources:
+
+- VS Code: https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics
+- Getting started with HTML: https://code.visualstudio.com/
