@@ -1,0 +1,39 @@
+.box {
+  width: 400px;
+  height: 400px;
+  background-color: cadetblue;
+  border: 7px solid;
+  padding: 25px;
+}
+
+.box2 {
+  width: 400px;
+  height: 400px;
+  background-color: cornflowerblue;
+  border: 7px solid;
+  /* top, right, bottom, left */
+  padding: 12px 24px 12px 48px;
+}
+
+.box3 {
+  width: 400px;
+  height: 400px;
+  background-color: darkolivegreen;
+  border: 7px solid;
+  /* top and bottom, right and left */
+  padding: 24px 48px;
+}
+
+.box4 {
+  padding: 24px 48px;
+  border: 2px solid;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  border-radius: 20px;
+  /* specifying each corner */
+  /* border-top-left-radius: ; */
+  /* border-top-right-radius: ; */
+  /* border-bottom-left-radius: ; */
+  /* border-bottom-right-radius: ; */
+  /* border-radius: 50%; */
+}

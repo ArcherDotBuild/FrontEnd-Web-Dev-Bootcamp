@@ -1,0 +1,12 @@
+h1 {
+  color: red;
+}
+
+.external-style {
+  background-color: aqua;
+}
+
+#external-id {
+  color: blue;
+  font-size: 30px;
+}

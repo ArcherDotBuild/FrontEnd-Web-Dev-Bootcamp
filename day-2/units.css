@@ -1,0 +1,12 @@
+p {
+  font-size: 2em;
+}
+
+.rem-text {
+  font-size: 2rem;
+}
+
+#div-paragraph {
+  color: red;
+  width: 200px;
+}
