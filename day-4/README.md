@@ -7,11 +7,21 @@
 ## 1. Files Order
 
 - first: index.html main.js
-- second:
+- second: dom-api-examples.js
+- third: portfolio-dom
 
 ## 2. DOM Nodes
 
 ![image info](./dom-nodes.png)
+
+## 3. Browser API
+
+- window, document
+
+## 4.
+
+- document.getElementsByClassName("blue") // returns de first object with class blue
+- document.getElementsByClassName("blue")[0].className // returns first class with class blue
 
 ## Resources:
 
