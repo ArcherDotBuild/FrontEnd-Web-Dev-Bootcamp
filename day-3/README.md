@@ -10,8 +10,6 @@
 - second: file1.js
 - third: file2.js
 
-## 2.
-
 ## Resources:
 
 - What is JavaScript: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Introduction#what_is_javascript
