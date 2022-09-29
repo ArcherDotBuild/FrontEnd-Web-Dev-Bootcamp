@@ -6,7 +6,11 @@
 
 ## 1. Files Order
 
-- first: index.html main.js
+- first: 01
+- second: 02
+- third: portfolio-form
+
+portfolio link: https://elfgodd-portfolio.netlify.app/
 
 ## Resources:
 

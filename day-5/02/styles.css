@@ -1,0 +1,12 @@
+body {
+  background-color: cadetblue;
+  text-align: center;
+}
+
+input:invalid {
+  outline: 2px solid coral;
+}
+
+input:valid {
+  outline: 2px solid rgb(0, 119, 255);
+}
