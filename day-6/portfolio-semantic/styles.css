@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  padding: 16px;
+  /* position: fixed; */
+  /* position: absolute; */
+  /* top: 30%; */
+  top: 0;
+  position: sticky;
+  border: 1px solid white;
+  background-color: hsl(0, 0%, 80%);
+  border-bottom: 4px solid;
+}
+
+header nav > a {
+  margin: 16px;
+  text-decoration: none;
+  padding: 8px;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+/* header nav a:visited {
+  color: royalblue;
+} */
+
+footer {
+  padding: 16px;
+  text-align: center;
+  border-top: 4px solid;
+}
+
+.container {
+  padding: 16px;
+}
+/* has container class and are divs parent of h2 tags*/
+.container section h2 {
+  text-align: center;
+}
+
+.intro {
+  margin: -16px;
+  padding: 16px;
+  background-color: #141111;
+  color: white;
+  text-align: center;
+}
+
+#profile-image {
+  height: 400px;
+
+  border-radius: 16px;
+}
+
+.social-links img {
+  height: 20px;
+  width: 20px;
+}
+
+.social-links a {
+  text-decoration: none;
+  margin: auto 16px;
+}
+
+table {
+  width: 100%;
+}
+
+table,
+tr,
+td,
+th {
+  border: 1px solid;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 8px;
+}
+
+p {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.dynamic-text-color {
+  color: royalblue;
+}
+
+form#contact {
+  max-width: 400px;
+  margin: auto;
+  padding: 60px;
+  border: 1px solid;
+  border-radius: 16px;
+}
+
+#contact label {
+  display: block;
+  font-weight: 600;
+}
+
+/* #contact input:focus {
+  outline: 2px solid green;
+} */
+
+#contact input,
+#contact textarea,
+#contact button {
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 8px;
+}
+
+#contact-me {
+  margin-top: 16px;
+}
+
+/*
+about-me
+qualifications
+hobbies
+technologies
+*/

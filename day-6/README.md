@@ -15,6 +15,13 @@
 3. class
 4. element selector
 
+## 3. Colors
+
+- color: rgb(0, 255, 11); // red, green blue
+- color: hsl(105deg 58% 19%); // hue, saturation and lightness
+- color: hsl(105deg 58% 19% / 1); // with opacity 1 dark, 0.5, 0 transparent
+- color: hsl(96,0,148,100%); // using commas
+
 ## Resources:
 
 - CSS Specificity: https://www.w3schools.com/css/css_specificity.asp

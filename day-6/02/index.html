@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 6 CSS Specificity & Semantic HTML</title>
+    <style>
+      .box {
+        width: 400px;
+        height: 400px;
+        padding: 16px;
+        background-color: coral;
+        /* position: relative; */
+        position: absolute;
+        /* by default z-index is auto */
+        z-index: 2;
+      }
+      .another-box {
+        box-sizing: border-box;
+        /* width: 100%; */
+        width: 400px;
+        height: 400px;
+        background-color: royalblue;
+        /* position: relative; */
+        position: absolute;
+        left: 40px;
+        /* bottom: -20px; */
+        z-index: 4;
+      }
+      .third {
+        left: 20%;
+        background-color: aquamarine;
+        z-index: 3;
+      }
+      p#id-level {
+        color: palevioletred;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="position: relative">
+      <div class="box"></div>
+      <div class="box another-box"></div>
+      <div class="box another-box third"></div>
+    </div>
+  </body>
+</html>
