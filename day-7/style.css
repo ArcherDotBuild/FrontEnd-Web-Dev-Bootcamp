@@ -1,0 +1,53 @@
+/* types: print, screen, all */
+
+/* body {
+  color: white;
+} */
+
+@media print {
+  body {
+    background-color: gray;
+    color: black;
+  }
+}
+
+body {
+  font-size: 1.5rem;
+}
+
+@media screen and (orientation: portrait) {
+  body::after {
+    content: 'Portrait';
+  }
+}
+
+@media screen and (orientation: landscape) {
+  body::after {
+    content: 'Landscape';
+    /* font-size: 2rem; */
+  }
+}
+
+/* @media (max-width: 500px) {
+  body {
+    background-color: lightgreen;
+  }
+} */
+
+/* @media all and (max-width: 500px) and (orientation: landscape) {
+  body {
+    background-color: lightgreen;
+  }
+} */
+
+@media (max-width: 500px) and (orientation: landscape) {
+  body {
+    background-color: lightgreen;
+  }
+}
+
+@media (min-width: 800px) {
+  body {
+    background-color: royalblue;
+  }
+}

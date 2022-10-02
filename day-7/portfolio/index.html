@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Alberto's Portfolio CSS</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="#about-me">About Me</a>
+        <a href="#qualifications">Qualifications</a>
+        <a href="#hobbies">Hobbies</a>
+        <a href="#technologies">Technologies</a>
+        <a href="#contact-me">Contact Me</a>
+      </nav>
+    </header>
+    <main class="container">
+      <article class="intro">
+        <img id="profile-image" src="./alberto.png" alt="my picture" />
+        <h1>Hi, i'm Alberto</h1>
+        <p>I am <span id="dynamic-text" class="dynamic-text-color"></span></p>
+        <p class="social-links">
+          <a href="https://twitter.com/elfgodd" target="_blank">
+            <img
+              width="30"
+              height="30"
+              src="https://www.iconpacks.net/icons/2/free-icon-twitter-logo-2429.png"
+              alt="Twitter Icon Image"
+            />
+          </a>
+          <a href="https://instagram.com/elfgodd" target="_blank">
+            <img
+              width="30"
+              height="30"
+              src="https://www.iconpacks.net/icons/3/free-icon-instagram-logo-8869.png"
+              alt="Instagram Icon Image"
+            />
+          </a>
+          <a href="https://linkedin.com/in/alienroom" target="_blank">
+            <img
+              width="30"
+              height="30"
+              src="https://www.iconpacks.net/icons/2/free-icon-linkedin-logo-2430.png"
+              alt="LinkedIn Icon Image"
+            />
+          </a>
+          <a href="https://github.com/elfgodd" target="_blank">
+            <img
+              width="30"
+              height="30"
+              src="https://www.iconpacks.net/icons/3/free-github-logo-icon-6532.png"
+              alt="GitHub Icon Image"
+            />
+          </a>
+        </p>
+      </article>
+      <section id="about-me">
+        <h2>About Me:</h2>
+        <p>
+          Entrepreneur & A Software Engineer with 4 years of education
+          background in modern web development
+        </p>
+        <p>
+          During my education path journey i listen to people repeatly say, they
+          wanted to connect with other developers, so i created a dev community
+          that became the largest in LatinAmerica
+        </p>
+        <p>
+          This website is an attempt to share my knowledge and experience. I'm
+          willing to teach others dev skills. Are you willing to learn?
+        </p>
+      </section>
+
+      <section id="qualifications">
+        <h2>Qualifications</h2>
+        <ol>
+          <li>Web development Bootcamp1 400 hours</li>
+          <li>Web development Bootcamp2 600 hours</li>
+        </ol>
+      </section>
+      <section id="hobbies">
+        <h2>Hobbies</h2>
+        <ul>
+          <li>Callisthenics</li>
+          <li>Soccer</li>
+          <li>Drawing</li>
+        </ul>
+      </section>
+      <section id="technologies">
+        <h2>Technologies</h2>
+        <table>
+          <tr>
+            <th>FrontEnd</th>
+            <th>BackEnd</th>
+            <th>Database</th>
+          </tr>
+          <tr>
+            <td>HTML</td>
+            <td>NodeJS</td>
+            <td>MongoDB</td>
+          </tr>
+          <tr>
+            <td>CSS</td>
+            <td>Java</td>
+            <td>MySQL</td>
+          </tr>
+          <tr>
+            <td>JavaScript</td>
+            <td>Ruby</td>
+            <td>PostgreSQL</td>
+          </tr>
+        </table>
+      </section>
+      <section id="contact-me">
+        <form name="contact" id="contact" method="POST" data-netlify="true">
+          <h1>Contact Me</h1>
+          <div>
+            <label for="firstName">First name</label>
+            <input
+              type="text"
+              name="firstName"
+              id="firstName"
+              autocomplete="off"
+            />
+          </div>
+          <div>
+            <label for="lastName">Last name</label>
+            <input
+              type="text"
+              name="lastName"
+              id="firstName"
+              autocomplete="off"
+            />
+          </div>
+          <div>
+            <label for="message">Message</label>
+            <textarea
+              name="message"
+              id="message"
+              cols="30"
+              rows="10"
+              autocomplete="off"
+            ></textarea>
+          </div>
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+    <footer>Made with heart @ElfGodd. Copyright 2022</footer>
+    <script src="./index.js"></script>
+  </body>
+</html>

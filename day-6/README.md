@@ -6,7 +6,9 @@
 
 ## 1. Files Order
 
-- first:
+- first: 01
+- second: 02
+- third: portfolio-semantic
 
 ## 2. Order of CSS specificity
 
