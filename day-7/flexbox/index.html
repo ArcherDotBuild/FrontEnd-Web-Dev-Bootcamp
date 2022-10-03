@@ -11,25 +11,47 @@
       }
       .box {
         background-color: royalblue;
-        /* width: 300px; */
-        width: 100%;
+        /* width: 100px; */
+        width: 300px;
+        /* width: 100%; */
         height: 300px;
         /* margin: 32px auto; */
-        margin: 10px;
+        /* margin: 10px; */
+      }
+      .box.second {
+        /* flex-basis: 400px; */
+        /* flex-basis: 0%; */
+        /* flex-grow: 2; */
+        /* flex-shrink: 1; */
+        /* flex: 0 1 400px; */
+        flex: 2 0 200px;
+      }
+      .box.third {
+        /* flex: 50%; */
+        flex: 1 1 100px;
       }
       .container {
         display: flex;
-        flex-direction: column;
-        max-height: 600px;
-        overflow: hidden;
+        /* flex-direction: column; */
+        /* max-height: 600px; */
+        height: 100vh;
+        /* overflow: hidden; */
+        /* flex-wrap: wrap; */
+        flex-wrap: nowrap;
+        gap: 16px;
+        /* justify-content: space-around; */
+        /* justify-content: space-evenly; */
+        /* justify-content: space-between; */
+        justify-content: center;
+        align-items: center;
       }
     </style>
   </head>
   <body>
     <main class="container">
       <section class="box"></section>
-      <section class="box"></section>
-      <section class="box"></section>
+      <section class="box second"></section>
+      <section class="box third"></section>
       <!-- <section class="box"></section>
       <section class="box"></section>
       <section class="box"></section> -->
