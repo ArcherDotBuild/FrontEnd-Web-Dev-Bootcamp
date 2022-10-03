@@ -1,0 +1,42 @@
+/* Custom properties */
+/* We can only define variables within a specific rule */
+/* Element level or Class rule, not hanging out */
+
+/* :root {
+  --background-color: lightgreen;
+  --text-color: white;
+} */
+
+:root {
+  /* --padding-large: 16px; */
+  --padding-large: 24px;
+  --padding-medium: 8px;
+  --background-color: lightgray;
+  --text-color: hsl(0, 0%, 0%);
+}
+
+/* main {
+  --background-color: lightgreen;
+  --text-color: white;
+  background-color: var(--background-color);
+} */
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+/* body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+} */
+h1 {
+  padding: var(--padding-large);
+  border: white solid;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    --background-color: black;
+    --text-color: hsl(0, 0%, 100%);
+  }
+}

@@ -6,7 +6,9 @@
 
 ## 1. Files Order
 
-- first:
+- first: media-queries
+- second: transform
+- third: variables
 
 ## 2. Rendering
 
@@ -16,6 +18,16 @@ This is for setting up the website for printing
   - ctrl + shift + p
   - search for rendering and select it
   - search the Emulate CSS media type and select print
+
+## 3. Transform
+
+`transform: rotate(45deg);`  
+`transform: rotate(0.13turn);`  
+`transform: scale(1.5, 0.5);`  
+`transform: translate(10px, 10px);`  
+`transform: skew(10deg, 10deg);`  
+apply multiple transform functions:  
+`transform: scale(1.5) translateY(50px);`
 
 ## Resources:
 
