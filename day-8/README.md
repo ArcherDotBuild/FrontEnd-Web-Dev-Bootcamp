@@ -9,6 +9,7 @@
 - first: simple-grid
 - second: intrinsic-values
 - third: fraction
+- fourth: minmax
 
 ## Resources:
 
