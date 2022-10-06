@@ -10,6 +10,8 @@
 - second: intrinsic-values
 - third: fraction
 - fourth: minmax
+- fifth: shadows
+- sixth: portfolio
 
 ## Resources:
 

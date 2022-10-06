@@ -1,0 +1,19 @@
+.card {
+  width: 300px;
+  height: 500px;
+  border: 1px solid;
+  box-shadow: 5px 5px 20px 1px hsl(240deg 80% 50%);
+
+  /* Multiply shadows */
+  /* box-shadow: 3px 4px 18px 10px hsl(240deg 80% 90%),
+  7px -4px 18px 10px blue; */
+}
+
+.card h1 {
+  text-shadow: 3px 4px 18px red;
+}
+
+.cards {
+  display: flex;
+  place-content: center;
+}
