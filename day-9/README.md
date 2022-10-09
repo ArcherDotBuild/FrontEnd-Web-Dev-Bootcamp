@@ -6,7 +6,9 @@
 
 ## 1. Files Order
 
-- first:
+- first: grid
+- second: grid-areas
+- third: js
 
 ## Resources:
 

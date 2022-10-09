@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 200px 40rem 30%;
   grid-template-rows: 300px 40%;
-  grid-template-rows: 300px 40%;
+  grid-auto-rows: 300px;
   gap: 16px;
   justify-content: center;
 }
@@ -15,6 +15,10 @@
 }
 .first {
   grid-column: span 2;
+}
+
+.second {
+  grid-row: span 2;
 }
 
 /* cheatsheet */
