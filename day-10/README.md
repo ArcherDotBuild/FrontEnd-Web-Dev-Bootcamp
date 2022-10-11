@@ -6,7 +6,9 @@
 
 ## 1. Files Order
 
-- first:
+- first: closures
+- second: objects
+- third: object-creation
 
 ## Resources:
 
