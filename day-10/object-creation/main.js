@@ -90,11 +90,51 @@ console.log(trunk) // {firstName: 'super sayayin'}
 console.log(vegeta) // {firstName: 'super sayayin'}
 
 console.log('\n')
-
 // Object.create
 // function Accepts an object as a parameter and it uses it to create a new object
 
 let org = { org: 'Archer' }
-// let anotherPersonForOrg = Object.create(org, { name: { value: 'Sword' } })
-// console.log(anotherPersonForOrg)
-console.log(Object.create(org, { name: { value: 'sword' } }))
+let somePerson = Object.create(org, { name: { value: 'Sword' } })
+// console.log(Object.create(org, { name: { value: 'sword' } }))
+console.log(somePerson)
+org.location = 'Barranquilla'
+console.log(somePerson)
+
+Object.hasOwn(somePerson, 'name')
+console.log(Object.hasOwn(somePerson, 'name'))
+console.log(Object.hasOwn(somePerson, 'location'))
+
+console.log('\n')
+// Object.assign()
+let someP = { name: 'Alberto' }
+let carP = { car: 'SomeCar' }
+
+console.log(Object.assign({}, someP, carP))
+
+// this need to be reviewed
+// console.log(Object.assign({}, somePerson, { car: 'BMW' }))
+// console.log(somePerson)
+
+console.log('\n')
+class Shape {
+  constructor(height, width) {
+    this.height = height
+    this.width = width
+  }
+  area() {
+    return this.height * this.width
+  }
+}
+
+let rectangle = new Shape(10, 20)
+console.log(rectangle)
+console.log(rectangle.area())
+
+class Square extends Shape {
+  constructor(dimension) {
+    super(dimension, dimension)
+  }
+}
+
+console.log(new Square(10))
+console.log(new Square(10).area())
