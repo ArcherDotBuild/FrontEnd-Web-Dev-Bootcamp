@@ -6,7 +6,8 @@
 
 ## 1. Files Order
 
-- first:
+- first: day-10-object-creation
+- second: portfolio
 
 ## Resources:
 
