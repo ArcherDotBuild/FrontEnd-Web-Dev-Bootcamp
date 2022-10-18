@@ -61,3 +61,57 @@ const [, pear] = fruits
 console.log(pear)
 const [, , , pineapple] = fruits
 console.log(pineapple)
+
+// fruits.at(0) // ('banana')
+// fruits.at(-1) // ('pineapple')
+// fruits.at(-2) // ('mango')
+
+console.log('\n')
+// alias
+let { firstName: givenName } = anotherPerson
+console.log(givenName)
+
+console.log('\n')
+// rest operator - ... => ellipsis notation
+
+const { firstName: nameRest, ...remaining } = anotherPerson
+console.log(nameRest, remaining)
+console.log(nameRest)
+console.log(remaining)
+
+const [apple, ...rem] = fruits
+console.log(apple, rem)
+
+console.log('\n')
+// spread operator
+const moreFruits = [fruits]
+console.log('moreFruits: ', moreFruits)
+let spreadFruits = [...fruits]
+console.log('spreadFruits: ', spreadFruits)
+const anotherListOfFruits = ['Strawberry', 'Cherry']
+spreadFruits = [...spreadFruits, ...anotherListOfFruits]
+console.log(spreadFruits)
+console.log({ ...anotherPerson, country: 'Colombia' })
+
+console.log('\n')
+// arrow functions
+sum = (firstNum, secondNum) => {
+  return firstNum + secondNum
+}
+console.log(sum(100, 50))
+
+let multiplyArrow = (firstNum, secondNum) => console.log(firstNum * secondNum)
+multiplyArrow(7, 3)
+
+let sumArrow = (firstNum, secondNum) => {
+  let result
+  if (firstNum > secondNum) {
+    result = firstNum + secondNum
+  } else {
+    result = 0
+  }
+  return result
+}
+console.log(sumArrow(5, 4))
+
+fruits.at()
