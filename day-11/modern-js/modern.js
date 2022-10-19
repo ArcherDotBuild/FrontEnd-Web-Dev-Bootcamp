@@ -104,6 +104,8 @@ let multiplyArrow = (firstNum, secondNum) => console.log(firstNum * secondNum)
 multiplyArrow(7, 3)
 
 let sumArrow = (firstNum, secondNum) => {
+  console.log(this) // window
+  // console.log(arguments) we don't have access to arguments
   let result
   if (firstNum > secondNum) {
     result = firstNum + secondNum
@@ -115,3 +117,41 @@ let sumArrow = (firstNum, secondNum) => {
 console.log(sumArrow(5, 4))
 
 fruits.at()
+
+// pass multiple arguments using arrow function
+let sumAll = (firstNum, secondNum, ...others) => {
+  return firstNum + secondNum + others
+}
+console.log(sumAll(1, 2, 3, 4, 5, 6, 7, 8, 9)) // 33,4,5,6,7,8,9
+
+console.log('\n')
+// optional chaining
+let human = {
+  firstName: 'Josue',
+  secondName: 'Guzman',
+  age: 16,
+}
+
+if (human && human.age) {
+  console.log(human.age)
+}
+
+// If the value is available it will be logged to the console
+if (anotherPerson?.address?.city) {
+  // if (anotherPerson && anotherPerson.address && anotherPerson.address.city) {
+  console.log(anotherPerson.address.city)
+}
+if (human?.address?.city) {
+  console.log(anotherPerson.address.city)
+}
+
+console.log('\n')
+// nullish coalescing operator
+
+let age1 = human.age || 20
+console.log(age1) // 16
+let age2 = anotherPerson.age || 20
+console.log(age2) // 20
+
+// if age is 0 it will drop 20 so lets do this
+// let age1 = human.age && 20
