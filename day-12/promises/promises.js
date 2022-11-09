@@ -159,3 +159,49 @@ function moneyReceived(amountReceived) {
     }
   })
 }
+
+// convertAmount(from, to = 5) => response
+// response => structured data {
+//   info: {
+//     rate: 81
+//   },
+//   result: 5 * 81
+// }
+
+// Response in structured formats
+// JSON: JavaScript Object Notation (most used)
+// XML
+// Text
+
+let object1 = {
+  info: {
+    rate: 81,
+  },
+  result: 5 * 81,
+}
+JSON.stringify(object1)
+// '{"info":{"rate":81},"result":405}'
+JSON.parse('{"info":{"rate":81},"result":405}')
+// {info: {…}, result: 405}
+// info
+// :
+// {rate: 81}
+// result
+// :
+// 405
+// [[Prototype]]
+// :
+// Object
+
+// Promise API example theory
+/**
+call api => request => promise
+response => json || error
+- calling an API
+- Requesting for some information
+- In the mean time the API time is taking to get that information we get a Promise
+- Once the result is available we will get a response
+- Once the response is available the promise will be settled
+- We will either get the JSON
+- Or well get some error
+ */

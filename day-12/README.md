@@ -7,6 +7,11 @@
 ## 1. Files Order
 
 - first: promises
+- second: currency-converter
+
+## second:
+
+- Curated API Marketplace: https://apilayer.com/
 
 ## Resources:
 
