@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   document
     .querySelector('#currency-converter')
-    .addEventListener('submit', async (event) => {
+    .addEventListener('submit', (event) => {
       event.preventDefault() // prevents refresh for not happening
 
       const {
@@ -16,12 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
         headers,
       }
 
-      let response = await fetch(
+      fetch(
         `https://api.apilayer.com/exchangerates_data/convert?to=${to.value}&from=${from.value}&amount=${amount.valueAsNumber}`,
         requestOptions
       )
-      const data = await response
-        .json()
         .then((response) => response.json())
         // .then((data) => console.log(data))
         .then((data) => {
