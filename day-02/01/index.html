@@ -6,19 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Intro to CSS</title>
     <style>
+      /* 1. element */
+      h2 {
+        /* this is know as the declaration */
+        color: violet;
+      }
       h1 {
         color: violet;
       }
 
+      /* 2. id selector */
       #first-id {
         font-style: italic;
-        color: coral;
+        color: rgb(38, 22, 255);
       }
 
+      /* 3. class selector */
       .brown {
-        color: brown;
+        color: rgb(253, 135, 0);
       }
-      .backgroundBG {
+
+      .background-bg {
         background-color: black;
       }
     </style>
@@ -28,12 +36,12 @@
     <h1 style="color: green; font-size: 40px">Another h1 tag</h1>
 
     <!-- CSS h1 rule  h1 { color: violet;} -->
-    <h1>3rd Heading tag</h1>
+    <h2>3rd Heading tag</h2>
 
     <h1 id="first-id">First element id heading</h1>
 
     <h1 class="brown">First element with class</h1>
 
-    <h1 class="brown backgroundBG">Element with two classes</h1>
+    <h1 class="brown background-bg">Element with two classes</h1>
   </body>
 </html>

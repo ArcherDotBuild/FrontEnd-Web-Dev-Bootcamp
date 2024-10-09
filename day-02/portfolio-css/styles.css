@@ -6,6 +6,7 @@ body {
 .container {
   padding: 16px;
 }
+
 /* has container class and are divs parent of h2 tags*/
 .container div h2 {
   text-align: center;
@@ -14,7 +15,7 @@ body {
 .intro {
   margin: -16px;
   padding: 16px;
-  background-color: #141111;
+  background-color: #925300;
   color: white;
   text-align: center;
 }
@@ -26,8 +27,8 @@ body {
 }
 
 .social-links img {
-  height: 20px;
-  width: 20px;
+  height: 40px;
+  width: 40px;
 }
 
 .social-links a {
@@ -56,10 +57,3 @@ p {
   font-size: 1.5rem;
   line-height: 2rem;
 }
-
-/*
-about-me
-qualifications
-hobbies
-technologies
-*/

@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .querySelector('#currency-converter')
     .addEventListener('submit', async (event) => {
       event.preventDefault() // prevents refresh for not happening
-
+      console.log('async function called first')
       const {
         target: { from, to, amount },
       } = event
@@ -20,8 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
           `https://api.apilayer.com/exchangerates_data/convert?to=${to.value}&from=${from.value}&amount=${amount.valueAsNumber}`,
           requestOptions
         )
+        console.log('response: ', response)
         const data = await response.json()
-        // console.log(data)
+        console.log('data: ', data)
         let {
           info,
           date,
@@ -37,10 +38,24 @@ document.addEventListener('DOMContentLoaded', () => {
       } finally {
         console.log('finally block')
       }
+      console.log('end of function')
     })
 
-  console.log('end of function')
+  document
+    .querySelector('#currency-converter')
+    .addEventListener('submit', (event) => {
+      console.log('a regular synchronous function')
+    })
 })
+/*
+Order of print statement's
+1. async function called first
+2. a regular synchronous function
+3. RESPONSE
+4. DATA
+5. finally block
+6. end of function
+*/
 
 // {
 //     "success": true,
