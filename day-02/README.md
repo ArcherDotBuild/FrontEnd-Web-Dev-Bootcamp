@@ -1,6 +1,6 @@
 ![image info](./welcome-day-02.png)
 
-# Day 2
+# Welcome to Day 2
 
 ## **Introduction to CSS**
 
@@ -18,9 +18,7 @@
 - 2: Live Server Extension
 - 3: CSS syntax
 - 4: Box Model
-- 5:
-- 6:
-- 7:
+- 5: Units
 
 #### 1. Homework
 

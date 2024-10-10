@@ -4,12 +4,6 @@
 
 ## **Getting started with JavaScript**
 
-## 1. Files Order
-
-- first: index.html
-- second: file1.js
-- third: file2.js
-
 ## Resources:
 
 - What is JavaScript: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Introduction#what_is_javascript
@@ -18,3 +12,23 @@
 - Loops: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
 - Operators: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators
 - Arrays: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections#array_object
+
+### Roadmap
+
+- 1: script tag
+- 2: run JavaScript in the browser developer tools
+- 3: 
+- 4: 
+- 5: 
+- 6:
+- 7:
+
+#### 1. script tag
+
+#### 2. run JavaScript in the browser developer tools
+
+#### 3. file 1
+
+#### 4. file 2
+
+#### 5. file 3

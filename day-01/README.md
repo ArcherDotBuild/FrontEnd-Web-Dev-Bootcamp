@@ -1,8 +1,10 @@
 ![image info](./welcome-day-01.png)
 
-# ARCHER
+# FrontEnd Bootcamp
 
-## **Welcome FrontEnd Bootcamp - Day 01**
+# Welcome to Day 1
+
+## **Intro to Webdev**
 
 ## Resources:
 
@@ -80,6 +82,6 @@ content goes here <--[content]
 
 #### 7. HTML Tags
 
-- <img> img tag has no content, some tags has no content
-- <img src=""> the src inside the tag is an attribute
-- <img> some tags are self-closing
+- `<img>` img tag has no content, some tags has no content
+- `<img src="">` the src inside the tag is an attribute
+- `<img>` some tags are self-closing
