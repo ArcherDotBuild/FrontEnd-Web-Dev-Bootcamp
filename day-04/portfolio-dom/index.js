@@ -14,7 +14,7 @@ function printLetters(phrase) {
   } else if (letterIndex < phrase.length) {
     dynamicContent.textContent += phrase.charAt(letterIndex)
 
-    // setTimeout(// function reference here, delay)
+    // setTimeout(function reference, delay time)
     letterIndex += 1
     setTimeout(function () {
       printLetters(phrase)

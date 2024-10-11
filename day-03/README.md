@@ -17,11 +17,9 @@
 
 - 1: script tag
 - 2: run JavaScript in the browser developer tools
-- 3: 
-- 4: 
-- 5: 
-- 6:
-- 7:
+- 3: file 1
+- 4: file 2
+- 5: file 3
 
 #### 1. script tag
 
