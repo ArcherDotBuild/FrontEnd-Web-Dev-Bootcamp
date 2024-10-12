@@ -2,23 +2,33 @@
 // When all elements have been loaded and the DOM tree has been constructed
 // check the document.addEventListener('load') EVENT
 document.addEventListener('DOMContentLoaded', function () {
-  // Way 1 <button onclick="handleClick()">Click Me</button>
-  // Way <button id="clickme">Click Me</button> passing handleClick
+  // Way 1
+  // <button onclick="handleClick()">Click Me</button>
   // function handleClick() {
   //   alert('You have clicked the button')
   // }
 
-  // Way 2 rest of the code
+  // Way 2 passing handleClick
+  // <button id="clickme">Click Me</button>
+  // JavaScript: function handleClick() {
+  //   alert('You have clicked the button')
+  // }
   // document.getElementById('clickme').onclick = handleClick
 
-  // Way 3 and recommended
+  // Way 3 recommended
+  // <button id="clickme">Click Me</button>
+  // function handleClick() {
+  //   alert('You have clicked the button')
+  // }
   // document.getElementById('clickme').addEventListener('click', handleClick)
+
   // Way 3 define the function inside the Listener
-  // document
-  //   .getElementById('clickme')
-  //   .addEventListener('click', function handleClick() {
-  //     alert('You have clicked the button')
-  //   })
+  // <button id='clickme'>Click Me</button>
+  document
+    .getElementById('clickme')
+    .addEventListener('click', function handleClick() {
+      alert('You have clicked the button')
+    })
 
   function handleMouseOver(event) {
     console.log(event)
@@ -27,6 +37,8 @@ document.addEventListener('DOMContentLoaded', function () {
   document
     .getElementById('start')
     .addEventListener('click', function handleClick() {
+      // When this event occurs and its handlder is called
+      // it is called with a parameter known as the event object
       // event object contains information about the event
       document.addEventListener('mouseover', handleMouseOver)
     })
@@ -38,24 +50,23 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
   // Basic key listener
-  // document.addEventListener('keyup', function (event) {
-  //   console.log(event)
-  //   console.log(event.key)
-  // })
+  document.addEventListener('keyup', function (event) {
+    console.log(event)
+    console.log(event.key)
+  })
 
-  // Order of keys: keydown, keypress and keyup
-
+  // Order of keys: 1. keydown, 2. keypress and 3. keyup
   // Preventing number 2 to be press
-  document.addEventListener('keypress', function (event) {
-    console.log('keypress')
+  document.addEventListener('keydown', function (event) {
+    console.log('keydown')
     if (event.key == '2') {
       event.preventDefault()
       event.stopPropagation()
     }
   })
 
-  document.addEventListener('keydown', function (event) {
-    console.log('keydown')
+  document.addEventListener('keypress', function (event) {
+    console.log('keypress')
     if (event.key == '2') {
       event.preventDefault()
       event.stopPropagation()
@@ -83,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
   // Events are captured
-
+  // event bubbling that the event bubbles up from its child to its parent   
   document.querySelector('.parent').addEventListener('click', function (event) {
     console.log('parent clicked')
     // Preventing Event Bubbling

@@ -14,8 +14,6 @@
 - 1: file 1
 - 2: file 2: DOM API Examples
 - 3: Portfolio
-- 4:
-- 5:
 
 #### 1. file 1
 

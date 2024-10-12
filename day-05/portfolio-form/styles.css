@@ -18,7 +18,7 @@ body {
 .intro {
   margin: -16px;
   padding: 16px;
-  background-color: #141111;
+  background-color: #00663f;
   color: white;
   text-align: center;
 }
@@ -83,10 +83,3 @@ form#contact {
 #contact button {
   width: 100%;
 }
-
-/*
-about-me
-qualifications
-hobbies
-technologies
-*/
