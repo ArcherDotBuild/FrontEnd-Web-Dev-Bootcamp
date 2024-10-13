@@ -22,6 +22,7 @@
 - 5: pseudo-element
 - 6: Border VS Outline
 - 7: CSS positioning style file 02 & 03
+- 8: z-index
 
 #### 1. Specificity
 
@@ -122,3 +123,7 @@ Always positioned relative to the viewport. Stays in the same place even when sc
 Sticky:
 
 Acts like a relative element until it reaches a specified scroll point, then "sticks" in place like a fixed element while staying within its container.
+
+#### 8. z-index
+
+The z-index controls the stacking order of positioned elements on a webpage. Higher values appear above lower ones. It only works on elements with position properties like relative, absolute, or fixed.
