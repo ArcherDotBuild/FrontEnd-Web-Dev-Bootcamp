@@ -32,7 +32,7 @@ Middle:
 
 - request, response
 
-#### Backend:
+#### Backend
 
 - Server: request, response, database
 - Server: NodeJS, ASP.NET, Java, ROR Ruby on rails

@@ -1,0 +1,92 @@
+/* General styles for the page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* Container styles for each example */
+.container {
+    width: 90%;
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Box styles to visualize the positioning */
+.box {
+    padding: 10px;
+    background-color: #76c7c0;
+    color: #fff;
+    border: 2px solid #4a9d8f;
+    width: 200px;
+    text-align: center;
+}
+
+/* Static positioning (default) */
+.static {
+    position: static;
+}
+
+/* Relative positioning */
+.relative-container {
+    height: 100px;
+}
+.relative {
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+
+/* Absolute positioning relative to its parent */
+.absolute-container {
+    height: 150px;
+    position: relative;
+}
+.parent {
+    position: relative;
+    background-color: #4a9d8f;
+    padding: 40px;
+    color: #fff;
+}
+.absolute {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff8a5c;
+}
+
+/* Fixed positioning relative to the viewport */
+.fixed-container {
+    height: 150px;
+}
+.fixed {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: #ff6f61;
+}
+
+/* Sticky positioning that sticks at a certain point */
+.sticky-container {
+    height: 300px;
+    padding-top: 100px;
+}
+.sticky {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 0;
+    background-color: #f4d35e;
+}

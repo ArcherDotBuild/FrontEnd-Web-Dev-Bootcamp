@@ -54,7 +54,7 @@ footer {
 .intro {
   margin: -16px;
   padding: 16px;
-  background-color: #141111;
+  background-color: #00663f;
   color: white;
   text-align: center;
 }
@@ -66,8 +66,8 @@ footer {
 }
 
 .social-links img {
-  height: 20px;
-  width: 20px;
+  height: 40px;
+  width: 40px;
 }
 
 .social-links a {
