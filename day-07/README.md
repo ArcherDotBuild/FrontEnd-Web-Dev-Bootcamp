@@ -19,10 +19,9 @@
 - 2: transform file 02
 - 3: transition file 03
 - 4: animations file 04
-- 5: Flexbox file 03
-- 6:
-- 7:
-- 8:
+- 5: CSS variables file 05
+- 6: Flexbox file 06
+- 7: portfolio
 
 #### 1. Media queries
 
@@ -44,3 +43,13 @@ The CSS transition function controls how property changes occur, specifying dura
 #### 4. animations
 
 CSS animation functions create complex visual effects by defining keyframes, durations, and timing, allowing elements to change styles smoothly over specified intervals.
+
+#### 5. CSS variables
+
+CSS variables (custom properties) store reusable values for styles, making it easier to manage and update colors, sizes, and other properties throughout your stylesheet with consistent changes.
+
+prefers-color-scheme: To open the print mode: in the Devtools toolbar, press ctrl + shift + p and search for rendering, select Show rendering. Then on Emulate CSS media feature prefers-color-scheme
+
+#### 6. FlexBox
+
+#### 7. portfolio

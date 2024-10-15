@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Cheat Sheet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .example-container {
+            margin-bottom: 20px;
+        }
+
+        .flex-container {
+            display: flex;
+            background-color: #f3f3f3;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .flex-item {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            margin: 5px;
+            text-align: center;
+            flex: 1;
+        }
+
+        h2 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Flexbox Cheat Sheet</h1>
+    <ul>
+      <li>display: flex;: Creates a flex container.</li>
+      <li>justify-content: Aligns items horizontally (e.g., center, space-between, space-around).</li>
+      <li>align-items: Aligns items vertically (e.g., center, flex-start, flex-end).</li>
+      <li>flex-direction: Sets the direction of items (e.g., row, column).</li>
+      <li>flex-wrap: Allows items to wrap onto multiple lines.</li>
+      <li>align-self: Allows individual items to override the container's alignment.</li>
+      <li>order: Changes the order of items in the flex container.</li>
+      <li>flex-grow: Specifies how much a flex item should grow relative to the others.</li>
+      <li>This cheat sheet provides practical examples of the most commonly used Flexbox properties, organized in order of importance.</li>
+    </ul>
+
+    <!-- Example 1 -->
+    <div class="example-container">
+        <h2>1. Basic Flexbox Layout</h2>
+        <p>Use <code>display: flex;</code> to create a flex container.</p>
+        <div class="flex-container">
+            <div class="flex-item">Item 1</div>
+            <div class="flex-item">Item 2</div>
+            <div class="flex-item">Item 3</div>
+        </div>
+    </div>
+
+    <!-- Example 2 -->
+    <div class="example-container">
+        <h2>2. Justify Content: Center</h2>
+        <p>Centers items horizontally.</p>
+        <div class="flex-container" style="justify-content: center;">
+            <div class="flex-item">Item 1</div>
+            <div class="flex-item">Item 2</div>
+            <div class="flex-item">Item 3</div>
+        </div>
+    </div>
+
+    <!-- Example 3 -->
+    <div class="example-container">
+        <h2>3. Align Items: Center</h2>
+        <p>Aligns items vertically to the center of the container.</p>
+        <div class="flex-container" style="align-items: center; height: 150px;">
+            <div class="flex-item">Item 1</div>
+            <div class="flex-item">Item 2</div>
+            <div class="flex-item">Item 3</div>
+        </div>
+    </div>
+
+    <!-- Example 4 -->
+    <div class="example-container">
+        <h2>4. Flex Direction: Column</h2>
+        <p>Changes the direction of items from row (default) to column.</p>
+        <div class="flex-container" style="flex-direction: column;">
+            <div class="flex-item">Item 1</div>
+            <div class="flex-item">Item 2</div>
+            <div class="flex-item">Item 3</div>
+        </div>
+    </div>
+
+    <!-- Example 5 -->
+    <div class="example-container">
+        <h2>5. Space Between</h2>
+        <p>Distributes space evenly between items.</p>
+        <div class="flex-container" style="justify-content: space-between;">
+            <div class="flex-item">Item 1</div>
+            <div class="flex-item">Item 2</div>
+            <div class="flex-item">Item 3</div>
+        </div>
+    </div>
+
+    <!-- Example 6 -->
+    <div class="example-container">
+        <h2>6. Space Around</h2>
+        <p>Places equal space around each item.</p>
+        <div class="flex-container" style="justify-content: space-around;">
+            <div class="flex-item">Item 1</div>
+            <div class="flex-item">Item 2</div>
+            <div class="flex-item">Item 3</div>
+        </div>
+    </div>
+
+    <!-- Example 7 -->
+    <div class="example-container">
+        <h2>7. Flex Wrap</h2>
+        <p>Makes items wrap onto multiple lines.</p>
+        <div class="flex-container" style="flex-wrap: wrap;">
+            <div class="flex-item" style="width: 150px;">Item 1</div>
+            <div class="flex-item" style="width: 150px;">Item 2</div>
+            <div class="flex-item" style="width: 150px;">Item 3</div>
+            <div class="flex-item" style="width: 150px;">Item 4</div>
+        </div>
+    </div>
+
+    <!-- Example 8 -->
+    <div class="example-container">
+        <h2>8. Align Self</h2>
+        <p>Allows individual items to override the container's align-items setting.</p>
+        <div class="flex-container" style="height: 150px; align-items: center;">
+            <div class="flex-item" style="align-self: flex-start;">Item 1</div>
+            <div class="flex-item">Item 2</div>
+            <div class="flex-item" style="align-self: flex-end;">Item 3</div>
+        </div>
+    </div>
+
+    <!-- Example 9 -->
+    <div class="example-container">
+        <h2>9. Order</h2>
+        <p>Changes the order of individual flex items.</p>
+        <div class="flex-container">
+            <div class="flex-item" style="order: 3;">Item 1</div>
+            <div class="flex-item" style="order: 1;">Item 2</div>
+            <div class="flex-item" style="order: 2;">Item 3</div>
+        </div>
+    </div>
+
+    <!-- Example 10 -->
+    <div class="example-container">
+        <h2>10. Flex Grow</h2>
+        <p>Controls how much a flex item grows relative to others.</p>
+        <div class="flex-container">
+            <div class="flex-item" style="flex-grow: 1;">Item 1</div>
+            <div class="flex-item" style="flex-grow: 2;">Item 2</div>
+            <div class="flex-item" style="flex-grow: 1;">Item 3</div>
+        </div>
+    </div>
+
+</body>
+</html>
