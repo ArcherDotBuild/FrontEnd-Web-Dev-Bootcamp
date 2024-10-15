@@ -1,0 +1,21 @@
+body {
+  padding: 16px;
+}
+
+.box {
+  background-color: royalblue;
+  width: 300px;
+  height: 300px;
+  margin: 32px auto;
+
+  /* example: rotate scales the item  */
+  /* transform: rotate(137deg); */
+
+  /* example: translate,moves the item in x and y diretions*/
+  /* transform: translate(20px, 20px); */
+  /* example: moves the item in the x direction only */
+  /* transform: translate(50px); */
+
+  /* example:  skew */
+  /* transform: skew(10deg, 10deg); */
+}

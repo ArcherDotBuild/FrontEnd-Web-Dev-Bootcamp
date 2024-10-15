@@ -7,10 +7,14 @@ body {
   width: 300px;
   height: 300px;
   margin: 32px auto;
-  /* transition-property: transform;
+
+  transition-property: transform;
   transition-duration: 0.5s;
+
+  /* delay when exits the hover */
   transition-delay: 250ms;
-  transition-timing-function: ease-out; */
+  /* click on the icon next to ease-out to pullup the UI */
+  transition-timing-function: ease-out;
 
   /* transition: transform 0.5s 0.4s cubic-bezier(0.55, 0.22, 0.58, 1); */
 
@@ -20,15 +24,15 @@ body {
 
   /* animation: rotation 0.8s infinite linear; */
 
-  animation: rotation 0.8s 3 alternate;
+  /* animation: rotation 0.8s 3 alternate; */
 }
 
-/* .box:hover {
+/* example: hover, for transition because this happens to fast */
+.box:hover {
   transform: scale(1.2);
-  width: 600px;
-} */
+}
 
-@keyframes rotation {
+/* @keyframes rotation {
   0% {
     transform: rotate(0);
   }
@@ -44,7 +48,7 @@ body {
   100% {
     transform: rotate(360deg);
   }
-}
+} */
 
 /* @keyframes rotation {
   from {

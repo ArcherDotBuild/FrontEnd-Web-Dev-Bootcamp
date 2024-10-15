@@ -28,24 +28,21 @@ body {
   }
 }
 
-/* @media (max-width: 500px) {
+/* Up to 500px this media query is applied */
+@media (max-width: 500px) {
   body {
     background-color: lightgreen;
   }
-} */
+}
 
-/* @media all and (max-width: 500px) and (orientation: landscape) {
-  body {
-    background-color: lightgreen;
-  }
-} */
-
+/* If you don't specify anything it targets all of the media types */
 @media (max-width: 500px) and (orientation: landscape) {
   body {
     background-color: lightgreen;
   }
 }
 
+/* Minimum width to start with is 800 pixels */
 @media (min-width: 800px) {
   body {
     background-color: royalblue;

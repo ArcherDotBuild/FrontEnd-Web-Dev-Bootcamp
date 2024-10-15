@@ -32,6 +32,7 @@ header nav > a {
   margin-right: 16px;
 }
 
+/* Targeting last element in the navbar */
 header nav > a:last-child {
   margin-right: revert;
 }
@@ -65,7 +66,7 @@ footer {
 .intro {
   margin: -16px;
   padding: 16px;
-  background-color: #141111;
+  background-color: #00663f;
   color: white;
   text-align: center;
 }
@@ -150,12 +151,14 @@ section.menu {
   display: none;
 }
 
+/* Long syntax: @media screen (max-width:500px */
 @media (width < 500px) {
+  /* short syntax */
   .default-nav {
     display: none;
   }
   .mobile-nav {
-    display: revert;
+    display: revert; /* revert the initial value for this, initial value: display: block */
   }
   #menu-button {
     display: block;
@@ -200,10 +203,3 @@ section.menu {
     width: 100%;
   }
 }
-
-/*
-about-me
-qualifications
-hobbies
-technologies
-*/

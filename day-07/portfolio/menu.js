@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   function showMenu() {
     const menu = document.querySelector('section.menu')
+    // Accessing the CSS object model with the .style
     menu.style.height = '100%'
   }
   function closeMenu() {
