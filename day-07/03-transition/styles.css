@@ -24,10 +24,12 @@ body {
 
   /* animation: rotation 0.8s infinite linear; */
 
-  /* animation: rotation 0.8s 3 alternate; */
+  animation: rotation 0.8s 1 1 linear;
 }
 
 /* example: hover, for transition because this happens to fast */
 .box:hover {
   transform: scale(1.2);
 }
+
+ 

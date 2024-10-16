@@ -13,6 +13,17 @@
 - Flexbox Froggy: https://flexboxfroggy.com/
 - Animations: https://web.dev/learn/css/animations/
 
+### Extra resources:
+
+- font-weight: https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight
+- flex: https://developer.mozilla.org/en-US/docs/Web/CSS/flex
+- align-items: https://developer.mozilla.org/en-US/docs/Web/CSS/align-items
+- align-content: https://developer.mozilla.org/en-US/docs/Web/CSS/align-content
+- align-self: https://developer.mozilla.org/en-US/docs/Web/CSS/align-self
+- justify-content: https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content
+- justify-items: https://developer.mozilla.org/en-US/docs/Web/CSS/justify-items
+- justify-self: https://developer.mozilla.org/en-US/docs/Web/CSS/justify-self
+
 ### Roadmap
 
 - 1: Media queries file 01
