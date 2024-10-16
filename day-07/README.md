@@ -40,7 +40,7 @@ Media queries allow you to create different layouts and styles for your website 
 
 Media types: print, screen, all
 
-Rendering: To open the print mode: in the Devtools toolbar, press ctrl + shift + p and search for rendering, select Show rendering. Then on Emulate CSS media type select print or screen
+Rendering: Open the Devtools UI, press ctrl + shift + p and search for rendering, select Show rendering. Then on Emulate CSS media type select print or screen
 
 #### 2. transform
 
@@ -59,7 +59,7 @@ CSS animation functions create complex visual effects by defining keyframes, dur
 
 CSS variables (custom properties) store reusable values for styles, making it easier to manage and update colors, sizes, and other properties throughout your stylesheet with consistent changes.
 
-prefers-color-scheme: To open the print mode: in the Devtools toolbar, press ctrl + shift + p and search for rendering, select Show rendering. Then on Emulate CSS media feature prefers-color-scheme
+prefers-color-scheme: Open the Devtools UI, press ctrl + shift + p and search for rendering, select Show rendering. Then on Emulate CSS media feature prefers-color-scheme
 
 #### 6. FlexBox
 

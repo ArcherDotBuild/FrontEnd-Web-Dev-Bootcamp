@@ -1,0 +1,23 @@
+/* The main grid container, which will change its column size based on the selected radio button */
+.container {
+  --col-track-size: auto; /* Default value for the column size */
+  display: grid; /* Enables the grid layout */
+  grid-template-columns: var(--col-track-size) var(--col-track-size) var(--col-track-size); /* Defines the size of each column */
+  grid-template-rows: 200px; /* Sets a fixed row height */
+  gap: 16px; /* Spacing between grid items */
+  width: 400px; /* Total width of the grid container */
+  border: 2px solid; /* Adds a border around the grid */
+  padding: 8px; /* Adds padding inside the grid container */
+}
+
+/* Styles for each grid item to make them visually distinctive */
+.container > div {
+  background-color: lightcoral; /* Background color of the grid items */
+}
+
+/* The radio button container styled as a grid with four equal columns */
+.option-container {
+  display: grid; /* Enables the grid layout */
+  grid-template-columns: 1fr 1fr 1fr 1fr; /* Four equal-width columns */
+  margin-bottom: 16px; /* Space below the radio button container */
+}
