@@ -1,0 +1,56 @@
+.container {
+  display: grid;
+  /* * ########## */
+  /* * PART 1 */
+  /* * Examples of other column layouts (commented out): */
+  /* *   - Fixed number of columns with minimum 200px width, expanding to 1fr if space allows */
+  /* grid-template-columns: repeat(3, minmax(200px, 1fr)); */
+
+  /* * Automatically fills the space with columns of at least 200px width, */
+  /* *   expanding to 1fr, adjusting the number of columns based on the container size */
+  /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); */
+
+  /* * Specifies that there should be as many columns as possible (auto-fit), */
+  /* * each with a minimum width of 200px, expanding to 1fr (fraction of available space) when possible */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+  /* * Creates 3 fixed columns each with a width of 200px */
+  /* grid-template-columns: repeat(3, 200px); */
+
+  /* * Sets the grid rows: first row has a fixed height of 200px, */
+  /* *   and the second row automatically expands based on its content */
+  /* grid-template-rows: 200px auto; */
+
+  /* * ########## */
+  /* * PART 2 */
+
+  grid-template-rows: 200px 300px;
+  /* * Examples of other row layouts (commented out): */
+  /* *   - First row is 200px high, second row takes 40% of available height */
+  /* grid-template-rows: 200px 40%; */
+
+  /* * Single row with a fixed height of 200px */
+  /* grid-template-rows: 200px; */
+
+  /* * Creates two rows with fixed heights of 200px and 300px */
+  /* grid-template-rows: 200px 300px; */
+
+  /* * Uncommenting this line changes the auto-placement of grid items to flow in columns instead of rows */
+  /* grid-auto-flow: column; */
+
+  /* * Defines a 16px gap between rows and columns in the grid, creating spacing between items */
+  gap: 16px;
+
+  /* * Specifies the width of the container (commented out to be fluid) */
+  /* width: 1280px; */
+
+  /* * Adds a solid border around the grid container */
+  border: 1px solid;
+
+  /* * Changes the writing direction to vertical, flowing from top to bottom and left to right */
+  /* writing-mode: vertical-lr; */
+}
+
+.container > div {
+  background-color: lightcoral;
+}

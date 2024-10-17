@@ -16,12 +16,11 @@
 ### Roadmap
 
 - 1: simple grid file 01
-- 2: intrinsic-values 02
-- 3:
-- 4:
-- 5:
-- 6:
-- 7:
+- 2: intrinsic-values file 02
+- 3: fraction file 03
+- 4: minmax file 04
+- 5: shadows file 05
+- 6: portfolio file06
 
 #### 1. grid
 
@@ -35,16 +34,18 @@ Grid UI: Open the Devtools UI, press ctrl + shift + p and search for rendering, 
 
 Grid UI 01: in the Devtools toolbar, in the Elements tab next to the `<div class="container">` you will see a grid pill icon click on it to show grid details in the website
 
-Grid UI 02: in the Devtools toolbar, in the Elements tab select the `<div class="container"> you will see in the Styles tab inside the .container class, next to displa: grid an small icon press it to open the grid ui
+Grid UI 02: in the Devtools toolbar, in the Elements tab select the `<div class="container">` you will see in the Styles tab inside the .container class, next to display: grid an small icon press it to open the grid ui
 
-Grid UI 03: in the Devtools toolbar, in the Elements tab select the `<div class="container"> you will see in the Layout tab with all the information you can add or remove about the grid ui
+Grid UI 03: in the Devtools toolbar, in the Elements tab select the `<div class="container">` you will see in the Layout tab with all the information you can add or remove about the grid ui
 
 #### 2. intrinsic-values
 
-#### 3. raction
+#### 3. fraction
 
 #### 4. minmax
 
 #### 5. shadows
+
+Shadow UI: in the Devtools toolbar, in the Elements tab select the `<section class="card">` you will see in the Styles tab inside the .card class, next to box-shadow  an small icon press it to open the shadow ui
 
 #### 6. portfolio
