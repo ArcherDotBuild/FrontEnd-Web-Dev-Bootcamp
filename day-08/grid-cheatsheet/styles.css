@@ -1,0 +1,94 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+.grid-example {
+    display: grid;
+    border: 1px solid #333;
+    margin: 20px 0;
+    padding: 10px;
+}
+
+.grid-example > div {
+    background-color: lightblue;
+    border: 1px solid #555;
+    padding: 10px;
+    text-align: center;
+}
+
+/* 1. Basic Grid Layout */
+.basic-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+/* 2. Grid with Fixed Columns */
+.fixed-columns {
+    grid-template-columns: 100px 100px;
+}
+
+/* 3. Grid with Fractional Units */
+.fractional-units {
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+/* 4. Grid with `repeat()` */
+.repeat-function {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* 5. Grid with Gaps */
+.grid-gap {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* 6. Grid with Named Areas */
+.named-areas {
+    grid-template-areas:
+        "header header"
+        "sidebar content"
+        "footer footer";
+    grid-template-columns: 1fr 2fr;
+}
+
+.named-areas .header { grid-area: header; }
+.named-areas .sidebar { grid-area: sidebar; }
+.named-areas .content { grid-area: content; }
+.named-areas .footer { grid-area: footer; }
+
+/* 7. Grid Item Alignment */
+.item-alignment {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: end;
+}
+
+/* 8. Nested Grids */
+.outer-grid {
+    grid-template-columns: 1fr 1fr;
+}
+
+.nested-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: lightcoral;
+    margin: 10px;
+}
+
+/* 9. Grid Auto-flow */
+.auto-flow {
+    grid-template-columns: 100px;
+    grid-auto-flow: column;
+}
+
+/* 10. Responsive Grid */
+.responsive-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}

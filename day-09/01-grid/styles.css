@@ -1,0 +1,34 @@
+/* The parent container is defined as a grid layout */
+.container {
+  /* Establishes this element as a grid container */
+  display: grid; 
+  /* Defines three columns with specified widths: the first is 200px, the second is 40rem, and the third is 30% of the container width */
+  grid-template-columns: 200px 40rem 30%; 
+  /* Defines two rows: the first row is 300px, and the second row is 40% of the container height */
+  grid-template-rows: 300px 40%;
+  /* Sets the default row height to 300px for any additional rows added to the grid */
+  grid-auto-rows: 300px;
+  /* Adds a 16px gap between rows and columns */
+  gap: 16px; 
+   /* Centers the grid items horizontally within the container */
+  justify-content: center;
+}
+.item {
+  display: grid;
+  place-content: center;
+  background-color: lightblue;
+  font-size: x-large;
+  font-weight: 600;
+}
+
+/* The .first element spans two columns */
+.first {
+  /* Makes this item span across two columns */
+  grid-column: span 2;
+}
+
+/* The .second element spans two rows */
+.second {
+  /* Makes this item span across two rows */
+  grid-row: span 2;
+}

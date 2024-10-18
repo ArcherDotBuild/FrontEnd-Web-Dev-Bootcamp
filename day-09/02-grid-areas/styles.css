@@ -1,3 +1,4 @@
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,6 +8,8 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto 1fr auto;
+
+  /* Defines named grid areas */
   grid-template-areas:
     'header header header header'
     /* specify an empty area */
@@ -27,18 +30,22 @@
 
 header {
   background-color: cadetblue;
+  /* Places this item in the "header" area */
   grid-area: header;
 }
 main {
   background-color: cornflowerblue;
+  /* Places this item in the "content" area */
   grid-area: content;
 }
 aside {
   background-color: darkkhaki;
+  /* Places this item in the "sidebar" area */
   grid-area: sidenav;
 }
 footer {
   background-color: violet;
+  /* Places this item in the "footer" area */
   grid-area: footer;
 }
 
