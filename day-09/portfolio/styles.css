@@ -10,7 +10,7 @@ html {
   scroll-behavior: smooth;
   --background-color: hsl(240deg, 80%, 100%);
   --secondary-color: hsl(255, 85%, 57%);
-  --text-color: hsl(240deg, 67, 223);
+  --text-color: hsl(240deg, 95%, 8%);
   --intro-color: hsl(0, 0%, 85%);
   --shadow-color: hsl(225 100% 83%);
   --shadow-color-dark: hsl(225 10% 63%);
@@ -22,6 +22,7 @@ html {
 
   /* --spacing-regular: 1rem; */
   --spacing-regular: 16px;
+  /* calc() in CSS performs calculations for values, combining units like pixels and percentages for dynamic sizing. */
   --spacing-small: calc(var(--spacing-regular) / 2);
 }
 
@@ -208,6 +209,7 @@ form#contact {
   padding: 0px;
   /* text-align: center; */
 }
+
 .card header h1 {
   margin: 0;
   /* text-align: center; */
