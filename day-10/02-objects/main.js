@@ -1,9 +1,30 @@
+//** ******************** */
+//** #################### */
+
+//** objects */
+console.log('objects:')
+console.log('\n')
+
+// example 1
 function printText() {
   console.log('hello')
 }
 
-printText.areYouAnObject = true
+printText.areYouAndObject = true
 
+console.log('1. printText: ', printText)
+console.log('2. printText(): ', printText())
+printText()
+console.log('3. printText.areYouAndObject: ', printText.areYouAndObject)
+printText.areYouAndObject
+// printText.areYouAndObject() // Uncaught TypeError: printText.areYouAndObject is not a function
+
+console.log('\n')
+console.log('printText.name: ', printText.name)
+// minuto 4
+
+console.log('\n')
+// example 2
 let a = 2
 
 let person = {

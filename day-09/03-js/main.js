@@ -105,6 +105,8 @@
 
 //** #################### */
 // Example 6
+// let, const and var difference with this example
+// Move the variables declaration, console.log and function invocation
 
 // let someVar
 // console.log('1. someVar: ', someVar)
