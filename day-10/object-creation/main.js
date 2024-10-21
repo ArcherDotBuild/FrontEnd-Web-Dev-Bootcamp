@@ -1,140 +1,63 @@
-// object literal syntax
+//** ******************** */
+//** #################### */
 
+//** object literal syntax */
+console.log('object literal syntax:')
+console.log('\n')
+
+// example 1
 let person = {
   firstName: 'Alberto',
   lastName: 'Guzman',
 }
 
-console.log(person)
+console.log('1. person: ', person)
 
 console.log('\n')
+console.log('####################')
+// example 2
 let anotherPerson = new Object()
 anotherPerson.firstName = 'Josue'
 anotherPerson.lastName = 'Guzman'
-console.log(anotherPerson)
+console.log('2. anotherPerson: ', anotherPerson)
 
 console.log('\n')
+console.log('####################')
+// example 3
 // function constructor
 function Person() {
   this.firstName = 'Yarelis'
   this.lastName = 'Diaz'
 }
+
 let yarelis = new Person()
-console.log(yarelis)
+console.log('3. yarelis: ', yarelis)
 
 console.log('\n')
-// prototypal inheritance in JS
+console.log('####################')
+// example 4
+// prototypal inheritance in JavaScript
 
-function Person2(firstName, lastName) {
+function PersonObject(firstName, lastName) {
   this.firstName = firstName
   this.lastName = lastName
 }
 
-let gohan = new Person2('gohan', 'hijo')
-console.log(gohan)
+let josue = new PersonObject('Josue', 'Guzman')
+console.log('4. josue: ', josue)
+
+let alberto = new PersonObject('Alberto', 'Guzman')
+console.log('5. alberto: ', alberto)
 
 console.log('\n')
-let alberto = new Person2('Alberto', 'Guzman')
-console.log(alberto)
+console.log('####################')
+// example 5
 
-console.log('\n')
 // Extending, adding more properties and methods
 // an it will be available on the object
-Person2.prototype.printName = function () {
+PersonObject.prototype.printFullName = function () {
   return this.firstName + ' ' + this.lastName
 }
-console.log(alberto.printName())
-console.log(alberto.firstName.toString())
-console.log(gohan.printName())
-
-// Array.prototype // run this in the browser console
-
-console.log('\n')
-let firstSet = [1, 3, 5, 8, 10]
-let anotherSet = [2, 6, 9, 12, 45, 30, 27]
-
-console.log(firstSet, anotherSet)
-
-Array.prototype.evenNumbers = function () {
-  return this.filter(function (item) {
-    return item % 2 === 0
-  })
-}
-console.log(firstSet.evenNumbers()) // [8, 10]
-console.log(anotherSet.evenNumbers()) // [2, 6, 12, 30]
-
-// Convert native func
-// filter
-let originalFilter = Array.prototype.filter
-Array.prototype.filter = console.log
-console.log(firstSet.filter(57))
-
-console.log('\n')
-// call by value && call by ref
-let a = 2
-let b = a
-console.log(a) // 2
-console.log(b) // 2
-a = 10
-console.log(b) // 2
-console.log(a) // 10
-
-console.log('\n')
-// objects
-let vegeta = {
-  firstName: 'vegeta',
-}
-let trunk = vegeta
-vegeta.firstName = 'super sayayin'
-console.log(trunk) // {firstName: 'super sayayin'}
-console.log(vegeta) // {firstName: 'super sayayin'}
-
-console.log('\n')
-// Object.create
-// function Accepts an object as a parameter and it uses it to create a new object
-
-let org = { org: 'Archer' }
-let somePerson = Object.create(org, { name: { value: 'Sword' } })
-// console.log(Object.create(org, { name: { value: 'sword' } }))
-console.log(somePerson)
-org.location = 'Barranquilla'
-console.log(somePerson)
-
-Object.hasOwn(somePerson, 'name')
-console.log(Object.hasOwn(somePerson, 'name'))
-console.log(Object.hasOwn(somePerson, 'location'))
-
-console.log('\n')
-// Object.assign()
-let someP = { name: 'Alberto' }
-let carP = { car: 'SomeCar' }
-
-console.log(Object.assign({}, someP, carP))
-
-// this need to be reviewed
-// console.log(Object.assign({}, somePerson, { car: 'BMW' }))
-// console.log(somePerson)
-
-console.log('\n')
-class Shape {
-  constructor(height, width) {
-    this.height = height
-    this.width = width
-  }
-  area() {
-    return this.height * this.width
-  }
-}
-
-let rectangle = new Shape(10, 20)
-console.log(rectangle)
-console.log(rectangle.area())
-
-class Square extends Shape {
-  constructor(dimension) {
-    super(dimension, dimension)
-  }
-}
-
-console.log(new Square(10))
-console.log(new Square(10).area())
+console.log('6. alberto.printName(): ', alberto.printFullName())
+console.log('7. alberto.firstName.toString(): ', alberto.firstName.toString())
+console.log('8. josue.printName(): ', josue.printFullName())

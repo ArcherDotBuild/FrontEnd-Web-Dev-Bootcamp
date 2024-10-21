@@ -21,7 +21,9 @@
 
 - 1: javascript
 - 2: closures file 01
-- 3:
+
+- 3: objects file 02
+- 4. object creation file 03
 
 #### 1. javascript
 
@@ -109,8 +111,50 @@ function(num) {
 
 - When you call `double(5)`, it executes the function stored in `double`, which was created using the `multiplier` value of `2`. So, it calculates `5 * 2`, which equals `10`.
 
-This technique is possible because of **closures** in JavaScript. A closure is when a function retains access to its outer function's variables even after the outer function has finished executing. In this case, the anonymous function that is returned keeps a reference to the **multiplier** value from **createMultiplier**, allowing it to use that value when it is later called.
-
 These capabilities make JavaScript functions "first-class citizens," which means they can be used just like other values (numbers, strings, objects, etc.). This is a core concept in functional programming and allows for more flexible and expressive code, enabling techniques like callbacks, higher-order functions, and closures.
 
 #### 2. closures
+
+This technique is possible because of **closures** in JavaScript. A closure is when a function retains access to its outer function's variables even after the outer function has finished executing. In this case, the anonymous function that is returned keeps a reference to the **multiplier** value from **createMultiplier**, allowing it to use that value when it is later called.
+
+#### 3. functions objects
+
+In JavaScript, `call`, `bind`, and `apply` are methods used to control the context (`this`) in which a function runs.
+
+1. `call()`: Invokes a function with a specified `this` value and arguments passed individually.
+
+```javascript
+function greet(name) {
+  console.log(`Hello, ${name}`)
+}
+greet.call(this, 'Alice') // Output: Hello, Alice
+```
+
+2. `apply()`: Similar to `call()`, but arguments are passed as an array.
+
+```javascript
+function sum(a, b) {
+  return a + b
+}
+console.log(sum.apply(this, [3, 4])) // Output: 7
+```
+
+3. `bind()`: Creates a new function with a specified `this` value and arguments, which can be invoked later.
+
+```javascript
+const multiply = function (x, y) {
+  return x * y
+}
+const double = multiply.bind(this, 2)
+console.log(double(5)) // Output: 10
+```
+
+These methods are useful for ensuring that a function is called with the correct this context or with predefined arguments.
+
+**Why use `call`, `apply`, or `bind`?**
+Use `call` or `apply` when you want to immediately invoke a function with a specific `this` value.
+Use `bind` when you need to create a new function that can be called later with a preset `this` value and arguments.
+The difference is that with `bind`, you get a reusable function, while `call` and `apply` execute the function immediately.
+
+
+#### 4. object creation
