@@ -95,3 +95,22 @@ console.log(sum2(2, 3, 4, 5))
 console.log('\n')
 // apply accepts an array of arguments
 greetPerson.apply(person, ['hello', 'Mr'])
+
+
+//* * .call example */
+console.log('\n')
+console.log('####################')
+let fruitObject = {
+  fruitName: 'Apple',
+}
+
+function getFruitName() {
+  return this.fruitName
+}
+
+let result
+result = getFruitName.call(fruitObject)
+
+console.log(result)
+
+

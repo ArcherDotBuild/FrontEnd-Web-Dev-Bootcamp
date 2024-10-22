@@ -21,9 +21,8 @@
 
 - 1: javascript
 - 2: closures file 01
-
 - 3: objects file 02
-- 4. object creation file 03
+- 4: object creation file 03
 
 #### 1. javascript
 
@@ -156,5 +155,30 @@ Use `call` or `apply` when you want to immediately invoke a function with a spec
 Use `bind` when you need to create a new function that can be called later with a preset `this` value and arguments.
 The difference is that with `bind`, you get a reusable function, while `call` and `apply` execute the function immediately.
 
+#### call() example
+
+To solve the problem using `Function.prototype.call()` so that the function `getFruitName()` returns the `fruitName` from the `fruitObject`, we'll bind the function to the `fruitObject`. Here is the complete solution:
+
+```javascript
+let fruitObject = {
+  fruitName: 'Apple',
+}
+
+function getFruitName() {
+  return this.fruitName
+}
+
+let result
+result = getFruitName.call(fruitObject)
+
+console.log(result)
+```
+
+**Explanation:**
+
+- `getFruitName.call(fruitObject)` invokes the `getFruitName` function with its `this` value explicitly set to `fruitObject`.
+- This means that when `getFruitName` tries to access `this.fruitName`, it correctly finds `fruitObject.fruitName`, and returns it.
+
+This approach ensures that the function correctly retrieves the `fruitName` from the `fruitObject` using `call()`.
 
 #### 4. object creation

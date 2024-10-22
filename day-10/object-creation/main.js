@@ -61,3 +61,38 @@ PersonObject.prototype.printFullName = function () {
 console.log('6. alberto.printName(): ', alberto.printFullName())
 console.log('7. alberto.firstName.toString(): ', alberto.firstName.toString())
 console.log('8. josue.printName(): ', josue.printFullName())
+
+console.log('\n')
+console.log('####################')
+// example 6
+
+const math = {
+  num1: 5,
+  num2: 10,
+}
+
+let operations = {
+  __proto__: math,
+
+  sum() {
+    return this.num1 + this.num2
+  },
+  product() {
+    return this.num1 * this.num2
+  },
+}
+
+// Now use the operations object directly without the `new` keyword
+let operationSum = operations.sum()
+let operationProduct = operations.product()
+
+console.log(operationSum) // Output: 15
+console.log(operationProduct) // Output: 50
+
+// Add the division method to the operations object
+operations.division = function () {
+  return this.num1 / this.num2
+}
+
+let operationDivision = operations.division()
+console.log(operationDivision) // Output: 0.5

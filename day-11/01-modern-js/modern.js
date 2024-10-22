@@ -1,74 +1,98 @@
+//** ******************** */
+//** #################### */
 // Array.prototype // run this in the browser console
 
+//** Array */
+console.log('Array:')
 console.log('\n')
+
+// example 1
 let firstSet = [1, 3, 5, 8, 10]
 let anotherSet = [2, 6, 9, 12, 45, 30, 27]
 
-firstSet.length
+console.log('1. firstSet.length: ', firstSet.length)
 
-console.log(firstSet, anotherSet)
-
+console.log('####################')
+// It defines a new method (evenNumbers) for all arrays.
+// When called, this method returns a new array containing only the even numbers from the original array.
 Array.prototype.evenNumbers = function () {
   return this.filter(function (item) {
     return item % 2 === 0
   })
 }
+
+// This creates a new array containing only the even numbers from the original array.
+console.log('2. firstSet.evenNumbers():')
 console.log(firstSet.evenNumbers()) // [8, 10]
+console.log('3. anotherSet.evenNumbers():')
 console.log(anotherSet.evenNumbers()) // [2, 6, 12, 30]
 
-// Convert native func
-// filter
+console.log('\n')
+console.log('####################')
+// Convert a native filter function
+// example 2
 let originalFilter = Array.prototype.filter
 Array.prototype.filter = console.log
-console.log(firstSet.filter(57))
+console.log('4. firstSet.filter(57):')
+firstSet.filter(57)
 
 console.log('\n')
-// call by value && call by ref
+console.log('####################')
+// call by value && call by reference
+// example 3
 let a = 2
 let b = a
-console.log(a) // 2
-console.log(b) // 2
+console.log('5. a: ', a) // 2
+console.log('5. b: ', b) // 2
 a = 10
-console.log(b) // 2
-console.log(a) // 10
+console.log('5. a: ', a) // 10
+console.log('5. b: ', b) // 2
 
 console.log('\n')
+console.log('####################')
 // objects
-let vegeta = {
-  firstName: 'vegeta',
+// example 3
+
+let user = {
+  firstName: 'Alberto',
 }
-let trunk = vegeta
-vegeta.firstName = 'super sayayin'
-console.log(trunk) // {firstName: 'super sayayin'}
-console.log(vegeta) // {firstName: 'super sayayin'}
+let sayayin = user
+user.firstName = 'Super Guzman'
+console.log('6. sayayin: ', sayayin) // {firstName: 'Super Guzman'}
+console.log('7. user: ', user) // {firstName: 'Super Guzman'}
 
 console.log('\n')
+console.log('####################')
 // Object.create
+// example 4
 // function Accepts an object as a parameter and it uses it to create a new object
-
+// prototypical inheritance
 let org = { org: 'Archer' }
-let somePerson = Object.create(org, { name: { value: 'Sword' } })
+let teacher = Object.create(org, { firstName: { value: 'Alberto' } })
 // console.log(Object.create(org, { name: { value: 'sword' } }))
-console.log(somePerson)
+console.log('8. teacher: ', teacher)
 org.location = 'Barranquilla'
-console.log(somePerson)
+console.log('9. teacher: ', teacher) // location shows up in the prototype, in the console devtools
 
-Object.hasOwn(somePerson, 'name')
-console.log(Object.hasOwn(somePerson, 'name'))
-console.log(Object.hasOwn(somePerson, 'location'))
+// Check whether a property
+Object.hasOwn(teacher, 'firstName')
+console.log(Object.hasOwn(teacher, 'firstName')) // true
+console.log(Object.hasOwn(teacher, 'location')) // false
 
 console.log('\n')
+console.log('####################')
 // Object.assign()
-let someP = { name: 'Alberto' }
-let carP = { car: 'SomeCar' }
+// example 5
+let person = { name: 'Alberto' }
+let carBrand = { car: 'Mazda' }
 
-console.log(Object.assign({}, someP, carP))
-
-// this need to be reviewed
-// console.log(Object.assign({}, somePerson, { car: 'BMW' }))
-// console.log(somePerson)
+console.log('10.')
+console.log(Object.assign({}, person, carBrand))
 
 console.log('\n')
+console.log('####################')
+// class
+// example 6
 class Shape {
   constructor(height, width) {
     this.height = height
@@ -80,8 +104,8 @@ class Shape {
 }
 
 let rectangle = new Shape(10, 20)
-console.log(rectangle)
-console.log(rectangle.area())
+console.log('11. rectangle: ', rectangle)
+console.log('11. rectangle.area(): ', rectangle.area())
 
 class Square extends Shape {
   constructor(dimension) {
