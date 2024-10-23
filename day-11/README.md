@@ -26,7 +26,8 @@
 - 1: Array
 - 2: hasOwn()
 - 3: class-based constructors and function constructors
-- 4: file 03
+- 4: ES5
+- 5: ES6
 
 #### 1. Array
 
@@ -182,3 +183,22 @@ Functionally, there is no significant performance difference between class-based
 - **Class-based Constructors** (introduced in ES6) offer a cleaner and more familiar OOP syntax but still rely on prototypes. They make inheritance, method definitions, and object creation easier and more readable.
 
 Classes are generally preferred in modern JavaScript due to their cleaner syntax and easier inheritance. However, both approaches can be used to create objects, and they are functionally very similar.
+
+#### 4. ES5 ECMAScript
+
+**What is ES5 JavaScript?**
+ES5 (ECMAScript 5) is the 5th edition of JavaScript, released in 2009. It introduced several important features that improved code writing, security, and performance, making JavaScript more reliable and maintainable.
+
+**What are the main features in ES5?**
+Key features of ES5 include strict mode, JSON support, array methods (forEach, map, filter), Object.defineProperty, and Function.bind(), enhancing error handling and functionality.
+
+#### 4. ES6 ECMAScript
+
+**What is ES6 JavaScript?**
+ES6 (ECMAScript 6), also known as ECMAScript 2015, is a significant update to JavaScript, introducing new syntax, features, and improvements to make the language more powerful and efficient.
+
+**What are the main features in ES6?**
+ES6 introduced features like let/const, arrow functions, classes, template literals, modules, promises, and destructuring, making JavaScript more concise and easier to write.
+
+**Differences between ES5 and ES6**
+ES6 introduced more modern syntax (e.g., let, const), classes, and modules, while ES5 relies on older functions and var. ES6 is more efficient, with features like arrow functions and promises not present in ES5.

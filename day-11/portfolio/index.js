@@ -38,6 +38,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   printLetters(phrases[pharseIndex])
 
+  // Select an element in the website with the Elements selector arrow
+  // $0 type this in the console it sends back the element selected
+  // $0.offsetTop is the offset of the element selected
+  // $0.offsetHeight
   window.addEventListener('scroll', function () {
     console.log(this.window.scrollY)
     let intro = this.document.querySelector('.intro')
