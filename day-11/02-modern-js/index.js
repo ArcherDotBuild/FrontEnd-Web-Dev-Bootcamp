@@ -203,16 +203,16 @@ let human = {
   firstName: 'Josue',
   secondName: 'Guzman',
   age: 18,
-  address: [city = 'Barranquilla']
+  address: [(city = 'Barranquilla')],
 }
 
 // & optional operator
 // If the value is available it will be logged to the console
 if (human && human.age) {
-  console.log('30. ',human.age)
+  console.log('30. ', human.age)
 }
 
-// ? question mark operator
+// ! question mark operator
 // whatever comes before this question mark, it will check whether this value
 // is defined or not, only then it will try and access that property
 if (anotherPerson?.address?.city) {
@@ -224,13 +224,46 @@ if (human?.address?.[0]) {
   console.log('32. anotherPerson.address.city: ', anotherPerson.address.city)
 }
 
+// ! optional chaining (?.)
+/* 
+function devsnest(object) {
+  return object?.person?.name;
+}
+
+Explanation:
+object?.person?.name uses optional chaining to check each step:
+- If object is undefined, it will return undefined without throwing an error.
+- If object.person is undefined, it will return undefined.
+- If both object and object.person are defined but object.person.name is undefined, it
+will return undefined.
+
+This approach guarantees that the function returns undefined in any case where object,
+object.person, or object.person.name is undefined.
+*/
+
 console.log('\n')
+console.log('####################')
+// example 18
 // nullish coalescing operator
 
 let age1 = human.age || 20
-console.log(age1) // 16
-let age2 = anotherPerson.age || 20
-console.log(age2) // 20
+console.log('33. age1: ', age1) // 18
+let age2 = anotherPerson.age || 37
+console.log('33. age2: ', age2) // 20
 
+console.log('####################')
+// example 19
+// only if value is null or undefined the value will be assigned
+let ageDoubleQuestion
+let age3 = ageDoubleQuestion ?? 77
+console.log('34. age3: ', age3)
+ageDoubleQuestion = null
+console.log('35. age3: ', age3)
+
+console.log('####################')
+// example 20
 // if age is 0 it will drop 20 so lets do this
-// let age1 = human.age && 20
+
+let ageZero = 10
+let age4 = ((ageZero === 0 || ageZero === false) && 20) || ageZero
+console.log('36. age4', age4)

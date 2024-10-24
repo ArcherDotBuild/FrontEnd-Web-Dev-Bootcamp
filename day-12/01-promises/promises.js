@@ -1,23 +1,32 @@
-// Example 1
-// let promise = new Promise((resolve, reject) => {
-//   setTimeout(() => {
-//     // resolve(10_000) // kept my promise
-//     reject(new Error("I lied, you're not getting your money"))
-//   }, 2000) // represent two days
-// })
+//** ******************** */
+//** #################### */
+//** Promises */
 
-// promise
-//   .then((money) => {
-//     if (money === 10_000) {
-//       console.log('Yay!, i got my money back')
-//     }
-//   })
-//   .catch((error) => {
-//     console.error('😢', error.message)
-//   })
+// Example 1
+let promiseOne = new Promise((resolve, reject) => {
+  // res and rej both are functions itself
+  setTimeout(() => {
+    // resolve(10_000) // kept my promise
+    reject(new Error("I lied, you're not getting your money"))
+  }, 2000) // represents the delay
+})
+
+// Promise object has => function called it known as .then
+promiseOne
+  .then((money) => {
+    if (money === 10_000) {
+      console.log('Yay!, i got my money back')
+    }
+  }) // suppose you dont get your money back, the promise has been rejected
+  .catch((error) => {
+    console.error('😢', error.message)
+  })
 
 console.log('\n')
-// Example 2
+console.log('####################')
+// example 2
+//
+
 // let moneyLended = 10_000
 // let promise = new Promise((resolve, reject) => {
 //   setTimeout(() => {
