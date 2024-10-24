@@ -103,6 +103,38 @@ fetchData()
 
 By understanding and utilizing Promises, you can write more robust and maintainable JavaScript code for asynchronous tasks.
 
+---
+
+When you create a new promise using `new Promise((resolve, reject) => { ... })`, you are **defining the behavior** for when something asynchronous happens, like waiting for a timer or a network request. Inside this promise, you use either `resolve()` to signal that the operation was successful, or `reject()` to signal that it failed.
+
+However, at that point, you're only **defining** what the promise will do (either resolve or reject) after the asynchronous task. You aren't yet telling the code what to do once the promise is resolved or rejected.
+
+**Why Use `.then()` and `.catch()`?**
+
+- `.then()` is used to specify what should happen **after** the promise is resolved. This is where you handle the result of the promise (e.g., when you get your money back).
+- `.catch()` is used to handle what should happen if the promise is **rejected** (if there's an error or something goes wrong).
+
+**Why not handle everything inside `resolve` and `reject`?**
+
+- Inside the `resolve` and `reject` calls, you are just controlling the outcome of the asynchronous operation, not what should happen afterward.
+- By using `.then()` and `.catch()`, you're **separating concerns**:
+  - **The promise itself** just cares about whether it resolves or rejects.
+  - **The code that uses the promise** (via `.then()` and `.catch()`) handles what happens next.
+
+**Example in your code:**
+In your `promiseOne`, you're telling the promise what to do in the future:
+
+- In `resolve(10_000)`: You're saying, "This is a successful outcome."
+- In `reject(new Error("I lied..."))`: You're saying, "This is a failure."
+
+But only when you chain `.then()` or `.catch()` are you specifying how your code should respond to that success or failure.
+
+**In Summary:**
+
+- **resolve()** or **reject()** decides the outcome of the promise.
+- **.then()** and **.catch()** specify what happens next depending on whether the promise was resolved or rejected.
+  This allows for cleaner and more modular code by separating the creation of the promise from the handling of its results.
+
 ## 1. Files Order
 
 - first: promises
