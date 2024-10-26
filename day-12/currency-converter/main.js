@@ -1,9 +1,14 @@
+//** ******************** */
+//** #################### */
+//** Cuyrrency Converter */
+
 document.addEventListener('DOMContentLoaded', () => {
   document
     .querySelector('#currency-converter')
     .addEventListener('submit', async (event) => {
-      event.preventDefault() // prevents refresh for not happening
+      event.preventDefault() // prevents refresh on click submit
       console.log('async function called first')
+      // destructuring event
       const {
         target: { from, to, amount },
       } = event
