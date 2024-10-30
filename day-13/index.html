@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="./secret-api-key.js"></script>
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <main class="container">
+      <article id="current-forecast">
+        <h1 class="city">City name</h1>
+        <p class="temp">Temp</p>
+        <p class="description">Description</p>
+        <p class="min-max-temp">H L</p>
+      </article>
+      <article id="hourly-forecast">
+        <h1>Hourly Forecast</h1>
+        <article>
+          <h2>Now</h2>
+          <img src="" alt="" />
+          <p>temp</p>
+        </article>
+      </article>
+      <article id="five-day-forecast">
+        <h1>5 day Forecast</h1>
+        <article>
+          <h2>Today</h2>
+          <p>icon</p>
+          <p>low</p>
+          <p>high</p>
+        </article>
+      </article>
+      <article>
+        <article>
+          <h2>Tuesday</h2>
+          <p>icon</p>
+          <p>low</p>
+          <p>high</p>
+        </article>
+        <article>
+          <h2>Today</h2>
+          <p>icon</p>
+          <p>low</p>
+          <p>high</p>
+        </article>
+        <article id="feels-like">
+          <h2>Feels Like</h2>
+          <p>temp</p>
+        </article>
+        <article id="humidity">
+          <h2>Humidity</h2>
+          <p>Value</p>
+        </article>
+      </article>
+    </main>
+  </body>
+</html>
