@@ -12,48 +12,44 @@
     <main class="container">
       <article id="current-forecast">
         <h1 class="city">City name</h1>
-        <p class="temp">Temp</p>
+        <p class="temp">--</p>
         <p class="description">Description</p>
-        <p class="min-max-temp">H L</p>
+        <p class="min-max-temp">High Low</p>
       </article>
       <article id="hourly-forecast">
         <h1>Hourly Forecast</h1>
-        <article>
-          <h2>Now</h2>
-          <img src="" alt="" />
-          <p>temp</p>
-        </article>
+        <section class="hourly-container">
+          <article>
+            <h3 class="time">Now</h3>
+            <p class="icon"></p>
+            <p class="hourly-temp">--</p>
+          </article>
+        </section>
       </article>
       <article id="five-day-forecast">
-        <h1>5 day Forecast</h1>
-        <article>
-          <h2>Today</h2>
-          <p>icon</p>
-          <p>low</p>
-          <p>high</p>
-        </article>
+        <h1>5-Day Forecast</h1>
+        <section class="five-day-forecast-container">
+          <article class="day-wise-forecast">
+            <h3>Today</h3>
+            <p class="icon">--</p>
+            <p class="min-temp">--</p>
+            <p class="max-temp">--</p>
+          </article>
+          <article class="day-wise-forecast">
+            <h3>Wed</h3>
+            <p class="icon">--</p>
+            <p class="min-temp">--</p>
+            <p class="max-temp">--</p>
+          </article>
+        </section>
       </article>
-      <article>
-        <article>
-          <h2>Tuesday</h2>
-          <p>icon</p>
-          <p>low</p>
-          <p>high</p>
-        </article>
-        <article>
-          <h2>Today</h2>
-          <p>icon</p>
-          <p>low</p>
-          <p>high</p>
-        </article>
-        <article id="feels-like">
-          <h2>Feels Like</h2>
-          <p>temp</p>
-        </article>
-        <article id="humidity">
-          <h2>Humidity</h2>
-          <p>Value</p>
-        </article>
+      <article id="feels-like">
+        <h1>Feels Like</h1>
+        <p class="feels-like-temp">--</p>
+      </article>
+      <article id="humidity">
+        <h1>Humidity</h1>
+        <p class="humidity-value">--</p>
       </article>
     </main>
   </body>
