@@ -1,5 +1,7 @@
 // console.log(apikey)
 
+const DAYS_OF_THE_WEEK = ['sun', 'mon', 'tud', 'wed', 'thu', 'fri', 'sat']
+
 const getCurrentWeatherData = async () => {
   const city = 'Barranquilla'
   const response = await fetch(
@@ -80,6 +82,19 @@ const loadHourlyForecast = (hourlyForecast) => {
   hourlyContainer.innerHTML = innerHTMLString
 }
 
+// DAYS_OF_THE_WEEK
+const calculateDayWiseForecast = (hourlyForecast) => {
+  let dayWiseForecast = new Map()
+  for (let forecast of hourlyForecast) {
+    const [date] = forecast.dt_txt.split(' ')
+  }
+}
+
+const loadFiveDayForecast = (hourlyForecast) => {
+  console.log('loadFiveDayForecast: ', hourlyForecast)
+  const dayWiseForecast = calculateDayWiseForecast(hourlyForecast)
+}
+
 const loadFeelsLike = ({ main: { feels_like } }) => {
   const container = document.querySelector('#feels-like')
   container.querySelector('.feels-like-temp').textContent =
@@ -100,6 +115,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   const hourlyForecast = await getHourlyForecast(currentWeather)
   loadHourlyForecast(hourlyForecast)
+
+  loadFiveDayForecast(hourlyForecast)
 
   loadFeelsLike(currentWeather)
 
