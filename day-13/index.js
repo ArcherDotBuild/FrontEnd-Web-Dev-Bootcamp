@@ -2,6 +2,13 @@
 // 31 minutes
 const DAYS_OF_THE_WEEK = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat']
 
+const getCitiesUsingGeolocation = async (searchText) => {
+  const response = await fetch(
+    `http://api.openweathermap.org/geo/1.0/direct?q=${searchText}&limit=5&appid=${apikey}`
+  )
+  return response.json()
+}
+
 const getCurrentWeatherData = async () => {
   const city = 'Barranquilla'
   const response = await fetch(
@@ -63,25 +70,35 @@ const loadCurrentForecast = ({
   )}`
 }
 
-const loadHourlyForecast = (hourlyForecast) => {
+const loadHourlyForecast = (
+  { main: { temp: tempNow }, weather: [{ icon: iconNow }] },
+  hourlyForecast
+) => {
   console.log('hourlyForecast: ', hourlyForecast)
+
+  const timeFormatter = Intl.DateTimeFormat('en', {
+    hour12: true,
+    hour: 'numeric',
+  })
   // slice method to create a new array containing a portion of the hourlyForecast array,
   // starting from the second element (index 1) up to, but not including, the thirteenth element (index 13).
-  let dataFor12Hours = hourlyForecast.slice(1, 13)
+  let dataFor12Hours = hourlyForecast.slice(2, 14) // 12 entries
   const hourlyContainer = document.querySelector('.hourly-container')
-  let innerHTMLString = ``
+  let innerHTMLString = `<article>
+            <h3 class="time">Now</h3>
+            <img class="icon" src="${createIconUrl(iconNow)}" />
+            <p class="hourly-temp">${formatTemperature(tempNow)}</p>
+          </article >`
 
   for (let { temp, icon, dt_txt } of dataFor12Hours) {
     console.log('dt_txt: ', dt_txt)
     // Splitting the Date-Time String: dt_txt.split(' ')
     // Accessing the Second Element: dt_txt.split(' ')[1]
-    innerHTMLString += `
-      <article>
-        <h3 class="time">${dt_txt.split(' ')[1]}</h3>
-        <img class="icon" src="${createIconUrl(icon)}" alt="icon" />
-        <p class="hourly-map">${formatTemperature(temp)}</p>
-      </article>
-    `
+    innerHTMLString += `<article>
+            <h3 class="time">${timeFormatter.format(new Date(dt_txt))}</h3>
+            <img class="icon" src="${createIconUrl(icon)}" />
+            <p class="hourly-temp">${formatTemperature(temp)}</p>
+          </article>`
   }
   hourlyContainer.innerHTML = innerHTMLString
 }
@@ -206,15 +223,65 @@ const loadHumidity = ({ main: { humidity } }) => {
   container.querySelector('.humidity-value').textContent = `${humidity} %`
 }
 
+function debounce(func) {
+  let timer
+  // The ...args: (rest parameter syntax) is used to collect all arguments passed to the
+  // debounced function so they can be passed to func later. This ensures that when func
+  // is finally executed after the delay, it receives the exact arguments originally passed
+  // to the debounced function.
+  return (...args) => {
+    clearTimeout(timer) // clear existing timer
+
+    // create a new time till the user is typing
+    // timer: variable serves as a reference point, allowing you to cancel the previous timeout
+    // and restart it every time debounce is called. This way, only the most recent call is
+    // allowed to complete, ensuring func only runs after the specified delay with no interruptions.
+    timer = setTimeout(() => {
+      console.log('debounce: ')
+      // func.apply(this, args):
+      // Set the this context, Pass arguments as an array
+      func.apply(this, args)
+    }, 500)
+  }
+}
+
+const onSearchChange = async (event) => {
+  let { value } = event.target
+  // if (!value) {
+  //   selectedCity = null
+  //   selectedCityText = ''
+  // }
+  // if (value && selectedCityText !== value) {
+  const listOfCities = await getCitiesUsingGeolocation(value)
+  console.log('listOfCities: ', listOfCities)
+  //   let options = ''
+  //   for (let { lat, lon, name, state, country } of listOfCities) {
+  //     options += `<option data-city-details='${JSON.stringify({
+  //       lat,
+  //       lon,
+  //       name,
+  //     })}' value="${name}, ${state}, ${country}"></option>`
+  //   }
+  //   document.querySelector('#cities').innerHTML = options
+  // }
+}
+
+const debounceSearch = debounce((event) => onSearchChange(event))
+
 document.addEventListener('DOMContentLoaded', async () => {
-  // preventDefault()
+  preventDefault()
   // console.log(await getCurrentWeatherData())
+
+  //  loadForecastUsingGeoLocation()
+  const searchInput = document.querySelector('#search')
+  searchInput.addEventListener('input', debounceSearch)
+  //  searchInput.addEventListener('change', handleCitySelection)
 
   const currentWeather = await getCurrentWeatherData()
   loadCurrentForecast(currentWeather)
 
   const hourlyForecast = await getHourlyForecast(currentWeather)
-  loadHourlyForecast(hourlyForecast)
+  loadHourlyForecast(currentWeather, hourlyForecast)
 
   loadFiveDayForecast(hourlyForecast)
 
