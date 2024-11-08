@@ -16,14 +16,36 @@
 
 ### Extra resources:
 
--
+- 
 
 ### Roadmap
 
-- 1:
-- 2:
+- 1: event queue
+- 2: call stack
 - 3:
 - 4:
 - 5:
 
-#### 1.
+#### 1. event queue
+
+The **event queue** in JavaScript is a part of the JavaScript runtime environment that holds asynchronous events and functions that are waiting to be processed. When the call stack (where synchronous code runs) is empty, the event loop takes functions from the event queue and pushes them to the call stack for execution.
+
+Here's a simple breakdown of how it works:
+
+1. **Event Loop:** Constantly checks if the call stack is empty.
+2. **Asynchronous Tasks** (like setTimeout, event listeners, fetch requests) complete in the background and, once ready, move their callback functions to the event queue.
+3. **Execution:** When the call stack is clear, the event loop picks functions from the event queue to execute, ensuring asynchronous tasks don’t interrupt synchronous code.
+
+This structure allows JavaScript to be non-blocking and handle async operations efficiently, even with a single-threaded model.
+
+#### 2. call stack
+
+The **call stack** in JavaScript is a data structure that keeps track of function calls in the order they need to be executed. It's part of the JavaScript runtime and handles synchronous code execution.
+
+Here's how it works:
+
+1. **Function Call:** When a function is called, it’s added to the top of the stack.
+2. **Execution:** JavaScript executes the function at the top of the stack.
+3. **Completion:** When a function finishes, it’s removed from the stack, and JavaScript moves to the next function.
+
+If functions call other functions, each one is stacked until the last call completes. When the stack is empty, the event loop can bring in async tasks from the event queue.
