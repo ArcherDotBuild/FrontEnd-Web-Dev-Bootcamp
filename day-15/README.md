@@ -16,13 +16,13 @@
 
 ### Extra resources:
 
-- 
+-
 
 ### Roadmap
 
 - 1: event queue
 - 2: call stack
-- 3:
+- 3: browser storage
 - 4:
 - 5:
 
@@ -49,3 +49,48 @@ Here's how it works:
 3. **Completion:** When a function finishes, it’s removed from the stack, and JavaScript moves to the next function.
 
 If functions call other functions, each one is stacked until the last call completes. When the stack is empty, the event loop can bring in async tasks from the event queue.
+
+#### 3. browser storage
+
+In JavaScript, **browser storage** lets you save data directly in the user’s browser, so it persists even when they navigate between pages or close the browser.
+
+**Types of Browser Storage**
+
+1. **Local Storage:**
+
+- Stores data with no expiration date.
+- Data is available across all pages of the site, even after closing the browser.
+- Accessed via `localStorage`.
+- Example:
+
+```javascript
+localStorage.setItem('username', 'Alice') // Save data
+const name = localStorage.getItem('username') // Retrieve data
+```
+
+2. **Session Storage:**
+
+- Stores data for the duration of the page session (while the browser tab is open).
+- Data is cleared when the tab or window is closed.
+- Accessed via `sessionStorage`.
+- Example:
+
+```javascript
+sessionStorage.setItem('sessionId', '12345')
+const id = sessionStorage.getItem('sessionId')
+```
+
+3. **Cookies:**
+
+- Primarily used for server communication, like tracking login status.
+- Can be set to expire after a certain time or kept temporarily.
+- Example:
+
+```javascript
+document.cookie = 'username=Alice; expires=Fri, 31 Dec 9999 23:59:59 GMT'
+```
+
+**Key Points**
+
+- **Local storage** and **session storage** are good for storing simple user preferences and state.
+- **Cookies** are typically used for authentication or data sent to the server.
