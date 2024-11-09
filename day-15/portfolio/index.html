@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles.css" />
     <title>Alberto's Portfolio CSS</title>
@@ -21,11 +22,15 @@
     </section>
     <header class="header">
       <nav class="default-nav">
-        <a href="#about-me">About Me</a>
-        <a href="#qualifications">Qualifications</a>
-        <a href="#hobbies">Hobbies</a>
-        <a href="#technologies">Technologies</a>
-        <a href="#contact-me">Contact Me</a>
+        <section>
+          <a href="#about-me">About Me</a><a href="#projects">Projects</a
+          ><a href="#technologies">Technologies</a
+          ><a href="#qualifications">Qualifications</a
+          ><a href="#hobbies">Hobbies</a><a href="#contact-me">Contact</a>
+        </section>
+        <section>
+          <button id="theme-switcher"></button>
+        </section>
       </nav>
       <nav class="mobile-nav">
         <button id="menu-button">Menu</button>
@@ -35,7 +40,7 @@
       <article class="intro">
         <img id="profile-image" src="./alberto.png" alt="my picture" />
         <h1>Hi, i'm Alberto</h1>
-        <p>I am <span id="dynamic-text" class="dynamic-text-color"></span></p>
+        <p>I am a <span id="dynamic-text" class="dynamic-text-color"></span></p>
         <p class="social-links">
           <a href="https://twitter.com/elfgodd" target="_blank">
             <img
@@ -155,7 +160,7 @@
             <input
               type="text"
               name="lastName"
-              id="firstName"
+              id="lastName"
               autocomplete="off"
             />
           </div>
@@ -176,5 +181,6 @@
     <footer>Made with ❤️ @ElfGodd. Copyright 2024</footer>
     <script src="./index.js"></script>
     <script src="./menu.js"></script>
+    <script src="theme.js"></script>
   </body>
 </html>
