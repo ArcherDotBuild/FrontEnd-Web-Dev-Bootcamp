@@ -1,6 +1,6 @@
 ![image info](./welcome-day-13.png)
 
-# Welcome to Day 13
+# Welcome to Day 13 & 14
 
 ## **Weather App**
 

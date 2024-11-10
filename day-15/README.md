@@ -1,17 +1,14 @@
-![image info](./welcome-day-12.png)
+![image info](./welcome-day-15.png)
 
-# Welcome to Day 12
+# Welcome to Day 15
 
 ## **Event Loop & Browser Storage**
 
 ## Resources:
 
 - Visual representation of the event loop: http://latentflip.com/loupe/
-
 - Local storage: https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
-
 - Session storage: https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage
-
 - Window.matchMedia: https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia
 
 ### Extra resources:
@@ -23,8 +20,6 @@
 - 1: event queue
 - 2: call stack
 - 3: browser storage
-- 4:
-- 5:
 
 #### 1. event queue
 
