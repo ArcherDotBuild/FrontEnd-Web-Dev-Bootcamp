@@ -1,0 +1,35 @@
+article p {
+  color: rgb(0, 0, 0);
+}
+article p span {
+  font-size: x-large;
+  color: greenyellow;
+}
+
+h1 {
+  color: purple;
+}
+
+.success, .primary, .default {
+  padding: 8px;
+  border-radius: 16px;
+  color: whitesmoke;
+}
+
+.default {
+  background-color: lightgray;
+}
+
+.primary {
+  background-color: purple;
+}
+
+.success {
+  background-color: darkgreen;
+}
+
+body {
+  background-color: rgb(59, 161, 245);
+}
+
+/*# sourceMappingURL=styles.css.map */

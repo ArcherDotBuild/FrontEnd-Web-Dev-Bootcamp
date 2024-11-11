@@ -1,0 +1,56 @@
+// run this:
+
+// node node_modules/.bin/sass styles.scss styles.css
+// To compile the SASS file to CSS
+
+// node node_modules/.bin/sass --watch styles.scss styles.css
+// watches for changes and automatically updates the styles
+
+// npm run sass-watch
+// script in the package.json, watches for changes and automatically updates the styles
+
+// Variables
+$color: purple;
+
+// Nesting styles
+article {
+  p {
+    color: cadetblue;
+    span {
+      font-size: x-large;
+      color: greenyellow;
+    }
+  }
+}
+
+h1 {
+  color: $color;
+}
+
+// Inheritance
+
+%btn {
+  padding: 8px;
+  border-radius: 16px;
+  color: whitesmoke;
+}
+
+// default style button
+
+.default {
+  @extend %btn;
+  background-color: lightgray;
+}
+
+.primary {
+  @extend %btn;
+  background-color: $color;
+}
+.success {
+  @extend %btn;
+  background-color: darkgreen;
+}
+
+body {
+  background-color: rgb(59, 161, 245);
+}
