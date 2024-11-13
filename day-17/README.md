@@ -2,7 +2,7 @@
 
 # Welcome to Day 17
 
-## ****
+## **Day 17 | ES6 Modules, Frontend Tooling - Webpack & Vite**
 
 ## Resources:
 
