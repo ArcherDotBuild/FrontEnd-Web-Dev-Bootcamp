@@ -6,9 +6,10 @@
 
 ## Resources:
 
-- 
-- 
-- 
+- Es 6 Modules: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
+- Intro to web pack: https://flaviocopes.com/webpack/
+- Guide: https://webpack.js.org/guides/
+- Vite: https://vitejs.dev/guide/
 
 ### Extra resources:
 
@@ -16,8 +17,8 @@
 
 ### Roadmap
 
-- 1: 
-- 2: 
-- 3: 
+- 1:
+- 2:
+- 3:
 
-#### 1. 
+#### 1.
