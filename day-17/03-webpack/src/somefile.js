@@ -26,3 +26,10 @@ export default defaultExport
 export function renameImport() {
   console.log('renameImport')
 }
+
+const button = document.createElement('button')
+button.textContent = 'Click button'
+button.addEventListener('click', () => {
+  console.log('button clicked')
+})
+document.body.appendChild(button)

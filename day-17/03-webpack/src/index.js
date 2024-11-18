@@ -41,7 +41,8 @@ console.log('publicVariable: ', everything.publicVariable)
 
 // import _ from 'lodash'
 import join from 'lodash/join'
-// import './style.scss'
+// import './styles.css'
+import './styles.scss'
 
 const element = document.createElement('article')
 
@@ -49,3 +50,16 @@ const element = document.createElement('article')
 element.textContent = join(['Hello', 'Webpack'], ' ')
 element.classList.add('blue')
 document.body.appendChild(element)
+
+/*
+ "devDependencies": {
+    "css-loader": "^6.7.1",
+    "html-webpack-plugin": "^5.5.0",
+    "sass": "^1.55.0",
+    "sass-loader": "^13.1.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1"
+  },
+*/
