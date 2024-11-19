@@ -27,6 +27,10 @@ export function renameImport() {
   console.log('renameImport')
 }
 
+export function unusedFN() {
+  console.log('unused')
+}
+
 const button = document.createElement('button')
 button.textContent = 'Click button'
 button.addEventListener('click', () => {

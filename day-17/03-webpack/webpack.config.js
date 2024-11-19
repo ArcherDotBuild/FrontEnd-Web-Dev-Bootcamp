@@ -30,7 +30,7 @@ module.exports = {
   devServer: {
     static: './dist',
   },
-  // optimization: {
-  //   usedExports: true,
-  // },
+  optimization: {
+    usedExports: true,
+  },
 }

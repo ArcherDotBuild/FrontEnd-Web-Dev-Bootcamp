@@ -2,7 +2,7 @@
 
 # Welcome to Day 17
 
-## **Day 17 | ES6 Modules, Frontend Tooling - Webpack & Vite**
+## **ES6 Modules, Frontend Tooling - Webpack & Vite**
 
 ## Resources:
 
@@ -20,6 +20,7 @@
 - 1: global scope sharing file 01
 - 2: module file 02
 - 3: export statement in JavaScript
+- 4: vite
 
 #### 1. global scope sharing
 
@@ -122,3 +123,47 @@ export default function myFunction() {
 ```
 
 To use an exported item in another file, you’ll use `import`.
+
+#### 4. vite
+
+**Vite** is a modern **build tool** and **development server** for JavaScript projects, designed to provide fast and efficient development and build processes for modern web applications.
+
+**Key Features of Vite:**
+
+1. **Instant Dev Server:**
+
+- Uses native ES modules (`<script type="module">`) for fast, browser-native imports during development.
+- Starts the dev server almost instantly, regardless of project size.
+
+1. **Lightning-Fast HMR (Hot Module Replacement):**
+
+- Updates changes in the browser instantly without refreshing the entire page.
+- Replaces only the affected module, speeding up the feedback loop during development.
+
+1. **Optimized Build Process:**
+
+- Uses Rollup under the hood for production builds.
+- Automatically optimizes code splitting, tree-shaking, and minification.
+
+1. **Native TypeScript & Framework Support:**
+
+- Works out of the box with frameworks like **Vue**, **React**, **Svelte**, and **Preact**.
+- Supports TypeScript, JSX, CSS preprocessors, and more without additional setup.
+
+1. **Flexible Configuration:**
+
+- Allows easy customization with plugins and integrations.
+- Supports tools like PostCSS, TailwindCSS, and Sass.
+
+**Quick Example:**
+
+- **Install Vite:**
+
+```bash
+npm create vite@latest my-project
+cd my-project
+npm install
+```
+
+- **Run Dev Server:** `npm run dev`
+- **Build for Production:** `npm run build`
