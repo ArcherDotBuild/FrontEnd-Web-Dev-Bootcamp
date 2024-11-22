@@ -1,3 +1,11 @@
+# Others
+secret-api-key.js
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
 # Logs
 logs
 *.log
