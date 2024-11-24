@@ -19,9 +19,32 @@
 
 ### Roadmap
 
-- 1:
-- 2:
+- 1: Spotify redirect settings
+- 2: Implicit Grant Flow
 - 3:
 - 4:
 
-#### 1.
+#### 1. Spotify redirect settings
+
+Redirect URIs: `http://localhost:3000/login/login.html`
+
+#### 2. Implicit Grant Flow
+
+The following JavaScript sample builds the authorization request:
+
+```javascript
+var client_id = 'CLIENT_ID'
+var redirect_uri = 'http://localhost:8888/callback'
+
+var state = generateRandomString(16)
+
+localStorage.setItem(stateKey, state)
+var scope = 'user-read-private user-read-email'
+
+var url = 'https://accounts.spotify.com/authorize'
+url += '?response_type=token'
+url += '&client_id=' + encodeURIComponent(client_id)
+url += '&scope=' + encodeURIComponent(scope)
+url += '&redirect_uri=' + encodeURIComponent(redirect_uri)
+url += '&state=' + encodeURIComponent(state)
+```
