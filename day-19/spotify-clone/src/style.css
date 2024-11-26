@@ -30,5 +30,5 @@
 
 .track.playing .track-no,
 .track.playing .song-title {
-  /* color: theme("colors.green"); */
+  color: theme("colors.green");
 }
