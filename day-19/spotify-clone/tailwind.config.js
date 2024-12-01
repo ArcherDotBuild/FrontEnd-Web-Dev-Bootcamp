@@ -13,10 +13,10 @@ module.exports = {
         secondary: '#b3b3b3',
         gray: '#535353',
       },
-  //     gridTemplateColumns: {
-  //       'auto-fill-cards': 'repeat(auto-fill, minmax(200px, 1fr))',
-  //     },
+      gridTemplateColumns: {
+        'auto-fill-cards': 'repeat(auto-fill, minmax(200px, 1fr))',
+      },
     },
   },
-  // plugins: [require('@tailwindcss/line-clamp')],
+  plugins: [require('@tailwindcss/line-clamp')],
 }

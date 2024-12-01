@@ -16,10 +16,10 @@
 // new URLSearchParams(window.location.hash).get('#access_token')
 // 'BQCPYklL_xtVOPSavxtL5SKcH_pVoXtfP0SDzZQZs9SJ6iVHPmJ4P2-y3SgsTus6LIXTcCnYcicR6QVA2P_TJL_kKgzwlynZn9Cz6OL_dqzRUt88blQWY95vTD3qXNl86Dca2itHsSZ5xUMsb04PYt09JTI0JY4bPCg9G5TSoJ8ZANqKCxrySYb3q7CLJDofRAZJL-yoTHGx8675IQuTNC_uPZvyTMckUXPnzBw4vM9QFg'
 
-import { ACCESS_TOKEN, EXPIRES_IN, TOKEN_TYPE } from '../../common'
+import { ACCESS_TOKEN, EXPIRES_IN, TOKEN_TYPE } from '../common'
 
 const CLIENT_ID = import.meta.env.VITE_CLIENT_ID
-const REDIRECT_URI = import.meta.env.VITE_REDIRECt_URI
+const REDIRECT_URI = import.meta.env.VITE_REDIRECT_URI
 const APP_URL = import.meta.env.VITE_APP_URL
 
 const scopes =
@@ -36,8 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 window.setItemsInLocalStorage = ({ accessToken, tokenType, expiresIn }) => {
-  localStorage.setItem('ACCESS_TOKEN', accessToken)
-  localStorage.setItem('TOKEN_TYPE', tokenType)
+  localStorage.setItem(ACCESS_TOKEN, accessToken)
+  localStorage.setItem(TOKEN_TYPE, tokenType)
   localStorage.setItem(EXPIRES_IN, Date.now() + expiresIn * 1000)
   window.location.href = APP_URL
 }
@@ -72,7 +72,6 @@ window.addEventListener('load', () => {
         tokenType,
         expiresIn,
       })
-      window.location.href = APP_URL
     } else {
       window.close()
     }
