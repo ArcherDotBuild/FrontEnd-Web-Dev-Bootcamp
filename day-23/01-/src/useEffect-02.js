@@ -6,16 +6,11 @@ const UseEffectExample = () => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 })
 
   useEffect(() => {
-    const handleMove = () => (e) => {
+    console.log('addEventListener add for pointermover')
+    window.addEventListener('pointermove', (e) => {
       setCursorPosition({ x: e.clientX, y: e.clientY })
       console.log('pointermove event')
-    }
-
-    console.log('addEventListener add for pointermover')
-    window.addEventListener('pointermove', handleMove)
-
-    // clean up function
-    return window.removeEventListener('pointermove', handleMove)
+    })
   }, [])
 
   return (

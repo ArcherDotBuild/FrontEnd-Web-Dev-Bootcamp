@@ -23,3 +23,13 @@ code {
 .items {
   display: flex;
 }
+
+.product {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.product-item {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+}

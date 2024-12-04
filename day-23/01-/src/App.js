@@ -3,13 +3,15 @@ import './App.css'
 import Counter from './counter'
 import List from './list'
 import UseEffectExample from './useEffect'
+import Products from './Products'
 
 function App() {
   return (
     <div className='App'>
       {/* <Counter /> */}
       {/* <List /> */}
-      <UseEffectExample />
+      {/* <UseEffectExample /> */}
+      <Products />
     </div>
   )
 }
