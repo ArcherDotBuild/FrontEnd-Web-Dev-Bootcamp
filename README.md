@@ -32,3 +32,61 @@ The standard name for environment files is typically:
 - `.env.development`
 - `.env.production`
 - `.env.test`
+
+---
+
+---
+
+#### || (logical OR) and ??
+
+In JavaScript, both `||` (logical OR) and `??` (nullish coalescing) operators can provide a fallback value, but they behave differently in determining when to use the second value.
+
+**1. `||` (Logical OR)**
+
+- Returns the second value if the first value is falsy.
+- Falsy values include: `false`, `0`, `''` (empty string), `null`, `undefined`, and `NaN`.
+
+**Example:**
+
+```javascript
+const value = '' || 'Default'
+console.log(value) // Output: "Default"
+```
+
+- Since `''` is falsy, it returns `"Default"`
+
+---
+
+**2. `??` (Nullish Coalescing)**
+
+- Returns the second value only if the first value is `null` or `undefined`.
+- Useful for handling cases where you want to allow falsy values like `0`, `false`, or `''`.
+
+**Example:**
+
+```javascript
+const value = '' ?? 'Default'
+console.log(value) // Output: ""
+```
+
+- Since `''` is neither `null` nor `undefined`, it keeps `''`.
+
+---
+
+**Key Difference:**
+
+- `||` treats all falsy values as needing a fallback.
+- `??` only treats `null` or `undefined` as needing a fallback.
+
+---
+
+**Comparison Example:**
+
+```javascript
+const a = 0 || 42;  // Fallback to 42, since 0 is falsy
+console.log(a);     // Output: 42
+
+const b = 0 ?? 42;  // No fallback, since 0 is not null/undefined
+console.log(b);     // Output: 0
+```
+Use `??` when you need more precise handling and want to preserve falsy values like `0` or `false`.

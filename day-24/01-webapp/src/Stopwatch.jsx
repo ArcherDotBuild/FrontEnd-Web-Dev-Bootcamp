@@ -22,8 +22,8 @@ const Stopwatch = () => {
   function stopStopwatch() {}
 
   // Divide / 1000 to get the value in seconds
-  // because now and startTime.current are both in milliseconds
-  // secondsElapsed = now - startTime.current / 1000
+  // because (now) and (startTime.current) are both in milliseconds
+  secondsElapsed = (now - startTime.current) / 1000
 
   return (
     <>
