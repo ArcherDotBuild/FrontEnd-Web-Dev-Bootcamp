@@ -1,6 +1,11 @@
 # FrontEnd Bootcamp
 
-#### Git commands
+### Cheatsheet
+- 01. Git commands
+- 02. || (logical OR) and ??
+- 03. prev => !prev
+
+### 01. Git commands
 
 After running git add ., use this command to see which files are staged:
 
@@ -37,7 +42,7 @@ The standard name for environment files is typically:
 
 ---
 
-#### || (logical OR) and ??
+### 02. || (logical OR) and ??
 
 In JavaScript, both `||` (logical OR) and `??` (nullish coalescing) operators can provide a fallback value, but they behave differently in determining when to use the second value.
 
@@ -83,10 +88,38 @@ console.log(value) // Output: ""
 **Comparison Example:**
 
 ```javascript
-const a = 0 || 42;  // Fallback to 42, since 0 is falsy
-console.log(a);     // Output: 42
+const a = 0 || 42 // Fallback to 42, since 0 is falsy
+console.log(a) // Output: 42
 
-const b = 0 ?? 42;  // No fallback, since 0 is not null/undefined
-console.log(b);     // Output: 0
+const b = 0 ?? 42 // No fallback, since 0 is not null/undefined
+console.log(b) // Output: 0
 ```
+
 Use `??` when you need more precise handling and want to preserve falsy values like `0` or `false`.
+
+### 03. prev => !prev
+
+- This is a function that takes the current state (`prev`) as an argument.
+- The `!prev` part flips the value of `prev` (i.e., `true` becomes `false`, and `false` becomes `true`).
+
+This is a shorthand for toggling a boolean value.
+
+```javascript
+let showHeader = true // Initial state
+
+function toggleHeader() {
+  showHeader = !showHeader // Flip the boolean value
+  console.log('Header is now:', showHeader ? 'Visible' : 'Hidden')
+}
+
+// Simulate toggling the header
+toggleHeader() // Logs: Header is now: Hidden
+toggleHeader() // Logs: Header is now: Visible
+toggleHeader() // Logs: Header is now: Hidden
+```
+
+**Explanation:**
+
+- `showHeader` is a simple boolean variable initialized to `true`.
+- The `toggleHeader` function toggles the value of `showHeader` using the ! operator.
+- Every time `toggleHeader` is called, it flips the value of `showHeader` and logs the updated state.
