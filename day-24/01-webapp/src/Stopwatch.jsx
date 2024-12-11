@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 
 const Stopwatch = () => {
-  console.log('Stopwatch rerendered')
+  // console.log('Stopwatch rerendered')
   const startTime = useRef(null)
   const intervalRef = useRef(null)
   const [now, setNow] = useState(null)
@@ -24,6 +24,10 @@ const Stopwatch = () => {
 
   function stopStopwatch() {
     clearInterval(intervalRef.current)
+  }
+
+  function trackLap() {
+    setLaps([...laps, secondsElapsed])
   }
 
   // Divide / 1000 to get the value in seconds
