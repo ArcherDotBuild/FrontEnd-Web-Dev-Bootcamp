@@ -14,7 +14,7 @@ const MemoizedEx = () => {
             id='firstName'
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
-            autocomplete='off'
+            autoComplete='off'
             placeholder='enter first name'
           />
           <input
@@ -23,7 +23,7 @@ const MemoizedEx = () => {
             id='lastName'
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
-            autocomplete='off'
+            autoComplete='off'
             placeholder='enter last name'
           />
         </fieldset>
