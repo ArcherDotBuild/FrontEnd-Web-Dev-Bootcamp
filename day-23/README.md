@@ -18,7 +18,7 @@
 
 ### Extra resources:
 
-- Fake Store API: fakestoreapi.com/docs - Fake store rest API for your e-commerce or shopping website prototype
+- Fake Store API: [fakestoreapi.com/docs](https://fakestoreapi.com/docs) - Fake store rest API for your e-commerce or shopping website prototype
 
 ### Roadmap
 
