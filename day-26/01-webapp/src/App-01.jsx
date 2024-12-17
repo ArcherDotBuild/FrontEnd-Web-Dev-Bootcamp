@@ -1,35 +1,6 @@
 import React, { Component, useState } from 'react'
 import './App.css'
 
-// minuto 16
-// preguntar a chat gpt como funciona este codigo
-class ErrorBoundary extends Component {
-  state = { error: null }
-  static getDerivedStateFromError(error) {
-    return { error }
-  }
-  render() {
-    const { error } = this.state
-    if (error) {
-      return (
-        <div>
-          <pre>{error.message}</pre>
-        </div>
-      )
-    }
-    return this.props.children
-  }
-}
-
-function FallbackComponent({ error }) {
-  return (
-    <div>
-      <p>Something went wrong</p>
-      <pre>{error.message}</pre>
-    </div>
-  )
-}
-
 function Breaker() {
   const [count, setCount] = useState(0)
 
@@ -64,11 +35,7 @@ function AnotherComponent() {
 function App() {
   return (
     <>
-      {/* <ErrorBoundary> */}
-      <ErrorBoundary FallbackComponent={FallbackComponent}>
-        <Breaker />
-      </ErrorBoundary>
-      {/* <Breaker /> */}
+      <Breaker />
       <AnotherComponent />
     </>
   )
