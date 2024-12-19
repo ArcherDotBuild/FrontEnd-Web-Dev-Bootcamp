@@ -1,9 +1,10 @@
 # FrontEnd Bootcamp
 
 ### Cheatsheet
-- 01. Git commands
-- 02. || (logical OR) and ??
-- 03. prev => !prev
+
+1.  Git commands
+2.  || (logical OR) and ??
+3.  prev => !prev
 
 ### 01. Git commands
 
@@ -97,6 +98,10 @@ console.log(b) // Output: 0
 
 Use `??` when you need more precise handling and want to preserve falsy values like `0` or `false`.
 
+---
+
+---
+
 ### 03. prev => !prev
 
 - This is a function that takes the current state (`prev`) as an argument.
@@ -123,3 +128,7 @@ toggleHeader() // Logs: Header is now: Hidden
 - `showHeader` is a simple boolean variable initialized to `true`.
 - The `toggleHeader` function toggles the value of `showHeader` using the ! operator.
 - Every time `toggleHeader` is called, it flips the value of `showHeader` and logs the updated state.
+
+---
+
+---
