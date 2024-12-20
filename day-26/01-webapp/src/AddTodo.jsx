@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const AddTodo = () => {
-  const [text, setText] = useState()
+// minuto 50
+const AddTodo = ({ onAddTodo }) => {
+  const [text, setText] = useState('')
   return (
-    <>
+    <div className='add-todo-container'>
       <input
         type='text'
         name='newTodo'
@@ -19,7 +20,7 @@ const AddTodo = () => {
       >
         Add
       </button>
-    </>
+    </div>
   )
 }
 
