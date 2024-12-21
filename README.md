@@ -1,5 +1,10 @@
 # FrontEnd Bootcamp
 
+### Web development tools
+
+- https://jsonhero.io/ : JSON sucks. But we're making it better.
+- https://fakestoreapi.com/docs : Fake Store API Fake store rest API for your e-commerce or shopping website prototype
+
 ### Cheatsheet
 
 1.  Git commands

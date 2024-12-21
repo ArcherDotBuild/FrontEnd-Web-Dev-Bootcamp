@@ -5,8 +5,7 @@ const TodoList = ({ todos, onTodoChange, onTodoDelete }) => {
     <ul className='todo-list'>
       {todos.map((todo) => (
         <li key={todo.id}>
-          <Todo todo={todo} />
-          {todo.text}
+          <Todo todo={todo} onChange={onTodoChange} onDelete={onTodoDelete} />
         </li>
       ))}
     </ul>
@@ -14,9 +13,21 @@ const TodoList = ({ todos, onTodoChange, onTodoDelete }) => {
 }
 
 function Todo({ todo, onChange, onDelete }) {
-  return(
+  return (
     <>
-      <input type="checkbox" name={`${todo.id}-done`} id={`${todo.id}-done`} checked={todo.done} />
+      <input
+        type='checkbox'
+        name={`${todo.id}-done`}
+        id={`${todo.id}-done`}
+        checked={todo.done}
+        onChange={(e) => {
+          onChange({ ...todo, done: e.target.checked })
+        }}
+        onDelete={(e) => {
+          onDelete({ id: e.target.id })
+        }}
+      />
+      {todo.text}
     </>
   )
 }
