@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 import AddTodo from './AddTodo'
 import TodoList from './TodoList'
 
+// 60
 let nextId = 4
+// todos array contains objects, each representing a "to-do" item. Each item has an id field, which is unique
 const initialTodos = [
   { id: 1, text: 'Learn JavaScript', done: true },
   { id: 2, text: 'Build Spotify Clone using JavaScript', done: false },
