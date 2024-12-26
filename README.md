@@ -11,6 +11,7 @@
 2.  || (logical OR) and ??
 3.  prev => !prev
 4. 
+5. 
 
 ### 01. Git commands
 
