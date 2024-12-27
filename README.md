@@ -10,7 +10,6 @@
 1.  Git commands
 2.  || (logical OR) and ??
 3.  prev => !prev
-4. 
 
 ### 01. Git commands
 
