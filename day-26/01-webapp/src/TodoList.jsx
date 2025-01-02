@@ -28,6 +28,7 @@ function Todo({ todo, onChange, onDelete }) {
         }}
       />
       {todo.text}
+      <button onClick={() => onDelete(todo.id)}>X</button>
     </>
   )
 }

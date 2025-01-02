@@ -24,9 +24,13 @@ const TodoApp = () => {
     ])
   }
 
+  // updatedTodo is an object representing a to-do item that needs to
+  // replace the existing one in the todos array, based on its id
   function handleTodoChange(updatedTodo) {
     setTodos(
       todos.map((existingTodo) => {
+        // If the IDs match, it means the current to-do (existingTodo)
+        // is the one to be updated. It replaces it with the updatedTodo
         if (existingTodo.id === updatedTodo.id) {
           return updatedTodo
         } else {
@@ -35,11 +39,21 @@ const TodoApp = () => {
       })
     )
   }
+
+  function handleTodoDelete(todoId) {
+    // creating a new array that excludes the to-do with the specified todoId
+    setTodos(todos.filter((todo) => todo.id !== todoId))
+  }
+
   return (
     <>
       <h2>Todos</h2>
       <AddTodo onAddTodo={handleAddTodo} />
-      <TodoList todos={todos} onTodoChange={handleTodoChange} />
+      <TodoList
+        todos={todos}
+        onTodoChange={handleTodoChange}
+        onTodoDelete={handleTodoDelete}
+      />
     </>
   )
 }
