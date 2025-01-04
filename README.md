@@ -5,12 +5,19 @@
 - https://jsonhero.io/ : JSON sucks. But we're making it better.
 - https://fakestoreapi.com/docs : Fake Store API Fake store rest API for your e-commerce or shopping website prototype
 
+```bash
+pnpm create vite
+pnpm install
+pnpm run dev
+pnpm dev
+```
+
 ### Cheatsheet
 
 1.  Git commands
 2.  || (logical OR) and ??
 3.  prev => !prev
-4. 
+
 ### 01. Git commands
 
 After running git add ., use this command to see which files are staged:
