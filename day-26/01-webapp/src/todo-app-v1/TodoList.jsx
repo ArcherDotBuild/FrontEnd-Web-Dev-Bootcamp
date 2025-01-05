@@ -23,6 +23,9 @@ function Todo({ todo, onChange, onDelete }) {
         onChange={(e) => {
           onChange({ ...todo, done: e.target.checked })
         }}
+        onDelete={(e) => {
+          onDelete({ id: e.target.id })
+        }}
       />
       {todo.text}
       <button onClick={() => onDelete(todo.id)}>X</button>
