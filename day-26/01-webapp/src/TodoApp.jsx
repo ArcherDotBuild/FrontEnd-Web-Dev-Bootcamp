@@ -1,6 +1,9 @@
-import React, { useReducer, useState } from 'react'
+import React from 'react'
+import { useState } from 'react'
+import { useReducer } from 'react'
 import AddTodo from './AddTodo'
 import TodoList from './TodoList'
+import todosReducer from './todosReducer'
 
 let nextId = 4
 // todos array contains objects, each representing a "to-do" item. Each item has an id field, which is unique
@@ -10,38 +13,33 @@ const initialTodos = [
   { id: 3, text: 'Learn React', done: false },
 ]
 
-function todoReducer(todos, action) {
-  console.log('action:', action)
-  const { type } = action
-  switch (type) {
-    // case 'add':
-    // return [
-    //     ...todos,
+// FIXME: Moving this to a separate file
 
-    //     {
-    //       id: action.id,
-    //       text: action.text,
-    //       done: false,
-    //     },
-    //   ]
-    case 'add':
-      const { id, text } = action
-      return [...todos, { id, text, done: false }]
-    case 'change':
-      const updatedTodo = action.todo
-      return todos.map((existingTodo) => {
-        if (existingTodo.id === updatedTodo.id) {
-          return updatedTodo
-        } else {
-          return existingTodo
-        }
-      })
-  }
-}
+// function todosReducer(todos, action) {
+//   console.log('action:', action)
+//   const { type } = action
+//   switch (type) {
+//     case 'add':
+//       const { id, text } = action
+//       return [...todos, { id, text, done: false }]
+//     case 'change':
+//       const updatedTodo = action.todo
+//       return todos.map((existingTodo) => {
+//         if (existingTodo.id === updatedTodo.id) {
+//           return updatedTodo
+//         } else {
+//           return existingTodo
+//         }
+//       })
+//     case 'remove':
+//       const todoId = action.id
+//       return todos.filter((todo) => todo.id !== todoId)
+//   }
+// }
 
 const TodoApp = () => {
   // const [todos, setTodos] = useState(initialTodos)
-  const [todos, dispatch] = useReducer(todoReducer, initialTodos)
+  const [todos, dispatch] = useReducer(todosReducer, initialTodos)
   function handleAddTodo(text) {
     dispatch({ type: 'add', id: nextId++, text })
 
@@ -78,6 +76,10 @@ const TodoApp = () => {
   function handleTodoDelete(todoId) {
     // creating a new array that excludes the to-do with the specified todoId
     // setTodos(todos.filter((todo) => todo.id !== todoId))
+    dispatch({
+      type: 'remove',
+      id: todoId,
+    })
   }
 
   return (
