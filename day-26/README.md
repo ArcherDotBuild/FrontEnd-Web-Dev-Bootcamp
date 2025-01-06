@@ -11,7 +11,7 @@
 - useReducer: https://beta.reactjs.org/learn/extracting-state-logic-into-a-reducer
 - Comparing useState & useReducer: https://beta.reactjs.org/learn/extracting-state-logic-into-a-reducer#comparing-usestate-and-usereducer
 - useContext: https://beta.reactjs.org/learn/passing-data-deeply-with-context
-- Dev Tools: https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en
+- Dev Tools: https://chrome.google.com/webstore/detail/react-developer-tools/
 
 ### Extra resources:
 
@@ -21,8 +21,8 @@
 
 - 1: ErrorBoundary
 - 2: useReducer
-- 3:
-- 4:
+- 3: Prop Drilling
+- 4: useContext
 
 #### 1. ErrorBoundary
 
@@ -194,3 +194,78 @@ It’s like a state machine: Input (state + action) → Output (new state).
 - Initially: **Count: 0**
 - Click **Increment:** Count increases by 1.
 - Click **Reset:** Count resets to 0.
+
+#### 3. Prop Drilling
+
+Is the process of passing data from a parent component to a deeply nested child component through multiple intermediary components. It occurs when a component needs access to a prop but isn't directly related to the parent component that holds the data.
+
+```jsx
+function App() {
+  const message = 'Hello from App!'
+
+  return <Parent message={message} />
+}
+
+function Parent({ message }) {
+  return <Child message={message} />
+}
+
+function Child({ message }) {
+  return <GrandChild message={message} />
+}
+
+function GrandChild({ message }) {
+  return <h1>{message}</h1>
+}
+
+export default App
+```
+
+In this example:
+
+- The `message` prop is passed from the `App` component to the `GrandChild` component through `Parent` and `Child`.
+- The intermediate components (`Parent` and `Child`) do not directly use the `message` prop but are responsible for passing it down.
+
+**Downsides of Prop Drilling:**
+- It can lead to cluttered and hard-to-maintain code, especially in deeply nested components.
+- To mitigate this, Context API or state management libraries like Redux can be used.
+
+#### 4. useContext
+
+**Task:**
+
+In this task, you’ve given three files Parent.jsx, A.jsx and B.jsx. Each exporting its respective Functional Component.
+
+Description of A:
+
+It contains a textarea inside a div with className a-container
+Description of B:
+
+It contains a div with className b-container
+Description of Parent:
+
+It returns components A and B wrapped inside divs to make it looks visually better.
+You have to use Context API such that text changes in textarea of component A are displayed in a paragraph inside component B. (you’ll have to create this paragraph inside component B.
+
+```jsx
+import A from './A'
+import B from './B'
+import { createContext, useState } from "react";
+
+function Parent() {
+  return <div className="parent-container">
+    <div>
+      <h3>Input (A)</h3>
+      <A/>
+    </div>
+    <div>
+      <h3>Display (B)</h3>
+      <B/>
+    </div>
+  </div>
+}
+
+export default Parent
+```
+
+**Solution:** Task file
