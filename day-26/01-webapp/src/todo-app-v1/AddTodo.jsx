@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 
-// minuto 50
 const AddTodo = ({ onAddTodo }) => {
   const [text, setText] = useState('')
   return (

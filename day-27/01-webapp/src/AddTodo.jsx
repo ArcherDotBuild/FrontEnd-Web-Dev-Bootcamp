@@ -1,7 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import { TodosDispatchContext } from './TodoApp'
 
-const AddTodo = ({ onAddTodo }) => {
+let nextId = 4
+const AddTodo = () => {
+  const dispatch = useContext(TodosDispatchContext)
   const [text, setText] = useState('')
+      
   return (
     <div className='add-todo-container'>
       <input
@@ -13,7 +17,7 @@ const AddTodo = ({ onAddTodo }) => {
       />
       <button
         onClick={() => {
-          onAddTodo(text)
+          dispatch({ type: 'add', id: nextId++, text })
           setText('')
         }}
       >
