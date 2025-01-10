@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import { useDispatch } from './TodosContext'
+import React, { useContext, useState } from 'react'
+import { TodosDispatchContext } from './TodoApp'
 
 let nextId = 4
 const AddTodo = () => {
-  const dispatch = useDispatch()
+  const dispatch = useContext(TodosDispatchContext)
   const [text, setText] = useState('')
       
   return (

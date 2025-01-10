@@ -1,8 +1,8 @@
-import React from 'react'
-import { useDispatch, useTodos } from './TodosContext'
+import React, { useContext } from 'react'
+import { TodosContext, TodosDispatchContext } from './TodoApp'
 
 const TodoList = () => {
-  const todos = useTodos()
+  const todos = useContext(TodosContext)
   return (
     <ul className='todo-list'>
       {todos.map((todo) => (
@@ -15,7 +15,7 @@ const TodoList = () => {
 }
 
 function Todo({ todo }) {
-  const dispatch = useDispatch()
+  const dispatch = useContext(TodosDispatchContext)
   return (
     <>
       <input
