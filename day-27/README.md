@@ -1,4 +1,4 @@
-![image info](./welcome-day-26.png)
+![image info](./welcome-day-27.png)
 
 # Welcome to Day 27
 
@@ -15,13 +15,10 @@
 
 ### Extra resources:
 
--
+- 0
 
 ### Roadmap
 
-- 1: 
-- 2: 
-- 3:  
-- 4: 
+- 1: 0
 
 #### 1. 
