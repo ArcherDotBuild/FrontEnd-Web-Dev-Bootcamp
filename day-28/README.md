@@ -13,8 +13,8 @@
 
 ### Extra resources:
 
--
-
+- https://randomuser.me/: Random User Generator
+A free, open-source API for generating random user data. Like Lorem Ipsum, but for people.
 ### Roadmap
 
 - 1: CSS-in-JS
