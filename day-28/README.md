@@ -14,13 +14,13 @@
 ### Extra resources:
 
 - https://randomuser.me/: Random User Generator
-A free, open-source API for generating random user data. Like Lorem Ipsum, but for people.
+  A free, open-source API for generating random user data. Like Lorem Ipsum, but for people.
+
 ### Roadmap
 
 - 1: CSS-in-JS
 - 2: Why Use Styled-Components or Emotion Over Inline Styles?
-- 3:
-- 4:
+- 3: useLoaderData React Hook from React Router (v6.4+)
 
 #### 1. CSS-in-JS
 
@@ -107,3 +107,69 @@ function App() {
 - Libraries allow you to write these directly in your components.
 - Styling with libraries makes code more readable and maintainable compared to writing raw `style` objects for every element.
 - Libraries like Emotion and Styled-Components allow you to define reusable themes or global styles.
+
+#### 3. useLoaderData is a React Hook from React Router (v6.4+)
+
+It is used to retrieve data loaded by a loader function in your route configuration. Here's an explanation of its purpose and usage:
+
+**What is a Loader in React Router?**
+A loader is a function you define in your route configuration that runs before rendering a route. Its purpose is to fetch or prepare data required for that route. The data returned by the loader is then made available to the route component using the `useLoaderData` hook.
+
+**What is useLoaderData?**
+`useLoaderData` is a hook that allows you to access the data returned by the loader function of the currently matched route. It's the recommended way to handle data fetching in React Router's data layer.
+
+**Why Use useLoaderData?**
+
+- **Centralized data fetching**: Loaders centralize data fetching logic, keeping it outside the components.
+- **Automatic handling**: React Router ensures that loaders run when a route is matched, and it passes the data seamlessly to the components via `useLoaderData`.
+- **Better UX**: Loaders can delay rendering until the data is fetched, avoiding the "loading flash."
+- **Error handling**: Loaders integrate with React Router’s error boundary mechanism.
+
+**Example Usage**
+
+1. **Define a Route with a Loader**
+
+```jsx
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+
+const router = createBrowserRouter([
+  {
+    path: '/users/:id',
+    element: <UserProfile />,
+    loader: async ({ params }) => {
+      // Fetch user data using the route's `id` parameter
+      const response = await fetch(`/api/users/${params.id}`)
+      if (!response.ok) throw new Response('User not found', { status: 404 })
+      return response.json()
+    },
+  },
+])
+
+export default function App() {
+  return <RouterProvider router={router} />
+}
+```
+
+2. **Access the Data in the Component with useLoaderData**
+
+```jsx
+import { useLoaderData } from 'react-router-dom'
+
+function UserProfile() {
+  const user = useLoaderData() // Access data returned by the loader
+
+  return (
+    <div>
+      <h1>{user.name}</h1>
+      <p>Email: {user.email}</p>
+    </div>
+  )
+}
+```
+
+**Key Points**
+
+1. **Where to Define Loaders:** Loaders are defined in the route configuration.
+2. **Automatic Matching:** useLoaderData fetches the data for the currently matched route, so there's no need to pass props manually.
+3. **Error Handling:** If a loader throws an error, you can use an error boundary for graceful handling.
+4. **Suspense Integration:** React Router automatically suspends rendering until the loader completes (useful with React's Suspense).
