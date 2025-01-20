@@ -6,18 +6,18 @@ import { createRoutesFromElements } from 'react-router-dom'
 import { Route } from 'react-router-dom'
 import { RouterProvider } from 'react-router-dom'
 import { Layout } from './App.jsx'
-import { loadContacts } from './loader.js'
+import { loadContacts, loadContact } from './loader.js'
+import Contact from './Contact.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path='/' element={<Layout />} loader={loadContacts}>
         <Route
-          path='/contacts/:contactId'
+        // params object available in the URL path
+          path='/contacts/:contactId' loader={({params}) => loadContact(params.contactId)}
           element={
-            <>
-              <h1>contacts</h1>
-            </>
+            <Contact />
           }
         />
       </Route>
