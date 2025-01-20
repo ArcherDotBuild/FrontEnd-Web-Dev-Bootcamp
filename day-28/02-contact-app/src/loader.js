@@ -1,5 +1,5 @@
 // const URL =
-//   'https://randomuser.me/api/?results=50&seed=4c8f9ad7f97ac8ff&inc=name,email,id,picture,cell'
+//   'https://randomuser.me/api/?results=50&seed=6f0145f2e462e8a6&inc=name,email,id,picture,cell&nat=IN'
 
 export async function loadContacts() {
   const result = await fetch(URL)
