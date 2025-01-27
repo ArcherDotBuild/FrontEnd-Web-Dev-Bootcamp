@@ -5,6 +5,7 @@ import { Typography } from '@mui/material'
 import ShoppingCartSharpIcon from '@mui/icons-material/ShoppingCartSharp'
 
 const Header = () => {
+  
   return (
     <AppBar position='sticky'>
       <Toolbar>

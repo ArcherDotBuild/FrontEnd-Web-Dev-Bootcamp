@@ -6,7 +6,7 @@ import { Outlet } from 'react-router-dom'
 
 const theme = createTheme({
   palette: {
-    mode: 'light'
+    mode: 'dark'
   }
 })
 
