@@ -2,6 +2,7 @@ import React from 'react'
 import AppBar from '@mui/material/AppBar'
 import {
   alpha,
+  Autocomplete,
   Badge,
   Box,
   Button,
@@ -28,7 +29,17 @@ const Search = styled('section')(({ theme }) => ({
 }))
 
 function SearchBar() {
-  return <Search></Search>
+  return (
+    <Search>
+      {/* <Autocomplete
+        disablePortal
+        id='combo-box-demo'
+        options={top100Films}
+        sx={{ width: 300 }}
+        renderInput={(params) => <TextField {...params} label='Movie' />}
+      /> */}
+    </Search>
+  )
 }
 
 const Header = () => {

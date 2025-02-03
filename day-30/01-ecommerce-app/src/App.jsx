@@ -9,7 +9,7 @@ import Home from './pages/Home'
 import Cart from './pages/Cart'
 import Login from './pages/Login'
 import { Provider } from 'react-redux'
-import { store } from '../store'
+import { store } from './store'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
