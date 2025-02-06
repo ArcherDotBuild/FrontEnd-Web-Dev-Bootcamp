@@ -15,7 +15,7 @@ import ShoppingCartSharpIcon from '@mui/icons-material/ShoppingCartSharp'
 import { useDispatch, useSelector } from 'react-redux'
 import { addToCart } from '../feature/cart-slice'
 import { fetchAllProducts } from '../feature/products-slice'
-
+//56
 const Home = () => {
   const theme = useTheme()
   const state = useSelector((state) => state.products)
