@@ -7,7 +7,9 @@ import {
   Box,
   Button,
   IconButton,
+  Select,
   styled,
+  TextField,
   Toolbar,
 } from '@mui/material'
 import { Typography } from '@mui/material'
@@ -29,15 +31,23 @@ const Search = styled('section')(({ theme }) => ({
 }))
 
 function SearchBar() {
+  const products = useSelector(state => state.products.value)
+
   return (
     <Search>
-      {/* <Autocomplete
+      <Select size='small'>
+        
+      </Select>
+      <Autocomplete
         disablePortal
         id='combo-box-demo'
-        options={top100Films}
+        options={Array.from(products, (prod) => ({
+          id: prod.id,
+          label: prod.title,
+        }))}
         sx={{ width: 300 }}
         renderInput={(params) => <TextField {...params} label='Movie' />}
-      /> */}
+      />
     </Search>
   )
 }
