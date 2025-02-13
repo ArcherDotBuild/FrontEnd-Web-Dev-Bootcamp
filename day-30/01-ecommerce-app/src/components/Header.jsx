@@ -7,6 +7,7 @@ import {
   Box,
   Button,
   IconButton,
+  MenuItem,
   Select,
   styled,
   TextField,
@@ -31,12 +32,24 @@ const Search = styled('section')(({ theme }) => ({
 }))
 
 function SearchBar() {
-  const products = useSelector(state => state.products.value)
+  const products = useSelector((state) => state.products.value)
 
   return (
     <Search>
-      <Select size='small'>
+      <Select size='small'
+      sx={{
+        m: 1,
+        '&': {
+
+        },
+      }}
+      variant='standard'
+      labelId='selected-category'
+      id='selected-category-id'
+      >
+        <MenuItem value='all'>all
         
+        </MenuItem>
       </Select>
       <Autocomplete
         disablePortal
@@ -46,7 +59,7 @@ function SearchBar() {
           label: prod.title,
         }))}
         sx={{ width: 300 }}
-        renderInput={(params) => <TextField {...params} label='Movie' />}
+        renderInput={(params) => <TextField {...params} />}
       />
     </Search>
   )
