@@ -6,5 +6,3 @@ const categoriesSlice = createSlice({
     value: []
   }
 })
-
-// 1.05

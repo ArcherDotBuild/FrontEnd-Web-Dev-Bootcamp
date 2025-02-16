@@ -19,9 +19,7 @@
 ### Roadmap
 
 - 1: Redux
-- 2:
-- 3:
-
+- 
 #### 1. Redux
 
 **What is Redux?**
