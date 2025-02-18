@@ -15,8 +15,9 @@ import {
 } from '@mui/material'
 import { Typography } from '@mui/material'
 import ShoppingCartSharpIcon from '@mui/icons-material/ShoppingCartSharp'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { getItemCount } from '../utils'
+import { fetchAllCategories } from '../feature/categories-slice'
 
 const Search = styled('section')(({ theme }) => ({
   position: 'relative',
@@ -32,24 +33,45 @@ const Search = styled('section')(({ theme }) => ({
 }))
 
 function SearchBar() {
-  const products = useSelector((state) => state.products.value)
+  const products = useSelector((state) => state.products?.value)
+  const categories = useSelector((state) => state.categories?.value)
+  const dispatch = useDispatch() // This is a hook from react-redux
+
+  if (!categories.length) {
+    dispatch(fetchAllCategories())
+  }
 
   return (
     <Search>
-      <Select size='small'
-      sx={{
-        m: 1,
-        '&': {
-
-        },
-      }}
-      variant='standard'
-      labelId='selected-category'
-      id='selected-category-id'
+      <Select
+        size='small'
+        sx={{
+          m: 1,
+          '&': {},
+        }}
+        variant='standard'
+        labelId='selected-category'
+        id='selected-category-id'
       >
-        <MenuItem value='all'>all
-        
+        <MenuItem
+          sx={{
+            textTransform: 'capitalize',
+          }}
+          defaultValue=''
+        >
+          all
         </MenuItem>
+        {categories?.map((category) => (
+          <MenuItem
+            sx={{
+              textTransform: 'capitalize',
+            }}
+            key={category}
+            defaultValue={category}
+          >
+            {category}
+          </MenuItem>
+        ))}
       </Select>
       <Autocomplete
         disablePortal

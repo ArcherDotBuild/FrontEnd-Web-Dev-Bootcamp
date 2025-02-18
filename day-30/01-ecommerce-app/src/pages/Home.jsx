@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useTheme } from '@emotion/react'
 import {
   Card,
@@ -23,9 +23,15 @@ const Home = () => {
   const { value: products, loading } = state ?? {}
   const dispatch = useDispatch() // This is a hook from react-redux
 
-  if (!products?.length) {
-    dispatch(fetchAllProducts())
-  }
+  // if (!products?.length) {
+  //   dispatch(fetchAllProducts())
+  // }
+
+  useEffect(() => {
+    if (!products?.length) {
+      dispatch(fetchAllProducts())
+    }
+  }, [products, dispatch]) // Only run when products change
 
   function addProductToCart(product) {
     console.log('Add to cart clicked')
