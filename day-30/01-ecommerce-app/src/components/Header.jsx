@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import AppBar from '@mui/material/AppBar'
 import {
   alpha,
@@ -36,14 +36,23 @@ function SearchBar() {
   const products = useSelector((state) => state.products?.value)
   const categories = useSelector((state) => state.categories?.value)
   const dispatch = useDispatch() // This is a hook from react-redux
+  const [selectedCategory, setSelectedCategory] = useState('all')
 
-  if (!categories.length) {
-    dispatch(fetchAllCategories())
+  useEffect(() => {
+    if (!categories.length) {
+      dispatch(fetchAllCategories())
+    }
+  }, [categories, dispatch])
+
+  function handleCategoryChange(event) {
+    const { value } = event.target
+    setSelectedCategory(value)
   }
 
   return (
     <Search>
       <Select
+        value={selectedCategory || 'all'}
         size='small'
         sx={{
           m: 1,
@@ -52,12 +61,13 @@ function SearchBar() {
         variant='standard'
         labelId='selected-category'
         id='selected-category-id'
+        onChange={handleCategoryChange}
       >
         <MenuItem
           sx={{
             textTransform: 'capitalize',
           }}
-          defaultValue=''
+          value='all'
         >
           all
         </MenuItem>
@@ -67,7 +77,7 @@ function SearchBar() {
               textTransform: 'capitalize',
             }}
             key={category}
-            defaultValue={category}
+            value={category}
           >
             {category}
           </MenuItem>
