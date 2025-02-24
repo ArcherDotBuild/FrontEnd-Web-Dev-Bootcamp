@@ -18,6 +18,7 @@ import ShoppingCartSharpIcon from '@mui/icons-material/ShoppingCartSharp'
 import { useDispatch, useSelector } from 'react-redux'
 import { getItemCount } from '../utils'
 import { fetchAllCategories } from '../feature/categories-slice'
+import { useNavigate } from 'react-router-dom'
 
 const Search = styled('section')(({ theme }) => ({
   position: 'relative',
@@ -37,6 +38,7 @@ function SearchBar() {
   const categories = useSelector((state) => state.categories?.value)
   const dispatch = useDispatch() // This is a hook from react-redux
   const [selectedCategory, setSelectedCategory] = useState('all')
+  const navigate = useNavigate()
 
   useEffect(() => {
     if (!categories.length) {
@@ -47,15 +49,17 @@ function SearchBar() {
   function handleCategoryChange(event) {
     const { value } = event.target
     setSelectedCategory(value)
+    navigate(selectedCategory === 'all' ? '/' : `/?category=${value}`)
   }
 
   return (
     <Search>
       <Select
-        value={selectedCategory || 'all'}
+        value={selectedCategory}
         size='small'
         sx={{
           m: 1,
+          textTransform: 'capitalize',
           '&': {},
         }}
         variant='standard'
