@@ -18,7 +18,7 @@ import ShoppingCartSharpIcon from '@mui/icons-material/ShoppingCartSharp'
 import { useDispatch, useSelector } from 'react-redux'
 import { getItemCount } from '../utils'
 import { fetchAllCategories } from '../feature/categories-slice'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 
 const Search = styled('section')(({ theme }) => ({
   position: 'relative',
@@ -43,6 +43,10 @@ function SearchBar() {
   const navigate = useNavigate()
 
   useEffect(() => {
+    setSelectedCategory(category ? category : 'all')
+  }, [category])
+
+  useEffect(() => {
     if (!categories.length) {
       dispatch(fetchAllCategories())
     }
@@ -50,8 +54,7 @@ function SearchBar() {
 
   function handleCategoryChange(event) {
     const { value } = event.target
-    setSelectedCategory(value)
-    navigate(selectedCategory === 'all' ? '/' : `/?category=${value}`)
+    navigate(value === 'all' ? '/' : `/?category=${value}`)
   }
 
   return (
@@ -92,17 +95,19 @@ function SearchBar() {
       <Autocomplete
         disablePortal
         id='combo-box-demo'
-        options={Array.from(products, (prod) => ({
-          id: prod.id,
-          label: prod.title,
-        }))}
+        options={Array.from(
+          selectedCategory === 'all'
+            ? products
+            : products.filter((prod) => prod.category === selectedCategory),
+          (prod) => ({ id: prod.id, label: prod.title })
+        )}
         sx={{ width: 300 }}
         renderInput={(params) => <TextField {...params} />}
       />
     </Search>
   )
 }
-
+// 1.30
 const Header = () => {
   const cartItems = useSelector((state) => state.cart?.value)
   const count = getItemCount(cartItems)
