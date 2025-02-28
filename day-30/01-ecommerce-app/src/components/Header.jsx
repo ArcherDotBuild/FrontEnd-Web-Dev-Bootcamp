@@ -52,9 +52,25 @@ function SearchBar() {
     }
   }, [categories, dispatch])
 
+  // 1.35
+
   function handleCategoryChange(event) {
     const { value } = event.target
     navigate(value === 'all' ? '/' : `/?category=${value}`)
+  }
+
+  function handleSearchChange(searchTerm) {
+    if (searchTerm) {
+      navigate(selectedCategory === 'all'
+        ? `?searchterm=${searchTerm}`
+        : `/?category=${selectedCategory}&search=${searchTerm}`)
+    } else {
+navigate(
+  selectedCategory === 'all'
+    ? `/`
+    : `/?category=${selectedCategory}`
+)
+    }
   }
 
   return (
@@ -93,6 +109,10 @@ function SearchBar() {
         ))}
       </Select>
       <Autocomplete
+        onChange={(e, value) => {
+          console.log('value: ', value)
+          handleSearchChange(value?.label)
+        }}
         disablePortal
         id='combo-box-demo'
         options={Array.from(
@@ -107,7 +127,7 @@ function SearchBar() {
     </Search>
   )
 }
-// 1.30
+
 const Header = () => {
   const cartItems = useSelector((state) => state.cart?.value)
   const count = getItemCount(cartItems)
