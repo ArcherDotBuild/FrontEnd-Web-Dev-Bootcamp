@@ -40,6 +40,7 @@ function SearchBar() {
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [searchParams] = useSearchParams()
   const category = searchParams.get('category')
+  const searchTerm = searchParams.get('searchTerm')
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -52,18 +53,18 @@ function SearchBar() {
     }
   }, [categories, dispatch])
 
-  // 1.35
-
   function handleCategoryChange(event) {
     const { value } = event.target
-    navigate(value === 'all' ? '/' : `/?category=${value}`)
+    navigate(value === 'all' ? '/' : `/?category=${value}${searchTerm}`)
   }
 
-  function handleSearchChange(searchTerm) {
+  function handleSearchChange(searchText) {
     if (searchTerm) {
-      navigate(selectedCategory === 'all'
-        ? `?searchterm=${searchTerm}`
-        : `/?category=${selectedCategory}&search=${searchTerm}`)
+      navigate(
+        selectedCategory === 'all'
+          ? `?searchterm=${searchTerm}`
+          : `/?category=${selectedCategory}&search=${searchText}`
+      )
     } else {
 navigate(
   selectedCategory === 'all'
