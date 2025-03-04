@@ -32,7 +32,7 @@ const Search = styled('section')(({ theme }) => ({
   marginLeft: 0,
   width: '100%',
 }))
-// 1:22
+// 1:23
 function SearchBar() {
   const products = useSelector((state) => state.products?.value)
   const categories = useSelector((state) => state.categories?.value)
