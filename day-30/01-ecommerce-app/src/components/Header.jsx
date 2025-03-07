@@ -19,7 +19,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getItemCount } from '../utils'
 import { fetchAllCategories } from '../feature/categories-slice'
 import { useNavigate, useSearchParams } from 'react-router-dom'
-
+// 1.40
 const Search = styled('section')(({ theme }) => ({
   position: 'relative',
   bordeRadius: theme.shape.borderRadius,
@@ -32,7 +32,7 @@ const Search = styled('section')(({ theme }) => ({
   marginLeft: 0,
   width: '100%',
 }))
-// 1:24
+
 function SearchBar() {
   const products = useSelector((state) => state.products?.value)
   const categories = useSelector((state) => state.categories?.value)
@@ -41,6 +41,7 @@ function SearchBar() {
   const [searchParams] = useSearchParams()
   const category = searchParams.get('category')
   const searchTerm = searchParams.get('searchTerm')
+  const [selectedProduct, setSelectedProduct] = useState(null)
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -55,22 +56,20 @@ function SearchBar() {
 
   function handleCategoryChange(event) {
     const { value } = event.target
-    navigate(value === 'all' ? '/' : `/?category=${value}${searchTerm}`)
+    navigate(value === 'all' ? '/' : `/?category=${value}${searchTerm ? '&searchterm=' + searchTerm : ''}`)
   }
 
   function handleSearchChange(searchText) {
-    if (searchTerm) {
+    if (searchText) {
       navigate(
         selectedCategory === 'all'
-          ? `?searchterm=${searchTerm}`
-          : `/?category=${selectedCategory}&search=${searchText}`
+          ? `?searchterm=${searchText}`
+          : `/?category=${selectedCategory}&searchterm=${searchText}`
       )
     } else {
-navigate(
-  selectedCategory === 'all'
-    ? `/`
-    : `/?category=${selectedCategory}`
-)
+      navigate(
+        selectedCategory === 'all' ? `/` : `/?category=${selectedCategory}`
+      )
     }
   }
 
@@ -110,6 +109,7 @@ navigate(
         ))}
       </Select>
       <Autocomplete
+        value={selectedProduct}
         onChange={(e, value) => {
           console.log('value: ', value)
           handleSearchChange(value?.label)
