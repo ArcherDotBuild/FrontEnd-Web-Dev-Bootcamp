@@ -37,7 +37,7 @@ function SearchBar() {
   const products = useSelector((state) => state.products?.value)
   const categories = useSelector((state) => state.categories?.value)
   const dispatch = useDispatch() // This is a hook from react-redux
-  const [selectedCategory, setSelectedCategory] = useState('all')
+  const [selectedCategory, setSelectedCategory] = useState('')
   const [searchParams] = useSearchParams()
   const category = searchParams.get('category')
   const searchTerm = searchParams.get('searchTerm')
@@ -59,19 +59,19 @@ function SearchBar() {
     navigate(value === 'all' ? '/' : `/?category=${value}${searchTerm ? '&searchterm=' + searchTerm : ''}`)
   }
 
-  function handleSearchChange(searchText) {
-    if (searchText) {
-      navigate(
-        selectedCategory === 'all'
-          ? `?searchterm=${searchText}`
-          : `/?category=${selectedCategory}&searchterm=${searchText}`
-      )
-    } else {
-      navigate(
-        selectedCategory === 'all' ? `/` : `/?category=${selectedCategory}`
-      )
-    }
+function handleSearchChange(searchText) {
+  if (searchText) {
+    navigate(
+      selectedCategory === 'all'
+        ? `?searchterm=${searchText}`
+        : `/?category=${selectedCategory}&searchterm=${searchText}`
+    )
+  } else {
+    navigate(
+      selectedCategory === 'all' ? `/` : `/?category=${selectedCategory}`
+    )
   }
+}
 
   return (
     <Search>
@@ -81,7 +81,13 @@ function SearchBar() {
         sx={{
           m: 1,
           textTransform: 'capitalize',
-          '&': {},
+          '&': {
+            '::before': {
+              ':hover': {
+                border: 'none',
+              },
+            },     
+          },
         }}
         variant='standard'
         labelId='selected-category'
@@ -109,19 +115,21 @@ function SearchBar() {
         ))}
       </Select>
       <Autocomplete
+        freeSolo
+        id='selected-product'
         value={selectedProduct}
         onChange={(e, value) => {
-          console.log('value: ', value)
+          console.log(value)
           handleSearchChange(value?.label)
         }}
         disablePortal
-        id='combo-box-demo'
-        options={Array.from(
+        options={
           selectedCategory === 'all'
-            ? products
-            : products.filter((prod) => prod.category === selectedCategory),
-          (prod) => ({ id: prod.id, label: prod.title })
-        )}
+            ? products.map((prod) => ({ id: prod.id, label: prod.title })) // ✅ Correctly mapping
+            : products
+                .filter((prod) => prod.category === selectedCategory)
+                .map((prod) => ({ id: prod.id, label: prod.title })) // ✅ Ensuring correct transformation
+        }
         sx={{ width: 300 }}
         renderInput={(params) => <TextField {...params} />}
       />
