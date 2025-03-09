@@ -20,6 +20,7 @@ import { useSearchParams } from 'react-router-dom'
 const Home = () => {
   const [searchParams] = useSearchParams()
   const category = searchParams.get('category')
+  const searchTerm = searchParams.get('searchTerm')
   const theme = useTheme()
   const state = useSelector((state) => state.products)
   const { value: products, loading } = state ?? {}
@@ -35,16 +36,18 @@ const Home = () => {
     }
   }, [products, dispatch]) // Only run when products change
 
+
   function addProductToCart(product) {
-    console.log('Add to cart clicked')
     // Dispatch an action to add the product to the cart
     dispatch(addToCart({ product, quantity: 1 }))
   }
 
   let filteredProducts =
-    category && category !== 'all'
-      ? products?.filter((prod) => prod.category === category)
-      : products
+    category && category !== "all" ? products.filter((prod) => prod.category === category) : products;
+
+  filteredProducts = searchTerm
+    ? filteredProducts.filter((prod) => prod.title.toLowerCase().includes(searchTerm.toLowerCase()))
+    : filteredProducts;
 
   return (
     // <pre>{JSON.stringify(products, null, 2)}</pre>
