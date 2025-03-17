@@ -12,6 +12,7 @@ import {
   styled,
   TextField,
   Toolbar,
+  useTheme,
 } from '@mui/material'
 import { Typography } from '@mui/material'
 import ShoppingCartSharpIcon from '@mui/icons-material/ShoppingCartSharp'
@@ -32,8 +33,9 @@ const Search = styled('section')(({ theme }) => ({
   marginLeft: 0,
   width: '100%',
 }))
-// 1.45.00
+
 function SearchBar() {
+  const theme = useTheme()
   const products = useSelector((state) => state.products?.value)
   const categories = useSelector((state) => state.categories?.value)
   const dispatch = useDispatch() // This is a hook from react-redux
@@ -56,22 +58,26 @@ function SearchBar() {
 
   function handleCategoryChange(event) {
     const { value } = event.target
-    navigate(value === 'all' ? '/' : `/?category=${value}${searchTerm ? '&searchterm=' + searchTerm : ''}`)
+    navigate(
+      value === 'all'
+        ? '/'
+        : `/?category=${value}${searchTerm ? '&searchterm=' + searchTerm : ''}`
+    )
   }
 
-function handleSearchChange(searchText) {
-  if (searchText) {
-    navigate(
-      selectedCategory === 'all'
-        ? `?searchterm=${searchText}`
-        : `/?category=${selectedCategory}&searchterm=${searchText}`
-    )
-  } else {
-    navigate(
-      selectedCategory === 'all' ? `/` : `/?category=${selectedCategory}`
-    )
+  function handleSearchChange(searchText) {
+    if (searchText) {
+      navigate(
+        selectedCategory === 'all'
+          ? `?searchterm=${searchText}`
+          : `/?category=${selectedCategory}&searchterm=${searchText}`
+      )
+    } else {
+      navigate(
+        selectedCategory === 'all' ? `/` : `/?category=${selectedCategory}`
+      )
+    }
   }
-}
 
   return (
     <Search>
@@ -86,7 +92,16 @@ function handleSearchChange(searchText) {
               ':hover': {
                 border: 'none',
               },
-            },     
+            },
+            '::before, &::after': {
+              border: 'none',
+            },
+            '.MuiSelect-standard': {
+              color: 'common.white',
+            },
+            '.MuiSelect-icon': {
+              fill: 'theme.common.palette.white',
+            },
           },
         }}
         variant='standard'
