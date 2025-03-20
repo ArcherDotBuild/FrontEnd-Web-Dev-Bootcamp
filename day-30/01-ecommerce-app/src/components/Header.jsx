@@ -99,9 +99,6 @@ function SearchBar() {
             '.MuiSelect-standard': {
               color: 'common.white',
             },
-            '.MuiSelect-icon': {
-              fill: 'theme.common.palette.white',
-            },
           },
         }}
         variant='standard'
