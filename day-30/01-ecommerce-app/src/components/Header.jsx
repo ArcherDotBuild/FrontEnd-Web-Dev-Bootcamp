@@ -15,6 +15,7 @@ import {
   useTheme,
 } from '@mui/material'
 import { Typography } from '@mui/material'
+import SearchIcon from '@mui/icons-material/Search'
 import ShoppingCartSharpIcon from '@mui/icons-material/ShoppingCartSharp'
 import { useDispatch, useSelector } from 'react-redux'
 import { getItemCount } from '../utils'
@@ -37,12 +38,29 @@ const Search = styled('section')(({ theme }) => ({
 const StyleAutocomplete = styled(Autocomplete)(({ theme }) => ({
   color: 'inherit',
   width: '100%',
-  '& .MuiTetField-root': {
-    padding: `calc(1em + ${theme.spacing(4)}px)`,
+  '& .MuiTextField-root': {
+    paddingRight: `calc(1em + ${theme.spacing(4)})`,
   },
   '& .MuiInputBase-input': {
-    color: 'inherit',
+    color: theme.palette.common.white,
   },
+  '& .MuiOutlinedInput-notchedOutline': {
+    border: 'none',
+  },
+  '& .MuiSvgIcon-root': {
+    fill: theme.palette.common.white,
+  },
+}))
+
+const SearchIconWrapper = styled('section')(({ theme }) => ({
+  padding: theme.spacing(0, 2),
+  height: '100%',
+  position: 'absolute',
+  right: 0,
+  pointerEvents: 'none',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
 }))
 
 function SearchBar() {
@@ -111,7 +129,7 @@ function SearchBar() {
               color: 'common.white',
             },
             '.MuiSelect-icon': {
-              fill: 'theme.common.palette.white',
+              fill: theme.palette.common.white,
             },
           },
         }}
@@ -140,7 +158,7 @@ function SearchBar() {
           </MenuItem>
         ))}
       </Select>
-      <Autocomplete
+      <StyleAutocomplete
         freeSolo
         id='selected-product'
         value={selectedProduct}
@@ -156,9 +174,12 @@ function SearchBar() {
                 .filter((prod) => prod.category === selectedCategory)
                 .map((prod) => ({ id: prod.id, label: prod.title })) // ✅ Ensuring correct transformation
         }
-        sx={{ width: 300 }}
+        // sx={{ width: 300 }}
         renderInput={(params) => <TextField {...params} />}
-      />
+      />{' '}
+      <SearchIconWrapper>
+       <SearchIcon />
+      </SearchIconWrapper>
     </Search>
   )
 }
