@@ -20,7 +20,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getItemCount } from '../utils'
 import { fetchAllCategories } from '../feature/categories-slice'
 import { useNavigate, useSearchParams } from 'react-router-dom'
-// 1.40
+
 const Search = styled('section')(({ theme }) => ({
   position: 'relative',
   bordeRadius: theme.shape.borderRadius,
@@ -32,6 +32,17 @@ const Search = styled('section')(({ theme }) => ({
   marginRight: theme.spacing(2),
   marginLeft: 0,
   width: '100%',
+}))
+
+const StyleAutocomplete = styled(Autocomplete)(({ theme }) => ({
+  color: 'inherit',
+  width: '100%',
+  '& .MuiTetField-root': {
+    padding: `calc(1em + ${theme.spacing(4)}px)`,
+  },
+  '& .MuiInputBase-input': {
+    color: 'inherit',
+  },
 }))
 
 function SearchBar() {
@@ -98,6 +109,9 @@ function SearchBar() {
             },
             '.MuiSelect-standard': {
               color: 'common.white',
+            },
+            '.MuiSelect-icon': {
+              fill: 'theme.common.palette.white',
             },
           },
         }}
