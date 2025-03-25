@@ -26,10 +26,6 @@ const Home = () => {
   const { value: products, loading } = state ?? {}
   const dispatch = useDispatch() // This is a hook from react-redux
 
-  // if (!products?.length) {
-  //   dispatch(fetchAllProducts())
-  // }
-
   useEffect(() => {
     if (!products?.length) {
       dispatch(fetchAllProducts())
@@ -65,6 +61,7 @@ const Home = () => {
                   height: '100%',
                   display: 'flex',
                   flexDirection: 'column',
+                  padding: theme.spacing(2,0),
                 }}
               >
                 <CardMedia
