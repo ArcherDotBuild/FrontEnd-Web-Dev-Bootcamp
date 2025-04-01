@@ -37,8 +37,10 @@ const Cart = () => {
                     }}
                     alt={title}
                   />
-                  {/* 20 */}
-                  <CardContent>
+                  <CardContent sx={{ display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center'
+                  }}>
                     <Box
                       sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
                     >
@@ -50,6 +52,11 @@ const Cart = () => {
                           value={quantity}
                         ></TextField>
                       </form>
+                    </Box>
+                    <Box>
+                      <Typography variant='h5' paragraph>
+                        
+                      </Typography>                      
                     </Box>
                   </CardContent>
                 </Card>
