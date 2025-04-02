@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography'
 import Card from '@mui/material/Card'
 import { useSelector } from 'react-redux'
 import { Box, CardContent, CardMedia, Rating, TextField } from '@mui/material'
+import { getSubtotal } from '../utils'
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart?.value)
@@ -37,10 +38,13 @@ const Cart = () => {
                     }}
                     alt={title}
                   />
-                  <CardContent sx={{ display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center'
-                  }}>
+                  <CardContent
+                    sx={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                    }}
+                  >
                     <Box
                       sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
                     >
@@ -55,8 +59,8 @@ const Cart = () => {
                     </Box>
                     <Box>
                       <Typography variant='h5' paragraph>
-                        
-                      </Typography>                      
+                        {getSubtotal([{ product, quantity }])}                        
+                      </Typography>
                     </Box>
                   </CardContent>
                 </Card>
@@ -66,6 +70,7 @@ const Cart = () => {
         </Grid>
         <Grid ite md={4}>
           <Typography variant='h4'>Subtotal</Typography>
+          <Typography variant='h4'>{getSubtotal(cart)}</Typography>
         </Grid>
       </Grid>
     </Container>
