@@ -52,6 +52,12 @@ const Cart = () => {
                       <Rating readOnly precision={0.5} value={rating.rate} />
                       <form>
                         <TextField
+                          sx={{
+                            width: theme.spacing(8),
+                          }}
+                          id={`${id}-product-id`}
+                          type='number'
+                          variant='standard'
                           label='Quantity'
                           value={quantity}
                         ></TextField>
@@ -59,7 +65,7 @@ const Cart = () => {
                     </Box>
                     <Box>
                       <Typography variant='h5' paragraph>
-                        {getSubtotal([{ product, quantity }])}                        
+                        {getSubtotal([{ product, quantity }])}
                       </Typography>
                     </Box>
                   </CardContent>
