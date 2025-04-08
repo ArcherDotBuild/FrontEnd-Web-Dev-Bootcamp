@@ -55,6 +55,10 @@ const Cart = () => {
                           sx={{
                             width: theme.spacing(8),
                           }}
+                          inputProps={{
+                            min: 0,
+                            max: 10,
+                          }}
                           id={`${id}-product-id`}
                           type='number'
                           variant='standard'
