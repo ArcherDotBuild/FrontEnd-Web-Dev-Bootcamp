@@ -7,7 +7,7 @@ import Card from '@mui/material/Card'
 import { useSelector } from 'react-redux'
 import { Box, CardContent, CardMedia, Rating, TextField } from '@mui/material'
 import { getSubtotal } from '../utils'
-
+// 33 minutes-
 const Cart = () => {
   const cart = useSelector((state) => state.cart?.value)
   const theme = useTheme()
