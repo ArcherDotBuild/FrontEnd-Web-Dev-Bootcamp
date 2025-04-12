@@ -5,12 +5,27 @@ import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 import Card from '@mui/material/Card'
 import { useSelector } from 'react-redux'
-import { Box, CardContent, CardMedia, Rating, TextField } from '@mui/material'
+import {
+  Box,
+  Button,
+  CardContent,
+  CardMedia,
+  Rating,
+  TextField,
+} from '@mui/material'
 import { getSubtotal } from '../utils'
-// 33 minutes-
+// 42 minutes
 const Cart = () => {
   const cart = useSelector((state) => state.cart?.value)
+  const subtotal = getSubtotal(cart)
   const theme = useTheme()
+
+   function goToHome() {
+     navigate('/')
+   }
+   function checkoutItems() {
+     navigate('/checkout')
+   }
   return (
     <Container sx={{ py: 8 }}>
       <Grid container spacing={2}>
@@ -48,7 +63,7 @@ const Cart = () => {
                     <Box
                       sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
                     >
-                      <Typography variant='h6'>{title}</Typography>
+                      <Typography variant='h5'>{title}</Typography>
                       <Rating readOnly precision={0.5} value={rating.rate} />
                       <form>
                         <TextField
@@ -78,9 +93,36 @@ const Cart = () => {
             )
           })}
         </Grid>
-        <Grid ite md={4}>
-          <Typography variant='h4'>Subtotal</Typography>
-          <Typography variant='h4'>{getSubtotal(cart)}</Typography>
+        <Grid
+          ite
+          md={4}
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+          }}
+        >
+          <Box
+            sx={{
+              padding: 2,
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 2,
+            }}
+          >
+            <Card>
+              <Typography variant='h4'>Subtotal</Typography>
+              <Typography variant='h5'>{subtotal}</Typography>
+              {subtotal > 0 ? (
+                <Button variant='contained' onClick={checkoutItems}>
+                  Buy now
+                </Button>
+              ) : (
+                <Button variant='contained' onClick={goToHome}>
+                  Shop products
+                </Button>
+              )}
+            </Card>
+          </Box>
         </Grid>
       </Grid>
     </Container>
