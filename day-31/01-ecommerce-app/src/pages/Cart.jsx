@@ -4,7 +4,7 @@ import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 import Card from '@mui/material/Card'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import {
   Box,
   Button,
@@ -14,18 +14,28 @@ import {
   TextField,
 } from '@mui/material'
 import { getSubtotal } from '../utils'
-// 42 minutes
+import { addToCart, removeFromCart } from '../feature/cart-slice'
+
 const Cart = () => {
   const cart = useSelector((state) => state.cart?.value)
-  const subtotal = getSubtotal(cart)
+  const subtotal = getSubtotal(cart)?.toFixed(2)
   const theme = useTheme()
+  const dispatch = useDispatch()
 
-   function goToHome() {
-     navigate('/')
-   }
-   function checkoutItems() {
-     navigate('/checkout')
-   }
+  function updateQuantity(e, { product, quantity }) {
+    const updatedQuantity = e.target.valueAsNumber
+    if ((updatedQuantity < quantity)) {
+      dispatch(removeFromCart({ product }))
+    } else {
+      dispatch(addToCart({ product }))
+    }
+  }
+
+  function goToHome() {
+    navigate('/')}
+  function checkoutItems() {
+    navigate('/checkout')
+  }
   return (
     <Container sx={{ py: 8 }}>
       <Grid container spacing={2}>
@@ -79,6 +89,9 @@ const Cart = () => {
                           variant='standard'
                           label='Quantity'
                           value={quantity}
+                          onChange={(e) =>
+                            updateQuantity(e, { product, quantity })
+                          }
                         ></TextField>
                       </form>
                     </Box>
