@@ -15,7 +15,7 @@ import {
 } from '@mui/material'
 import { getSubtotal } from '../utils'
 import { addToCart, removeFromCart } from '../feature/cart-slice'
-
+// 55 minute
 const Cart = () => {
   const cart = useSelector((state) => state.cart?.value)
   const subtotal = getSubtotal(cart)?.toFixed(2)
@@ -97,7 +97,7 @@ const Cart = () => {
                     </Box>
                     <Box>
                       <Typography variant='h5' paragraph>
-                        {getSubtotal([{ product, quantity }])}
+                        {getSubtotal([{ product, quantity }])?.toFixed(2)}
                       </Typography>
                     </Box>
                   </CardContent>
