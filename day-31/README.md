@@ -11,7 +11,7 @@
 
 ### Extra resources:
 
-- 
+- Your Temporary Email Address: https://temp-mail.org/
 
 ### Roadmap
 
