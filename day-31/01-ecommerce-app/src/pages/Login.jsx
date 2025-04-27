@@ -19,9 +19,9 @@ import { useNavigate } from 'react-router-dom'
 const Login = () => {
   const theme = useTheme()
   const navigate = useNavigate()
+  const { signIn } = useAuth()
 
   async function login(event) {
-    const { signIn } = useAuth()
     event.preventDefault()
     const { email, password } = event.target
     await signIn(email.value, password.value)

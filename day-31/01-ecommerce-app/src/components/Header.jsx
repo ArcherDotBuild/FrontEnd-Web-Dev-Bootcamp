@@ -7,6 +7,7 @@ import {
   Box,
   Button,
   IconButton,
+  Menu,
   MenuItem,
   Select,
   styled,
@@ -21,6 +22,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getItemCount } from '../utils'
 import { fetchAllCategories } from '../feature/categories-slice'
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
+import { useAuth } from '../firebase/Auth'
 
 const Search = styled('section')(({ theme }) => ({
   position: 'relative',
@@ -62,8 +64,6 @@ const SearchIconWrapper = styled('section')(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'center',
 }))
-
-
 
 const StyledLink = styled(Link)(({ theme }) => ({
   color: theme.palette.common.white,
@@ -185,16 +185,24 @@ function SearchBar() {
         renderInput={(params) => <TextField {...params} />}
       />{' '}
       <SearchIconWrapper>
-       <SearchIcon />
+        <SearchIcon />
       </SearchIconWrapper>
     </Search>
   )
 }
 
 const Header = () => {
+  const { user } = useAuth()
   const cartItems = useSelector((state) => state.cart?.value)
   const count = getItemCount(cartItems)
   const navigate = useNavigate()
+
+  //  1.35
+  const renderMenu = (
+    <Menu>
+      <h1></h1>
+    </Menu>
+  )
 
   function navigateToCart() {
     navigate('/cart')
@@ -212,9 +220,9 @@ const Header = () => {
           <StyledLink to='/'>Ecommerce</StyledLink>
         </Typography>
         <SearchBar />
-        <Box sx={{ display: { md: 'flex' } }}>
+        <Box flexBasis={500} sx={{ display: { md: 'flex' } }}>
           <IconButton
-          onClick={navigateToCart}
+            onClick={navigateToCart}
             size='large'
             aria-label='shows cart items count'
             color='inherit'
@@ -223,8 +231,14 @@ const Header = () => {
               <ShoppingCartSharpIcon />
             </Badge>
           </IconButton>
+          {user ? (
+            <Button color='inherit'>
+              Hello, {user?.displayName ?? user.email}
+            </Button>
+          ) : (
+            <Button color='inherit'>Login</Button>
+          )}
         </Box>
-        <Button color='inherit'>Login</Button>
       </Toolbar>
     </AppBar>
   )
