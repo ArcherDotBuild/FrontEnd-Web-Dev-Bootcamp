@@ -15,12 +15,14 @@ import {
 } from '@mui/material'
 import { getSubtotal } from '../utils'
 import { addToCart, removeFromCart } from '../feature/cart-slice'
+import { useNavigate } from 'react-router-dom'
 
 const Cart = () => {
-  const cart = useSelector((state) => state.cart?.value)
-  const subtotal = getSubtotal(cart)?.toFixed(2)
-  const theme = useTheme()
-  const dispatch = useDispatch()
+const cart = useSelector((state) => state.cart?.value)
+const subtotal = getSubtotal(cart)?.toFixed(2)
+const theme = useTheme()
+const dispatch = useDispatch()
+const navigate = useNavigate()
 
   function updateQuantity(e, { product, quantity }) {
     const updatedQuantity = e.target.valueAsNumber

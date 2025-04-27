@@ -3,14 +3,17 @@
 
 import { createBrowserRouter } from 'react-router-dom'
 import { createRoutesFromElements } from 'react-router-dom'
-import { Route, RouterProvider } from 'react-router-dom'
+import { Route } from 'react-router-dom'
+import { RouterProvider } from 'react-router-dom'
 import Layout from './components/Layout'
 import Home from './pages/Home'
 import Cart from './pages/Cart'
 import Login from './pages/Login'
 import { Provider } from 'react-redux'
 import { store } from './store'
-import AuthProvider from './firebase/Auth'
+import Checkout from './pages/Checkout'
+import AuthProvider, { useAuth } from './firebase/Auth'
+import { Navigate } from 'react-router-dom'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -20,7 +23,7 @@ const router = createBrowserRouter(
         <Route path='/cart' element={<Cart />} />
         <Route path='/checkout' element={<Checkout />} />
       </Route>
-      <Route path='/login' element={<Login />} />
+      <Route path='/login' index element={<Login />} />
     </>
   )
 )
