@@ -196,12 +196,27 @@ const Header = () => {
   const cartItems = useSelector((state) => state.cart?.value)
   const count = getItemCount(cartItems)
   const navigate = useNavigate()
+  const [anchorEl, setAnchorEl] = useState(null)
+  const isMenuOpen = Boolean(anchorEl)
 
-  //  1.35
+  function handleProfileMenuOpen(e) {
+    setAnchorEl(e.currentTarget)
+  }
+
+  function handleMenuClose() {
+    setAnchorEl(null)
+  }
+
   const renderMenu = (
-    <Menu>
-      <h1></h1>
-    </Menu>
+    <Menu
+      anchorEl={anchorEl}
+      id='user-profile-menu'
+      keepMounted
+      transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+      anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+      open={isMenuOpen}
+      onClose={handleMenuClose}
+    ></Menu>
   )
 
   function navigateToCart() {
