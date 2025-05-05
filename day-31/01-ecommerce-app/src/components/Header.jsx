@@ -163,7 +163,7 @@ function SearchBar() {
           >
             {category}
           </MenuItem>
-        ))}
+        ))} 
       </Select>
       <StyleAutocomplete
         freeSolo
@@ -181,7 +181,6 @@ function SearchBar() {
                 .filter((prod) => prod.category === selectedCategory)
                 .map((prod) => ({ id: prod.id, label: prod.title })) // ✅ Ensuring correct transformation
         }
-        // sx={{ width: 300 }}
         renderInput={(params) => <TextField {...params} />}
       />{' '}
       <SearchIconWrapper>
@@ -192,7 +191,7 @@ function SearchBar() {
 }
 
 const Header = () => {
-  const { user } = useAuth()
+  const { user, signOut } = useAuth()
   const cartItems = useSelector((state) => state.cart?.value)
   const count = getItemCount(cartItems)
   const navigate = useNavigate()
@@ -207,6 +206,11 @@ const Header = () => {
     setAnchorEl(null)
   }
 
+  async function logout() {
+   await signOut()
+   navigate('/login')
+  }
+
   const renderMenu = (
     <Menu
       anchorEl={anchorEl}
@@ -216,7 +220,11 @@ const Header = () => {
       anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       open={isMenuOpen}
       onClose={handleMenuClose}
-    ></Menu>
+    >
+      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+      <MenuItem onClick={handleMenuClose}>My Account</MenuItem>
+      <MenuItem onClick={logout}>Logout</MenuItem>
+    </Menu>
   )
 
   function navigateToCart() {
@@ -224,39 +232,43 @@ const Header = () => {
   }
 
   return (
-    <AppBar
-      position='sticky'
-      sx={{
-        py: 1,
-      }}
-    >
-      <Toolbar sx={{ display: 'flex', gap: 2 }}>
-        <Typography variant='h6' color='inherit'>
-          <StyledLink to='/'>Ecommerce</StyledLink>
-        </Typography>
-        <SearchBar />
-        <Box flexBasis={500} sx={{ display: { md: 'flex' } }}>
-          <IconButton
-            onClick={navigateToCart}
-            size='large'
-            aria-label='shows cart items count'
-            color='inherit'
-          >
-            <Badge badgeContent={count} color='error'>
-              <ShoppingCartSharpIcon />
-            </Badge>
-          </IconButton>
-          {user ? (
-            <Button color='inherit'>
-              Hello, {user?.displayName ?? user.email}
-            </Button>
-          ) : (
-            <Button color='inherit'>Login</Button>
-          )}
-        </Box>
-      </Toolbar>
-    </AppBar>
+    <>
+      <AppBar
+        position='sticky'
+        sx={{
+          py: 1,
+        }}
+      >
+        <Toolbar sx={{ display: 'flex', gap: 2 }}>
+          <Typography variant='h6' color='inherit'>
+            <StyledLink to='/'>Ecommerce</StyledLink>
+          </Typography>
+          <SearchBar />
+          <Box flexBasis={500} sx={{ display: { md: 'flex' } }}>
+            <IconButton
+              onClick={navigateToCart}
+              size='large'
+              aria-label='shows cart items count'
+              color='inherit'
+            >
+              <Badge badgeContent={count} color='error'>
+                <ShoppingCartSharpIcon />
+              </Badge>
+            </IconButton>
+            {user ? (
+              <Button onClick={handleProfileMenuOpen} color='inherit'>
+                Hello, {user?.displayName ?? user.email}
+              </Button>
+            ) : (
+              <Button color='inherit'>Login</Button>
+            )}
+          </Box>
+        </Toolbar>
+      </AppBar>
+      {renderMenu}
+    </>
   )
 }
 
 export default Header
+// 141
