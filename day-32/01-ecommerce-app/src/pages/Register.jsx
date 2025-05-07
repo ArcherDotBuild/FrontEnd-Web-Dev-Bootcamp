@@ -28,5 +28,5 @@ const Register = () => {
     </Box>
   </Container>
 }
-
+// 6 min
 export default Register
