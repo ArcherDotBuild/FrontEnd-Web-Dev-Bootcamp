@@ -91,6 +91,13 @@ const Login = () => {
           >
             Sign In
           </Button>
+          <Grid container justifyContent={'flex-end'}>
+            <Grid item>
+              <Link href='/register' variant='body2'>
+                New User? Sign Up
+              </Link>
+            </Grid>
+          </Grid>
         </form>
       </Box>
     </Container>
