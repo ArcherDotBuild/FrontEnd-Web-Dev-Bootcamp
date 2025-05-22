@@ -110,5 +110,6 @@ navigate('/login')
     </Container>
   )
 }
-// 9 min
+// 13 mins
+
 export default Register
