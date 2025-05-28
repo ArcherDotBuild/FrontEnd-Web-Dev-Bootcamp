@@ -29,8 +29,8 @@ const Register = () => {
     // const name = data.get('name')
     // const email = data.get('email')
     // const password = data.get('password')
-await signUp(data.get('email'), data.get('password'), data.get('name'))
-navigate('/login')
+    await signUp(data.get('email'), data.get('password'), data.get('name'))
+    navigate('/login')
   }
 
   return (
@@ -110,6 +110,5 @@ navigate('/login')
     </Container>
   )
 }
-// 13 mins
 
 export default Register
