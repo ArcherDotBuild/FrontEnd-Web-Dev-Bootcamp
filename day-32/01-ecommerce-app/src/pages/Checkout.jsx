@@ -29,25 +29,18 @@ const Checkout = () => {
         variant='outlined'
         sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}
       >
-        <Typogragy component='h1' variant='h4' align='center'></Typogragy>
-        <Stepper activeStep={0} sx={{ pt: 3, pb: 5 }}></Stepper>
-          <Step>
-            <StepLabel activeStep={activeStep}
-            sx={{
-              pt: 3,
-              pb: 5,
-            }}
-            >Shipping Address</StepLabel>
-          </Step>
-          <Step>
-            <StepLabel>Payment Details</StepLabel>
-          </Step>
-          <Step>
-            <StepLabel>Review Your Order</StepLabel>
-          </Step>
+        <Typography component='h1' variant='h4' align='center'>Checkout</Typography>
+        <Stepper activeStep={activeStep} sx={{ pt: 3, pb: 5 }}>
+            {steps.map((label) => (
+              <Step key={label}>
+                <StepLabel>{label}</StepLabel>
+              </Step>
+            ))}
+        </Stepper>
       </Paper>
     </Container>
   )
 }
+// 29
 
 export default Checkout
