@@ -17,13 +17,14 @@ import { useDispatch } from 'react-redux'
 // import { clearCart } from '../feature/cart-slice'
 // import { clearCheckoutInformation } from '../feature/checkout-slice'
 import { Link } from 'react-router-dom'
+import AddressForm from '../components/AddressForm'
 
 const steps = ['Shipping Address', 'Payment Details', 'Review Your Order']
 
-function getStepContent(step) {
+function getStepContent(activeStep) {
   switch (activeStep) {
     case 0:
-      return <h1>address</h1>
+      return <AddressForm />
     case 1:
       return <h1>payment details</h1>
     case 2:
@@ -76,8 +77,26 @@ const Checkout = () => {
           <>
             {getStepContent(activeStep)}
             <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-              {activeStep !== 0 && <Button onClick={handleBack}>Back</Button>}
-              <Button>
+              {activeStep !== 0 && (
+                <Button
+                  sx={{
+                    mt: 3,
+                    ml: 1,
+                  }}
+                  onClick={handleBack}
+                  variant='contained'
+                >
+                  Back
+                </Button>
+              )}
+              <Button
+                sx={{
+                  mt: 3,
+                  ml: 1,
+                }}
+                onClick={handleNext}
+                variant='contained'
+              >
                 {activeStep === steps.length - 1 ? 'Place Order' : 'Next'}
               </Button>
             </Box>
