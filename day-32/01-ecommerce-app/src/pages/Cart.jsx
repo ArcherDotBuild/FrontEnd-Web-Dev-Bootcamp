@@ -109,7 +109,7 @@ const navigate = useNavigate()
           })}
         </Grid>
         <Grid
-          ite
+          item
           md={4}
           sx={{
             display: 'flex',

@@ -7,6 +7,10 @@ import {
   FormControlLabel,
 } from '@mui/material'
 
+function handleChange(event) {
+  console.log(event.target)
+}
+
 const AddressForm = () => {
   return (
     <>
@@ -24,7 +28,6 @@ const AddressForm = () => {
               fullWidth
               autoComplete='given-name'
               variant='standard'
-              defaultValue={address.firstName ?? ''}
             />
           </Grid>
           <Grid item xs={12} sm={6}>
@@ -36,12 +39,10 @@ const AddressForm = () => {
               fullWidth
               autoComplete='family-name'
               variant='standard'
-              defaultValue={address.lastName ?? ''}
             />
           </Grid>
           <Grid item xs={12}>
             <TextField
-              defaultValue={address.address1 ?? ''}
               required
               id='address1'
               name='address1'
@@ -52,7 +53,6 @@ const AddressForm = () => {
           </Grid>
           <Grid item xs={12}>
             <TextField
-              defaultValue={address.address2 ?? ''}
               required
               id='address2'
               name='address2'
@@ -63,7 +63,6 @@ const AddressForm = () => {
           </Grid>
           <Grid item xs={12}>
             <TextField
-              defaultValue={address.city ?? ''}
               required
               id='city'
               name='city'
@@ -74,7 +73,6 @@ const AddressForm = () => {
           </Grid>
           <Grid item xs={12}>
             <TextField
-              defaultValue={address.zipCode ?? ''}
               required
               id='zipCode'
               name='zipCode'
@@ -85,7 +83,6 @@ const AddressForm = () => {
           </Grid>
           <Grid item xs={12}>
             <TextField
-              defaultValue={address.country ?? ''}
               required
               id='country'
               name='country'
@@ -99,5 +96,5 @@ const AddressForm = () => {
     </>
   )
 }
-// 50
+// 54
 export default AddressForm
