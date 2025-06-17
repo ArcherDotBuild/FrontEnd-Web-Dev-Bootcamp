@@ -6,12 +6,16 @@ import {
   TextField,
   FormControlLabel,
 } from '@mui/material'
+import { useDispatch, useSelector } from 'react-redux'
+import { updateAddress } from '../redux/checkoutSlice'
+
+const address = useSelector((state) => state.checkout?.address)
+const dispatch = useDispatch()
 
 function handleChange(event) {
   // console.log(event.target)
-  const [name, value] = event.target
-  const address = useSelector((state) => state.checkout?.address)
-  const dispatch = useDispatch(updateAddress)
+  const { name, value } = event.target
+  dispatch(updateAddress({ [name]: value }))
 }
 
 const AddressForm = () => {
