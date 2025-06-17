@@ -8,7 +8,10 @@ import {
 } from '@mui/material'
 
 function handleChange(event) {
-  console.log(event.target)
+  // console.log(event.target)
+  const [name, value] = event.target
+  const address = useSelector((state) => state.checkout?.address)
+  const dispatch = useDispatch(updateAddress)
 }
 
 const AddressForm = () => {
