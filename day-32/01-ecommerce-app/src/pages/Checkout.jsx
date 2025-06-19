@@ -18,6 +18,7 @@ import { useDispatch } from 'react-redux'
 // import { clearCheckoutInformation } from '../feature/checkout-slice'
 import { Link } from 'react-router-dom'
 import AddressForm from '../components/AddressForm'
+import PaymentsForm from '../components/Paymentsform'
 
 const steps = ['Shipping Address', 'Payment Details', 'Review Your Order']
 
@@ -26,7 +27,7 @@ function getStepContent(activeStep) {
     case 0:
       return <AddressForm />
     case 1:
-      return <h1>payment details</h1>
+      return <PaymentsForm />
     case 2:
       return <h1>review</h1>
     default:
@@ -106,6 +107,5 @@ const Checkout = () => {
     </Container>
   )
 }
-// 30
 
 export default Checkout

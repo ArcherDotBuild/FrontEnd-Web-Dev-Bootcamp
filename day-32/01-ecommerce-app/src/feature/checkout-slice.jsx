@@ -6,9 +6,9 @@ const checkoutSlice = createSlice({
     address: {},
   },
   reducers: {
-    updateAddress: (state, action) => {
+    updateAddress(state, action) {
       const { payload } = action
-      state.address = { ...state.address, payload }
+      state.address = { ...state.address, ...payload }
     },
   },
 })
