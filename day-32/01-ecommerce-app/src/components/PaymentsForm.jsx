@@ -2,6 +2,9 @@ import React from 'react'
 import { Typography, Box, Grid } from '@mui/material'
 
 const PaymentsForm = () => {
+  function handleChange(event) {
+    // Handle form changes here
+    console.log(event.target.name, event.target.value)
   return (
     <>
       <Typography variant='h6' gutterBottom>
@@ -40,6 +43,18 @@ const PaymentsForm = () => {
               label='Expiry Date'
               fullWith
               autoComplete='cc-exp'
+            ></TextField>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <TextField
+              name='cvv'
+              id='cvv'
+              variant='standard'
+              required
+              label='CVV'
+              type='password'
+              fullWith
+              autoComplete='cc-csc'
             ></TextField>
           </Grid>
         </Grid>
