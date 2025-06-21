@@ -1,10 +1,16 @@
 import React from 'react'
 import { Typography, Box, Grid } from '@mui/material'
+import { useDispatch, useSelector } from 'react-redux'
 
 const PaymentsForm = () => {
+  const payment = useSelector((state) => state.checkout.payment)
+  const dispatch = useDispatch()
   function handleChange(event) {
-    // Handle form changes here
-    console.log(event.target.name, event.target.value)
+    const { name, value } = event.target ?? {}
+    console.log(name, value)
+    dispatch(updateAddress({ [name]: value }))
+  }
+
   return (
     <>
       <Typography variant='h6' gutterBottom>
@@ -21,6 +27,7 @@ const PaymentsForm = () => {
               label='Name on Card'
               fullWith
               autoComplete='cc-name'
+              defaultValue={payment?.name ?? ''}
             ></TextField>
           </Grid>
           <Grid item xs={12} md={6}>
