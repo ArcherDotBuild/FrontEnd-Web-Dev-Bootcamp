@@ -1,6 +1,7 @@
 import React from 'react'
-import { Typography, Box, Grid } from '@mui/material'
+import { Typography, Box, Grid, TextField } from '@mui/material'
 import { useDispatch, useSelector } from 'react-redux'
+import { updatePayment } from '../feature/checkout-slice'
 
 const PaymentsForm = () => {
   const payment = useSelector((state) => state.checkout.payment)
@@ -8,7 +9,7 @@ const PaymentsForm = () => {
   function handleChange(event) {
     const { name, value } = event.target ?? {}
     console.log(name, value)
-    dispatch(updateAddress({ [name]: value }))
+    dispatch(updatePayment({ [name]: value }))
   }
 
   return (
@@ -24,11 +25,11 @@ const PaymentsForm = () => {
               id='name'
               variant='standard'
               required
-              label='Name on Card'
-              fullWith
+              label='Name on card'
+              fullWidth
               autoComplete='cc-name'
               defaultValue={payment?.name ?? ''}
-            ></TextField>
+            />
           </Grid>
           <Grid item xs={12} md={6}>
             <TextField
@@ -37,9 +38,10 @@ const PaymentsForm = () => {
               variant='standard'
               required
               label='Card Number'
-              fullWith
+              fullWidth
               autoComplete='cc-number'
-            ></TextField>
+              defaultValue={payment?.cardNumber ?? ''}
+            />
           </Grid>
           <Grid item xs={12} md={6}>
             <TextField
@@ -48,9 +50,10 @@ const PaymentsForm = () => {
               variant='standard'
               required
               label='Expiry Date'
-              fullWith
+              fullWidth
               autoComplete='cc-exp'
-            ></TextField>
+              defaultValue={payment?.expDate ?? ''}
+            />
           </Grid>
           <Grid item xs={12} md={6}>
             <TextField
@@ -60,9 +63,10 @@ const PaymentsForm = () => {
               required
               label='CVV'
               type='password'
-              fullWith
+              fullWidth
               autoComplete='cc-csc'
-            ></TextField>
+              defaultValue={payment?.cvv ?? ''}
+            />
           </Grid>
         </Grid>
       </Box>
@@ -70,5 +74,5 @@ const PaymentsForm = () => {
   )
 }
 
-// 111
+// 120
 export default PaymentsForm

@@ -13,8 +13,8 @@ const checkoutSlice = createSlice({
     },
     updatePayment(state, action) {
       const { payload } = action
-      state.payment = { ...state.payment , ...payload}
-    }
+      state.payment = { ...state.payment, ...payload }
+    },
   },
 })
 export const { updateAddress, updatePayment } = checkoutSlice.actions
