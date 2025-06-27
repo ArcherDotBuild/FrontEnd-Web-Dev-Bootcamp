@@ -19,6 +19,7 @@ import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import AddressForm from '../components/AddressForm'
 import PaymentsForm from '../components/Paymentsform'
+import ReviewForm from '../components/ReviewForm'
 
 const steps = ['Shipping Address', 'Payment Details', 'Review Your Order']
 
@@ -29,7 +30,7 @@ function getStepContent(activeStep) {
     case 1:
       return <PaymentsForm />
     case 2:
-      return <h1>review</h1>
+      return < ReviewForm />
     default:
       throw new Error('Unknown step')
   }
