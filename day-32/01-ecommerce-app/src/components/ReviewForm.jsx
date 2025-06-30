@@ -42,11 +42,16 @@ const ReviewForm = () => {
         ))}
         <ListItem sx={{ py: 1, px: 0 }}>
           <ListItemText primary='Total' />
-          <Typography variant='subtitle1' sx={{ mt: 2 }}>
+          <Typography variant='subtitle1' sx={{ fontWeight: 700 }}>
             {getSubtotal(cart)?.toFixed(2)}
           </Typography>
         </ListItem>
       </List>
+      <Grid container spacing={2}>
+        <Grid item xs={12} sm={6}>
+          <Typography variant='h6'></Typography>
+        </Grid>
+      </Grid>
     </>
   )
 }
