@@ -21,12 +21,16 @@ const ReviewForm = () => {
           detail: 'Visa',
         },
         {
-          name: 'Card type',
-          detail: 'Visa',
+          name: 'Card Number',
+          detail: payment.cardNumber,
         },
         {
-          name: 'Card type',
-          detail: 'Visa',
+          name: 'Card Holder',
+          detail: payment.name,
+        },
+        {
+          name: 'Expiry Date',
+          detail: payment.expDate  ,
         },
       ]
     : []
@@ -74,7 +78,18 @@ const ReviewForm = () => {
         <Grid item container direction='column' xs={12} sm={6}>
           <Typography variant='h6' sx={{ mt: 2 }}>
             Payment Details
-            <Grid container></Grid>
+            <Grid container>
+              {payments.map(({ name, detail }) => (
+                <>
+                  <Grid key={name} item xs={6}>
+                    <Typography gutterBottom>{name}</Typography>
+                  </Grid>
+                  <Grid key={detail} item xs={6}>
+                    <Typography gutterBottom>{detail}</Typography>
+                  </Grid>
+                </>
+              ))}
+            </Grid>
           </Typography>
         </Grid>
       </Grid>
