@@ -74,5 +74,4 @@ const PaymentsForm = () => {
   )
 }
 
-// 122
 export default PaymentsForm

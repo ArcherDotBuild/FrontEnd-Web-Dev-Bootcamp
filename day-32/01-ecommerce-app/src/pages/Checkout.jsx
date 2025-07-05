@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import {
   Box,
   Container,
-  Toolbar,
   Paper,
   Stepper,
   Step,
@@ -10,13 +9,9 @@ import {
   Button,
   Typography,
 } from '@mui/material'
-// import AddressForm from '../components/AddressForm'
-// import PaymentsForm from '../components/PaymentsForm'
-// import ReviewForm from '../components/ReviewForm'
 import { useDispatch } from 'react-redux'
-// import { clearCart } from '../feature/cart-slice'
-// import { clearCheckoutInformation } from '../feature/checkout-slice'
-import { Link } from 'react-router-dom'
+import { clearCart } from '../feature/cart-slice'
+import { clearCheckoutInformation } from '../feature/checkout-slice'
 import AddressForm from '../components/AddressForm'
 import PaymentsForm from '../components/Paymentsform'
 import ReviewForm from '../components/ReviewForm'
@@ -30,17 +25,22 @@ function getStepContent(activeStep) {
     case 1:
       return <PaymentsForm />
     case 2:
-      return < ReviewForm />
+      return <ReviewForm />
     default:
       throw new Error('Unknown step')
   }
 }
-// const Checkout = () => {
-//   const [activeStep, setActiveStep] = useState(0)
-//   const dispatch = useDispatch()
 
 const Checkout = () => {
   const [activeStep, setActiveStep] = useState(0)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    if (activeStep === steps.length) {
+      dispatch(clearCart())
+      dispatch(clearCheckoutInformation())
+    }
+  }, [activeStep])
 
   function handleNext() {
     setActiveStep(activeStep + 1)
