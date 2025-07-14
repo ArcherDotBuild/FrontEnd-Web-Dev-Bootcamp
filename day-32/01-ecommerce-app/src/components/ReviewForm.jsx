@@ -30,7 +30,7 @@ const ReviewForm = () => {
         },
         {
           name: 'Expiry Date',
-          detail: payment.expDate  ,
+          detail: payment.expDate,
         },
       ]
     : []
@@ -96,6 +96,4 @@ const ReviewForm = () => {
     </>
   )
 }
-// 1.51
-// 28
 export default ReviewForm

@@ -15,6 +15,7 @@ import { clearCheckoutInformation } from '../feature/checkout-slice'
 import AddressForm from '../components/AddressForm'
 import PaymentsForm from '../components/Paymentsform'
 import ReviewForm from '../components/ReviewForm'
+import { Link } from 'react-router-dom'
 
 const steps = ['Shipping Address', 'Payment Details', 'Review Your Order']
 
@@ -74,6 +75,7 @@ const Checkout = () => {
               Your order number is #1234. We have emailed you the details
               regarding your order confirmation.
             </Typography>
+            <Link to='/'>Shop More</Link>
           </>
         ) : (
           <>
