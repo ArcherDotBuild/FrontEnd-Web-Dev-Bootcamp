@@ -14,6 +14,3 @@ console.log(somevariable.toUpperCase())
 somevariable = 17
 // console.log(somevariable.toUpperCase())
 // TypeError: somevariable.toUpperCase is not a function
-
-
-//  minute 04
