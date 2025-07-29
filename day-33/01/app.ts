@@ -21,4 +21,13 @@ console.log(addNumbersTS(2, 4))
 // Argument of type 'string' is not assignable to parameter of type 'number'.
 // console.log(addNumbersTS(3, '7'))
 
+const person = {
+  name: 'Alberto',
+  role: 'Mentor',
+}
+
+// console.log(person.lastName) // Property 'lastName' does not exist on type '{ name: string; role: string; }'.
+
+
+
 // 7m
