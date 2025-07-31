@@ -14,7 +14,13 @@
 
 ### Roadmap
 
-- 1: 
-- 
+- 1: run typescript compiler
+- 2: typescript configuration file
 
-#### 1. 
+#### 1. run typescript compiler
+
+`pnpm tsc app.ts`
+
+#### 2. typescript configuration file
+
+`pnpm tsc --init`
