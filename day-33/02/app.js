@@ -15,7 +15,7 @@ function addNumbersTS(firstNumber, secondNumber) {
 console.log(addNumbersTS(2, 4));
 // Argument of type 'string' is not assignable to parameter of type 'number'.
 // console.log(addNumbersTS(3, '7'))
-var personTS = {
+export const personTS = {
     name: 'Alberto',
     role: 'Mentor',
 };
