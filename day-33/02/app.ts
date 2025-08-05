@@ -62,3 +62,5 @@ const anotherUser: User = {
   lastName: 'Godd2',
   age: 382,
 }
+
+// 25m
