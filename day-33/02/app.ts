@@ -63,4 +63,4 @@ const anotherUser: User = {
   age: 382,
 }
 
-// 25m
+// 25
