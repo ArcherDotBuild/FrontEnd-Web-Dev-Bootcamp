@@ -63,4 +63,17 @@ const anotherUser: User = {
   age: 382,
 }
 
-// 25
+class Employee implements User {
+  firstName: string
+  lastName: string
+  age: number
+
+  constructor(firstName: string, lastName: string, age: number) {
+    this.firstName = firstName
+    this.lastName = lastName
+    this.age = age
+  }
+}
+
+const employee = new Employee('Elf3', 'Godd3', 383)
+console.log('employee: ', employee)
