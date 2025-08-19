@@ -77,3 +77,17 @@ class Employee implements User {
 
 const employee = new Employee('Elf3', 'Godd3', 383)
 console.log('employee: ', employee)
+
+class Manager extends Employee {
+  role: string
+  constructor(firstName: string, lastName: string, age: number, role: string) {
+    // this will call the Employee base class
+    // constructor of the parent class
+    super(firstName, lastName, age)
+    this.role = role
+  }
+}
+
+const manager = new Manager('fuz', 'baz', 36, 'Manager')
+
+// 28m
