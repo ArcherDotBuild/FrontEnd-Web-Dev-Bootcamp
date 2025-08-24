@@ -17,10 +17,12 @@
 - 1: run typescript compiler
 - 2: typescript configuration file
 - 3: types vs interfaces
+- 4: Type inference
 
 #### 1. run typescript compiler
 
 `pnpm tsc app.ts`
+`pnpm tsc`
 
 #### 2. typescript configuration file
 
@@ -44,3 +46,33 @@ Here’s a **clear table** to see it quickly:
 
 - Use `interface` when describing object shapes or classes — especially if you expect to extend or merge.
 - Use `type` when you need unions, intersections, or to alias primitives, tuples, etc.
+
+#### 4. Type inference
+
+Type inference in TypeScript means that the compiler can automatically figure out the type of a variable, function return, or expression without you explicitly writing the type.
+
+Basically, TypeScript looks at how you use a value and guesses its type for you
+
+Examples:
+```typescript
+// TypeScript infers that 'count' is a number
+let count = 5; 
+// Equivalent to: let count: number = 5;
+
+// Function return type is inferred as number
+function add(a: number, b: number) {
+  return a + b; 
+  // TypeScript infers: function add(a: number, b: number): number
+}
+
+// Inferred as string[]
+let fruits = ["apple", "banana"];
+```
+
+⚡ Why it matters:
+
+- Saves you from writing extra type annotations.
+- Keeps code cleaner while still type-safe.
+- If TypeScript can’t infer correctly, you can always declare types manually.
+
+👉 Do you want me to make you a side-by-side table (manual typing vs inference) so it’s super clear when to use each?

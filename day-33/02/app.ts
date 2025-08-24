@@ -6,12 +6,12 @@ console.log(somevariableTS)
 console.log(somevariableTS.toUpperCase())
 // somevariable = 17 // Type 'number' is not assignable to type 'string'
 
-function addNumbers(firstNumber, secondNumber) {
+function addNumbers(firstNumber: number, secondNumber: number) {
   return firstNumber + secondNumber
 }
 
 console.log(addNumbers(5, 10))
-console.log(addNumbers(5, '9'))
+// console.log(addNumbers(5, '9'))
 
 function addNumbersTS(firstNumber: number, secondNumber: number): number {
   return firstNumber + secondNumber
@@ -90,4 +90,25 @@ class Manager extends Employee {
 
 const manager = new Manager('fuz', 'baz', 36, 'Manager')
 
-// 28m
+// type inference
+// looking at the value determines the type of the variable
+
+// implicit type inference
+let username = 'test'
+console.log('username: ', username)
+
+// explicit type inference
+let usernameExplicit: string = 'test2'
+console.log('usernameExplicit: ', usernameExplicit)
+
+// type any
+// skips type checking
+// it is a way to opt-out of type checking
+// any type can be anything, it is not type checked
+// it is not recommended to use any type, but it can be useful in some cases
+let objectAny: any = {x: 0}
+objectAny.x
+objectAny.y = 10 // no error, but it is not type checked
+objectAny.foo() // no error, but it is not type checked
+
+// 38 minute
