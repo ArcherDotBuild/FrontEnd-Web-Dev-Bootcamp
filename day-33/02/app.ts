@@ -111,4 +111,4 @@ objectAny.x
 objectAny.y = 10 // no error, but it is not type checked
 objectAny.foo() // no error, but it is not type checked
 
-// 38 minutes
+// 38 minute
