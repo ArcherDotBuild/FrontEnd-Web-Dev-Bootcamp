@@ -111,4 +111,9 @@ objectAny.x
 objectAny.y = 10 // no error, but it is not type checked
 objectAny.foo() // no error, but it is not type checked
 
-// 38 minute
+// generics
+type Box<T> = {
+  content: 
+}
+
+// 39 mins
