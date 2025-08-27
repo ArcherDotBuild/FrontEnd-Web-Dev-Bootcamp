@@ -116,4 +116,4 @@ type Box<T> = {
   content: 
 }
 
-// 39 mins
+// 39 min
