@@ -119,4 +119,41 @@ type Box<T> = {
 const stringBox: Box<string> = {content: 'abc'}
 const numberBox: Box<number> = {content: 1}
 
+// literal types
+
+// type action = 'add'
+// Type '"subtract"' is not assignable to type '"add"'
+// let addAction: action = 'subtract'
+
+// union types
+type action = 'add' | 'remove' | 'update'
+
+let addAction: action = 'add'
+let removeAction: action = 'remove'
+// Type '"edit"' is not assignable to type 'action'
+// let editAction: action = 'edit'
+let editAction: action = 'update'
+
+/* Error example
+function getProperty(objectAny, key) {
+ return obj[key]
+}
+
+let x = {a: 1, b: 2, c: 3, d: 4}
+
+getProperty(x, 'b')
+getProperty(x, 'e') // no error, but it is not type checked
+*/
+
+function getProperty<Type, Key extends keyof Type>(obj: Type, key: Key) {
+// function getProperty<T, K extends keyof T>(obj: T, key: K) {
+  return obj[key]
+}
+
+let x = {a: 1, b: 2, c: 3, d: 4}
+
+getProperty(x, 'b')
+// Argument of type '"e"' is not assignable to parameter of type '"b" | "a" | "c" | "d"'
+// getProperty(x, 'e')
+
 // 39 mins

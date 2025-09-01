@@ -19,6 +19,7 @@
 - 3: types vs interfaces
 - 4: Type inference
 - 5: Generics
+- 6: Literal types
 
 #### 1. run typescript compiler
 
@@ -93,3 +94,35 @@ let str = identity<string>("hi"); // str: string
 Here, <T> is a **type placeholder** that gets replaced when you call the function.
 
 In short: **Generics = flexible + strongly typed code**. ✅
+
+#### 6. Literal types
+
+In **TypeScript, literal types** are types that represent **exact** values rather than general types.
+
+```typescript
+let direction: "north" | "south" | "east" | "west";
+direction = "north";   // ✅
+direction = "up";      // ❌ Error
+```
+
+Here `"north", "south", "east", "west"` are **string literal types**.
+
+They also work with **numbers** and **booleans**:
+
+```typescript
+let answer: true;  
+answer = true;   // ✅
+answer = false;  // ❌ Error
+```
+
+👉 In short: **Literal types let you restrict a variable to specific, exact values**.
+
+```typescript
+// With a type alias (using `type`)
+type Direction = "north" | "south" | "east" | "west";
+let direction: Direction = "east"; // ✅
+direction = "up";                  // ❌ Error
+```
+
+`type` is only needed when you want a **named type alias**.
+You can use literal types **inline** or via a **type alias**:
