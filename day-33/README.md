@@ -18,6 +18,7 @@
 - 2: typescript configuration file
 - 3: types vs interfaces
 - 4: Type inference
+- 5: Generics
 
 #### 1. run typescript compiler
 
@@ -76,3 +77,19 @@ let fruits = ["apple", "banana"];
 - If TypeScript can’t infer correctly, you can always declare types manually.
 
 👉 Do you want me to make you a side-by-side table (manual typing vs inference) so it’s super clear when to use each?
+
+#### 5. Generics
+Generics in **TypeScript** are a way to create **reusable components** (functions, classes, interfaces) that work with different data types **without losing type safety**.
+
+```typescript
+function identity<T>(value: T): T {
+  return value;
+}
+
+let num = identity<number>(42);   // num: number
+let str = identity<string>("hi"); // str: string
+```
+
+Here, <T> is a **type placeholder** that gets replaced when you call the function.
+
+In short: **Generics = flexible + strongly typed code**. ✅

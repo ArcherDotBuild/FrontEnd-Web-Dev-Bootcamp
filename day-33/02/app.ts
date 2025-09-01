@@ -113,7 +113,10 @@ objectAny.foo() // no error, but it is not type checked
 
 // generics
 type Box<T> = {
-  content: 
+  content: T
 }
+
+const stringBox: Box<string> = {content: 'abc'}
+const numberBox: Box<number> = {content: 1}
 
 // 39 mins
