@@ -20,6 +20,8 @@
 - 4: Type inference
 - 5: Generics
 - 6: Literal types
+- 7: keyof operator
+- 8: typeof operator
 
 #### 1. run typescript compiler
 
@@ -126,3 +128,115 @@ direction = "up";                  // ❌ Error
 
 `type` is only needed when you want a **named type alias**.
 You can use literal types **inline** or via a **type alias**:
+
+#### 7. keyof operator
+
+The `keyof` operator in TypeScript is used to get a union type of all the keys (property names) of a given object type.
+
+```typescript
+type Person = {
+  name: string;
+  age: number;
+  alive: boolean;
+};
+
+type PersonKeys = keyof Person;
+// "name" | "age" | "alive"
+```
+So `PersonKeys` is literally the union of the keys `"name" | "age" | "alive"`.
+
+```typescript
+type Person = {
+  name: string;
+  age: number;
+  alive: boolean;
+};
+
+type PersonKeys = keyof Person;
+// "name" | "age" | "alive"
+```
+<br>
+<hr>
+
+**Practical use:**
+
+```typescript
+function getValue<T, K extends keyof T>(obj: T, key: K): T[K] {
+  return obj[key];
+}
+
+const person = { name: "Ana", age: 25, alive: true };
+
+let age = getValue(person, "age");     // number
+let name = getValue(person, "name");   // string
+```
+
+👉 In short: `keyof` **extracts the keys of a type as a union, useful for making type-safe utilities.**
+
+#### 8. typeof operator
+
+- `typeof` in TypeScript lets you **capture the type of a value/variable.**
+
+- It’s different from JavaScript’s runtime `typeof` (which gives a string like `"string"`, `"number"`).
+
+- In TypeScript, it’s a **type query operator**.
+
+```typescript
+const person = {
+  name: "Ana",
+  age: 25,
+  alive: true,
+};
+
+type PersonType = typeof person;
+// {
+//   name: string;
+//   age: number;
+//   alive: boolean;
+// }
+```
+<br>
+<hr>
+<br>
+
+🔹 Using `keyof` with `typeof`
+
+You often combine them:
+
+```typescript
+const person = {
+  name: "Ana",
+  age: 25,
+  alive: true,
+};
+
+type PersonKeys = keyof typeof person;
+// "name" | "age" | "alive"
+```
+
+So now, instead of manually writing `"name" | "age" | "alive"`, TypeScript infers it automatically.
+
+<hr>
+
+🔹 Practical Example
+
+```typescript
+function getValue<T, K extends keyof T>(obj: T, key: K): T[K] {
+  return obj[key];
+}
+
+const car = { brand: "Toyota", year: 2020 };
+
+type CarKeys = keyof typeof car; 
+// "brand" | "year"
+
+let key: CarKeys = "brand"; // ✅ type-safe
+getValue(car, key);         // returns string
+```
+👉 **In short**:
+
+- `typeof` → turns a value into its type.
+
+- `keyof` → extracts the keys of a type as a union.
+
+- Together → let you build **type-safe functions** that adapt to the structure of objects.

@@ -106,7 +106,7 @@ console.log('usernameExplicit: ', usernameExplicit)
 // it is a way to opt-out of type checking
 // any type can be anything, it is not type checked
 // it is not recommended to use any type, but it can be useful in some cases
-let objectAny: any = {x: 0}
+let objectAny: any = { x: 0 }
 objectAny.x
 objectAny.y = 10 // no error, but it is not type checked
 objectAny.foo() // no error, but it is not type checked
@@ -116,8 +116,8 @@ type Box<T> = {
   content: T
 }
 
-const stringBox: Box<string> = {content: 'abc'}
-const numberBox: Box<number> = {content: 1}
+const stringBox: Box<string> = { content: 'abc' }
+const numberBox: Box<number> = { content: 1 }
 
 // literal types
 
@@ -146,14 +146,20 @@ getProperty(x, 'e') // no error, but it is not type checked
 */
 
 function getProperty<Type, Key extends keyof Type>(obj: Type, key: Key) {
-// function getProperty<T, K extends keyof T>(obj: T, key: K) {
+  // function getProperty<T, K extends keyof T>(obj: T, key: K) {
   return obj[key]
 }
 
-let x = {a: 1, b: 2, c: 3, d: 4}
+let x = { a: 1, b: 2, c: 3, d: 4 }
 
 getProperty(x, 'b')
 // Argument of type '"e"' is not assignable to parameter of type '"b" | "a" | "c" | "d"'
 // getProperty(x, 'e')
 
-// 39 mins
+const someUser = { name: 'jane', country: 'somecountry' }
+
+type SomeUserType = typeof someUser
+
+const anotherSomeUser: SomeUserType = {}
+
+// 47 mins
