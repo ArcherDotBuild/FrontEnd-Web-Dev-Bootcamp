@@ -145,6 +145,7 @@ getProperty(x, 'b')
 getProperty(x, 'e') // no error, but it is not type checked
 */
 
+// keyof operator
 function getProperty<Type, Key extends keyof Type>(obj: Type, key: Key) {
   // function getProperty<T, K extends keyof T>(obj: T, key: K) {
   return obj[key]
@@ -156,10 +157,11 @@ getProperty(x, 'b')
 // Argument of type '"e"' is not assignable to parameter of type '"b" | "a" | "c" | "d"'
 // getProperty(x, 'e')
 
+// typeof operator
 const someUser = { name: 'jane', country: 'somecountry' }
 
 type SomeUserType = typeof someUser
 
-const anotherSomeUser: SomeUserType = {}
+const anotherSomeUser: SomeUserType = {name: 'john', country: 'anothercountry'}
 
-// 47 mins
+// 50 min
