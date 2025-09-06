@@ -164,4 +164,4 @@ type SomeUserType = typeof someUser
 
 const anotherSomeUser: SomeUserType = {name: 'john', country: 'anothercountry'}
 
-// 50 mins
+// 50 min
