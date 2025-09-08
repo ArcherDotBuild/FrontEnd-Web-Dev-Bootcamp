@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { createContext } from 'react'
+import { Action } from './todosReducer'
 
-type Todo = {
+export type Todo = {
   id: number
   text: string
   done: boolean
@@ -19,8 +20,6 @@ const initialTodos: Todo[] = [
   },
   { id: 3, text: 'Use typescript with react', done: false },
 ]
-
-type Action = {}
 
 const TodosContext = createContext<typeof initialTodos | null>(null)
 const TodosDispatchContext = createContext<React.Dispatch<Action>>(() => null)
