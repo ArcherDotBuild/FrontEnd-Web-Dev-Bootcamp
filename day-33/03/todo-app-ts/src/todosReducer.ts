@@ -21,4 +21,4 @@ export default function todosReducer(state: Todo[], action: Action): Todo[] {
   }
 }
 
-// 1.16min
+// 1.16mins
