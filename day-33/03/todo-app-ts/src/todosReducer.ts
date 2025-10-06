@@ -14,10 +14,15 @@ export default function todosReducer(state: Todo[], action: Action): Todo[] {
       return [...state, {id, text, done: false}]
     }
 
-    case 'change': {
-      const { todo } = action
-      return state.map(t => t.id === todo.id ? todo : t)
+ case 'change':
+  const updatedTodo = action.todo
+  return state.map((existingTodo) => {
+    if (existingTodo.id === updatedTodo.id) {
+      return updatedTodo
+    } else {
+      return existingTodo
     }
+  })
   }
 }
 
