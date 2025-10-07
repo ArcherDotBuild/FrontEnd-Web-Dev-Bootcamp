@@ -26,6 +26,10 @@ export default function todosReducer(state: Todo[], action: Action): Todo[] {
           return existingTodo
         }
       })
+
+    case 'remove':
+      const todoId = action.id
+      return state.filter((todo) => todo.id !== todoId)
   }
 }
 
