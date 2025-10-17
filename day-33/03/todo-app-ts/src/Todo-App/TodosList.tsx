@@ -47,4 +47,4 @@ export default function TodoList() {
   )
 }
 
-// 1.42m
+// 1.42
