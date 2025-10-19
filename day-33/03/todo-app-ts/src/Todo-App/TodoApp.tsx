@@ -1,7 +1,7 @@
 import react, { createContext, useReducer, useState } from 'react'
 
-import TodoList from './TodoList'
-import AddTodo from './AddTodo'
+import TodoList from './TodoList.tsx'
+import AddTodo from './AddTodo.tsx'
 
 export type Todo = { id: number; text: string; done: boolean }
 
