@@ -8,10 +8,18 @@ import {
 function AppRouter() {
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route
-        path="/"
-        element={<h1 className="text-3xl font-bold underline">Hello world!</h1>}
-      />,
+      <>
+        <Route
+          path="/"
+          element={
+            <h1 className="text-3xl font-bold underline">default view</h1>
+          }
+        />
+        <Route path="/login" element={<h1>login</h1>} />,
+        <Route path="/browse" element={<h1>browse</h1>}>
+          <Route index element={} />
+        </Route>
+      </>,
     ),
   );
 
