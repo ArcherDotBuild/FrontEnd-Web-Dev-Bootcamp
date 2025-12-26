@@ -12,7 +12,7 @@ function AppRouter() {
         <Route
           path="/"
           element={
-            <h1 className="text-3xl font-bold underline">default view</h1>
+            <h1>default view</h1>
           }
         />
         <Route path="/login" element={<h1>login</h1>} />,
@@ -30,4 +30,4 @@ export default function App() {
   return <AppRouter />;
 }
 
-// 15m
+// 22m
