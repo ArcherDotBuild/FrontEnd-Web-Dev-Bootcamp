@@ -3,7 +3,9 @@ import {
   createRoutesFromElements,
   Route,
   RouterProvider,
-} from "react-router-dom";
+} from 'react-router-dom'
+import Layout from './components/layout'
+import Browse from './pages/browse'
 
 function AppRouter() {
   const router = createBrowserRouter(
@@ -12,22 +14,22 @@ function AppRouter() {
         <Route
           path="/"
           element={
-            <h1>default view</h1>
+            <h1 className="text-3xl font-bold underline">default view</h1>
           }
         />
         <Route path="/login" element={<h1>login</h1>} />,
-        <Route path="/browse" element={<h1>browse</h1>}>
-          <Route index element={} />
+        <Route path="/browse" element={<Layout />}>
+          <Route index element={<Browse />} />
         </Route>
-      </>,
-    ),
-  );
+      </>
+    )
+  )
 
-  return <RouterProvider router={router} />;
+  return <RouterProvider router={router} />
 }
 
 export default function App() {
-  return <AppRouter />;
+  return <AppRouter />
 }
 
 // 23m

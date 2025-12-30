@@ -1,19 +1,9 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom'
-import Header from './header'
 
-const header = () => {
+const Header = () => {
   return (
-    <>
-    <Header />
-    <main>
-      <Outlet />
-    </main>
-    <footer>
-
-    </footer>
-    </>
+    <div>Header</div>
   )
 }
 
-export default header
+export default Header
