@@ -28,8 +28,13 @@ function AppRouter() {
   return <RouterProvider router={router} />
 }
 
-export default function App() {
-  return <AppRouter />
+export default  function App() {
+  return (
+    <div className="bg-testPink min-h-screen text-white">
+      {/* <div className="min-h-screen bg-red-500 text-white"> */}
+      <AppRouter />
+    </div>
+  )
 }
 
-// 23m
+// 26m
