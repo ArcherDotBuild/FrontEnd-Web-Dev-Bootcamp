@@ -37,5 +37,5 @@ export default  function App() {
   )
 }
 
-// 288m
+// 27m
 // tailwind course minute 30
